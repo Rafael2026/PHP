@@ -14,17 +14,16 @@
   <h1>My first PHP page</h1>
 
   <?php
-
-    echo "My first PHP script!<br>";
-    echo "Hello World!<br>";
-
+    
     $n1 = 5;
     $n2 = 4;
-
+    
+    echo "My first PHP script!<br>";
+    echo "Hello World!<br>";
     echo ($n1 + $n2);
-
     echo "<br> Pi: ";
     echo (pi());
+  
   ?>
 
 </body>
