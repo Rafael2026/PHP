@@ -1,4 +1,5 @@
 <?php
+
   $a = 10;
   $b = 13.45;
   $c = true;
@@ -13,4 +14,5 @@
   is_string($e); // true
   is_long($a); // true
   is_double($b); // true
+
 ?>
