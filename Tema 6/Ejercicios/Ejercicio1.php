@@ -1,6 +1,6 @@
 <?php
-  $datos = [
-    [
+
+  $datos = [[
       "nombre" => "Rafael",
       "apellidos" => "Aguilar Muñoz",
       "edad" => 19,
@@ -8,4 +8,5 @@
       "telefono" => 609213851
     ],
   ];
+
 ?>
