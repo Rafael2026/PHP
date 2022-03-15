@@ -11,6 +11,7 @@
     array("<h1>The Punisher</h1>", "<h2>Netflix</h2>", "<h2>81%</h2>", "<p>Un antiguo marine decidido a castigar a los asesinos de su familia termina atrapado en una conspiración militar.</p>"),
 
     array("<h1>Iron Fist</h1>", "<h2>Netflix</h2>", "<h2>66%</h2>", "<p>Danny Rand reaparece 15 años después de ser dado por muerto. Ahora, armado con un increíble poder, tratará de recuperar su pasado y cumplir su destino.</p>")
+  
   );
 
 ?>

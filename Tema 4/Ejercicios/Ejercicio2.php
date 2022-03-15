@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicio 2</title>
-  <link href="bootstrap.css" rel="stylesheet">
   <link href="estilos.css" rel="stylesheet">
+  <link href="https://github.com/Rafael2026/learn_bootstrap/blob/main/bootstrap/css/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,17 +24,17 @@
 
     <?php
 
-      include("Series.php");
+      require_once("Series.php");
 
       for ($i = 0; $i < count($series); $i++) {
 
-        echo ("<tr>");
+        echo "<tr>";
 
         for ($j = 0; $j < count($series[$i]); $j++) {
-          echo ("<td>" .$series[$i][$j] ."</td>");
+          echo "<td>" .$series[$i][$j] ."</td>";
         }
 
-        echo ("</tr>");
+        echo "</tr>";
       }
 
     ?>
