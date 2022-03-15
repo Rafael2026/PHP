@@ -6,6 +6,6 @@
   $colorBorde = $_POST["colorBorde"];
   $colorFigura = $_POST["colorFigura"];
 
-  echo ("<svg><rect width='$lado' height='$lado' stroke='$colorBorde' stroke-width='$size' fill='$colorFigura'/></svg>");
+  echo ("<svg><rect width='$lado' height='$radio' stroke='$colorBorde' stroke-width='$size' fill='$colorFigura'/></svg>");
 
 ?>
