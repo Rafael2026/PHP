@@ -1,0 +1,15 @@
+td {
+  border: 5px solid black;
+}
+
+.card {
+  border: 5px solid black;
+  width: 500px;
+  height: 500px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  padding: 50px 50px 50px 50px;
+}
