@@ -1,5 +1,5 @@
 ## PHP History
-<a href="https://desarrolloweb.com/articulos/436.php">Breve historia de PHP</a>
+<a href="https://desarrolloweb.com/articulos/436.php">Short PHP history</a>
 
 ## Laravel documentation
 <a href="https://laravel.com/docs/9.x">
