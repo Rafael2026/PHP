@@ -12,4 +12,4 @@
 </a>
 
 ## OpenWebinars certificates
-<a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados%20OpenWebinars/PHP%20para%20Principiantes/certificado.pdf">PHP para principiantes</a>
+<a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados%20OpenWebinars/PHP%20para%20Principiantes/certificado.pdf">PHP for beginners</a>
