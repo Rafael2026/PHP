@@ -10,3 +10,6 @@
 <a href="https://symfony.com/doc/current/index.html">
   <img src="https://symfony.com/images/logos/header-logo.svg" alt="Logo de Symfony">
 </a>
+
+## OpenWebinars certificates
+<a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados%20OpenWebinars/PHP%20para%20Principiantes/certificado.pdf">PHP para principiantes</a>
