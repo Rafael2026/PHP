@@ -13,4 +13,4 @@
 
 ## OpenWebinars certificates
 <a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/PHP para Principiantes/certificado.pdf">PHP for beginners</a><br>
-<a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/Páginas web dinámicas con PHP y MySQL/certificado.pdf">PHP and MYSQL pages</a>
+<a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/Páginas web dinámicas con PHP y MySQL/certificado.pdf">PHP and MySQL pages</a>
