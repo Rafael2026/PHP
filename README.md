@@ -12,5 +12,5 @@
 </a>
 
 ## OpenWebinars certificates
-<img src="https://github.com/Rafael2026/learn_php/blob/main/Certificados%20OpenWebinars/PHP%20para%20Principiantes/certificado.pdf"><br>
-<img src="https://github.com/Rafael2026/learn_php/blob/main/Certificados%20OpenWebinars/P%C3%A1ginas%20web%20din%C3%A1micas%20con%20PHP%20y%20MySQL/certificado.pdf>
+<img src="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/PHP para Principiantes/certificado.pdf"><br>
+<img src="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/Páginas web dinámicas con PHP y MySQL/certificado.pdf">
