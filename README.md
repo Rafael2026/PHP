@@ -45,11 +45,11 @@
   </li>
   
   <li>
-    Unit 8: <a href="https://drive.google.com/file/d/1xmNlELsAK8b9y65LvWQVW_1wXM19PBLs/view?usp=sharing">Connect to database</a>
+    Unit 8: <a href="https://drive.google.com/file/d/10OnSQk8Al7pv7iz-ltFKFqhGZyJnaYdY/view?usp=sharing">Connect to database</a>
   </li>
   
   <li>
-    Unit 9: <a href="https://drive.google.com/file/d/1xmNlELsAK8b9y65LvWQVW_1wXM19PBLs/view?usp=sharing">Programming Objects (POO)</a>
+    Unit 9: <a href="https://drive.google.com/file/d/1fHoRb19WbKClMX-OZcAlj2-s9Wn2vMlS/view?usp=sharing">Programming Objects (POO)</a>
   </li>
   
   <li>
