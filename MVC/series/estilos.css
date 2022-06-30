@@ -1,4 +1,4 @@
-tbody {column-count: 2;}
+tbody { column-count: 2; }
 
 img {
   float: left;
@@ -11,13 +11,13 @@ a {
   font-size: 25px;
 }
 
-.inicio {text-decoration: none;}
-td a {text-align: center;}
-.updateInfo {margin-left: 215px;}
-.imagen {margin: 0px 25px 0px 16.5%;}
-.plataforma {margin-bottom: 35px;}
-.reset {clear: both;}
-.enlaces {position: relative;}
+.inicio { text-decoration: none; }
+td a { text-align: center; }
+.updateInfo { margin-left: 215px; }
+.imagen { margin: 0px 25px 0px 16.5%; }
+.plataforma { margin-bottom: 35px; }
+.reset { clear: both; }
+.enlaces { position: relative; }
 
 h4 {
   font-size: 30px;
@@ -25,4 +25,4 @@ h4 {
   float: left;
 }
 
-p {font-size: 20px;}
+p { font-size: 20px; }
