@@ -12,7 +12,8 @@
 </a>
 
 ## OpenWebinars certificates
-<a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/PHP para Principiantes/certificado.pdf">PHP for beginners</a><br>
+<a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/PHP para Principiantes/certificado.pdf">PHP for beginners</a>
+
 <a href="https://github.com/Rafael2026/learn_php/blob/main/Certificados OpenWebinars/Páginas web dinámicas con PHP y MySQL/certificado.pdf">PHP and MySQL pages</a>
 
 ## Web history
@@ -57,4 +58,19 @@
     Unit 11: <a href="https://drive.google.com/file/d/1m7NIgkjr6UhYQWWErrZ6-ltEc9_gLg4p/view?usp=sharing">Access and services creation</a>
   </li>
   
-<ul>
+</ul>
+
+https://oldweb.today/#19960101/http://geocities.com/
+https://www.php.net/
+https://www.phpmyadmin.net/
+https://overapi.com/php
+https://mariadb.org/
+https://www.apache.org/
+https://caniuse.com/
+https://jigsaw.w3.org/css-validator/
+https://validator.w3.org/
+https://www.w3schools.com/html/default.asp
+https://developer.mozilla.org/es/docs/Web/HTTP/Status
+https://overapi.com/regex
+https://regexr.com/
+https://httpd.apache.org/docs/2.4/howto/htaccess.html
