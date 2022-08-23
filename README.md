@@ -71,56 +71,60 @@
 <ul>
   
   <li>
-    <a href="https://oldweb.today/#19960101/http://geocities.com/"></a>
+    <a href="https://oldweb.today/#19960101/http://geocities.com/">JS Browser Emulation</a>
   </li>
 
   <li>
-    <a href="https://www.php.net/"></a>
+    <a href="https://www.php.net/">Official PHP documentation</a>
   </li>
 
   <li>
-    <a href="https://www.phpmyadmin.net/"></a>
+    <a href="https://www.phpmyadmin.net/">PHPMyAdmin - Home Page</a>
   </li>
 
   <li>
-    <a href="https://overapi.com/php"></a>
-  </li>
-  <li>
-    <a href="https://mariadb.org/"></a>
-  </li>
-  <li>
-    <a href="https://www.apache.org/"></a>
-  </li>
-  <li>
-    <a href="https://caniuse.com/"></a>
+    <a href="https://overapi.com/php">PHP Cheat Sheet</a>
   </li>
 
   <li>
-    <a href="https://jigsaw.w3.org/css-validator/"></a>
+    <a href="https://mariadb.org/">MariaDB documentation</a>
   </li>
 
   <li>
-    <a href="https://validator.w3.org/"></a>
+    <a href="https://www.apache.org/">Apache Software Foundation - Homepage</a>
+  </li>
+  
+  <li>
+    <a href="https://caniuse.com/">Can I use?</a>
   </li>
 
   <li>
-    <a href="https://www.w3schools.com/html/default.asp"></a>
+    <a href="https://jigsaw.w3.org/css-validator/">Official CSS validator</a>
   </li>
 
   <li>
-    <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status"></a>
+    <a href="https://validator.w3.org/">Official HTML validator</a>
   </li>
 
   <li>
-    <a href="https://overapi.com/regex"></a>
+    <a href="https://www.w3schools.com/html/default.asp">HTML tutorial - W3SchoolS</a>
   </li>
 
   <li>
-    <a href="https://regexr.com/"></a>
+    <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">
+HTTP response status codes</a>
   </li>
 
   <li>
-    <a href="https://httpd.apache.org/docs/2.4/howto/htaccess.html"></a>
+    <a href="https://overapi.com/regex">Regural expressions Cheat Sheet</a>
+  </li>
+
+  <li>
+    <a href="https://regexr.com/">Online tool for regular expressions</a>
+  </li>
+
+  <li>
+    <a href="https://httpd.apache.org/docs/2.4/howto/htaccess.html">File .htaccess - Apache HTTP server</a>
   </li>
 
 </ul>
