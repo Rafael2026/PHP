@@ -19,7 +19,7 @@
     echo "Phone: 609213851";
   ?>
 
-  <hr>
+  <hr/>
 
   <h1>Exercise 2</h1>
 
@@ -28,7 +28,7 @@
     echo "(<i>Jon Franklin</i>)";
   ?>
 
-  <hr>
+  <hr/>
 
   <h1>Exercise 3</h1>
 
@@ -40,7 +40,7 @@
     echo "  *  ";
   ?>
 
-  <hr>
+  <hr/>
 
   <h1>Exercise 4</h1>
   
@@ -57,7 +57,7 @@
 
   ?>
 
-  <hr>
+  <hr/>
 
   <h1>Exercise 5</h1>
   
@@ -73,7 +73,7 @@
     
   ?>
 
-  <hr>
+  <hr/>
 
   <h1>Exercise 6</h1>
 
@@ -81,7 +81,7 @@
     echo "Goonies never say die!";
   ?>
 
-  <hr>
+  <hr/>
 
   <h1>Exercise 7</h1>
 
@@ -101,7 +101,7 @@
     
   ?>
 
-  <hr>
+  <hr/>
 
   <h1>Exercise 8</h1>
 

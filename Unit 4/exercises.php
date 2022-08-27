@@ -21,7 +21,7 @@
 
     for ($i = 0; $i < count($series); $i++) {
       for ($j = 0; $j < count($series[$i]); $j++) {
-        echo $series[$i][$j] ."<br>";
+        echo $series[$i][$j] ."<br/>";
       }
     }
 
@@ -101,7 +101,7 @@
 
     for ($i = 0; $i < count($series); $i++) {
 
-      echo "<div class='card'><div class='container'><img src='img/imagen$i.webp'>";
+      echo "<div class='card'><div class='container'><img src='img/" .$series[$i] ."'>";
 
       for ($j = 0; $j < count($series[$i]); $j++) {
         echo($series[$i][$j]);
