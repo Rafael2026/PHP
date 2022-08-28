@@ -3,12 +3,12 @@
 
 ## Laravel documentation
 <a href="https://laravel.com/docs/9.x">
-  <img src="https://laravel.com/img/logotype.min.svg" alt="Logo de Laravel">
+  <img src="./img/laravel.svg" alt="Logo de Laravel">
 </a>
 
 ## Symfony documentation
 <a href="https://symfony.com/doc/current/index.html">
-  <img src="https://symfony.com/images/logos/header-logo.svg" alt="Logo de Symfony">
+  <img src="./img/symfony.svg" alt="Logo de Symfony">
 </a>
 
 ## OpenWebinars certificates
@@ -111,8 +111,7 @@
   </li>
 
   <li>
-    <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">
-HTTP response status codes</a>
+    <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status">HTTP response status codes</a>
   </li>
 
   <li>
