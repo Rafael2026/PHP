@@ -1,15 +1,16 @@
 ## Laravel 8 - Tutorials
 <a href="https://www.youtube.com/watch?v=j5baJsM_Adc">Crud Laravel</a>
 
-## Documentation Laravel 8
-<a href="https://bluuweb.github.io/tutorial-laravel/#%C2%BFque-es-laravel">Documentación Laravel en github</a>
+## Laravel 8 - Documentation
+<a href="https://bluuweb.github.io/tutorial-laravel/#%C2%BFque-es-laravel">Github</a>
 
 ## Migraciones
 <a href="https://www.oulub.com/es-ES/Laravel/migrations">Como hacer las migraciones en Laravel?</a>
 
-## Generar datos falsos con la libreía Faker
-<a href="https://www.youtube.com/watch?v=pcTV_qRNjMs">Faker youtube</a><br/>
-<a href="https://www.tutsmake.com/laravel-8-factory-generate-dummy-data-tutorial/">Faker documentación</a>
+## Generar false data - Libray Faker
+<a href="https://www.youtube.com/watch?v=pcTV_qRNjMs">Youtube</a>
+
+<a href="https://www.tutsmake.com/laravel-8-factory-generate-dummy-data-tutorial/">Kaker documentation</a>
 
 ## Curso Laravel 8 desde cero
 <a href="https://aprendible.com/series/laravel-desde-cero/lecciones/introduccion-a-laravel">Curso completo</a>
