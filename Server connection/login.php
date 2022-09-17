@@ -30,9 +30,7 @@
 
     $fh = fopen('usuarios.txt', 'r');
 
-    while ($line = fgets($fh)) {
-      $usuarios[] = explode(" ", trim($line));
-    }
+    while ($line = fgets($fh)) { $usuarios[] = explode(" ", trim($line)); }
 
     fclose($fh);
 
