@@ -11,21 +11,7 @@
 
 <body>
   
-  <h1>Exercise 1</h1>
-
-  <?php
-
-    $datos = [[
-      "nombre" => "Rafael",
-      "apellidos" => "Aguilar Muñoz",
-      "edad" => 20,
-      "direccion" => "C/ Ceres, Nº 8",
-      "telefono" => 609213851
-    ]];
-
-  ?>
-
-  <h1>Exercise 2</h1>
+  <h1>Exercise 1 and 2</h1>
 
   <?php
 
