@@ -12,9 +12,7 @@
 
       $query = $this->con->query("SELECT * FROM serie LIMIT 35");
 
-      while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
-        $series[] = $row;
-      }
+      while ($row = $query->fetch_array(MYSQLI_ASSOC)) { $series[] = $row; }
 
       return $series;
     }
@@ -23,9 +21,7 @@
 
       $query = $this->con->query("SELECT genero FROM genero");
 
-      while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
-        $generos[] = $row;
-      }
+      while ($row = $query->fetch_array(MYSQLI_ASSOC)) { $generos[] = $row; }
 
       return $generos;
     }
@@ -34,9 +30,7 @@
       
       $query = $this->con->query("INSERT INTO genero (genero) VALUES genero=$genero");
 
-      while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
-        $generos[] = $row;
-      }
+      while ($row = $query->fetch_array(MYSQLI_ASSOC)) { $generos[] = $row; }
 
       return $generos;
     }
@@ -45,9 +39,7 @@
       
       $query = $this->con->query("DELETE FROM genero WHERE genero=$genero");
 
-      while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
-        $generos[] = $row;
-      }
+      while ($row = $query->fetch_array(MYSQLI_ASSOC)) { $generos[] = $row; }
 
       return $generos;
     }
@@ -62,9 +54,7 @@
 
       $query = $this->con->query("UPDATE serie SET fecha='$fecha' , temporadas='$temporadas', puntuacion='$puntuacion', argumento='$argumento' WHERE ids='$codigo'");
 
-      while ($row = $query->fetch_array(MYSQLI_ASSOC)) {
-        $series[] = $row;
-      }
+      while ($row = $query->fetch_array(MYSQLI_ASSOC)) { $series[] = $row; }
 
       return $series;
     }
