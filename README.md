@@ -28,15 +28,18 @@
 ## PHP Links
 - [JS Browser Emulation](https://oldweb.today/#19960101/http://geocities.com/)
 - [Official PHP documentation](https://www.php.net/)
-- [PHPMyAdmin - Home Page](https://www.phpmyadmin.net/)
+- PHPMyAdmin: [Home Page](https://www.phpmyadmin.net/)
 - [PHP Cheat Sheet](https://overapi.com/php)
 - [MariaDB documentation](https://mariadb.org/)
 - [Apache Software Foundation - Homepage](https://www.apache.org/)
 - [Can I use?](https://caniuse.com/)
+- [Official PHP validator](https://phpcodechecker.com/)
 - [Official CSS validator](https://jigsaw.w3.org/css-validator/)
-- [Official HTML validator](https://validator.w3.org/)
-- [HTML tutorial - W3SchoolS](https://www.w3schools.com/html/default.asp)
+- PHP tutorial: [W3SchoolS](https://www.w3schools.com/php/default.asp)
 - [HTTP response status codes](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
-- [Regural expressions Cheat Sheet](https://overapi.com/regex)
-- [Online tool for regular expressions](https://regexr.com/)
-- [File .htaccess - Apache HTTP server](https://httpd.apache.org/docs/2.4/howto/htaccess.html)
+- Regular expressions: [Cheat Sheet](https://overapi.com/regex)
+- Regular expressions: [Online tool](https://regexr.com/)
+- Apache HTTP server: [File .htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html)
+
+## Update composer dependencies
+composer update
