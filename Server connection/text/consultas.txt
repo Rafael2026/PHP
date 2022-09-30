@@ -1,5 +1,0 @@
-/*$insertarDatos = "INSERT INTO usuario VALUES('1', '$email1', '$passw1'),
-('2', '$email2', '$passw2'), ('3', '$email3', '$passw3')";*/
-//$actualizacion = "UPDATE usuario SET passw='$hash' WHERE email='$email3'";
-//$insertar = mysqli_query($conexion, $insertarDatos);
-//$actualizar = mysqli_query($conexion, $actualizacion);
