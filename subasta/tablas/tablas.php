@@ -167,7 +167,7 @@
 
       <?php
 
-      $pujaQuery = "SELECT * FROM puja WHERE codSubasta=" . $productos[$i]['codSubasta'];
+      $pujaQuery = "SELECT * FROM puja WHERE codSubasta=". $productos[$i]['codSubasta'];
       $pujaResult = mysqli_query($conexion, $pujaQuery);
 
       while ($row = mysqli_fetch_array($pujaResult)) { $pujas[] = $row; }
@@ -283,7 +283,7 @@
 
   <hr>
 
-  <form action="pujar.php" method="POST" enctype="multipart/form-data">
+  <form action="../pujar/pujar.php" method="POST" enctype="multipart/form-data">
 
     <div class="row">
 
