@@ -12,7 +12,7 @@
 - [PHP and MySQL pages](https://openwebinars.net/certificacion/Xx3Nr1av?type=pdf&r=a5df70feb}&t=)
 
 ## Web history
-[Web and the future](https://drive.google.com/file/d/1rvRm5mKgx1Mq_79S2bzoRdykw7F9U189/view?usp=sharing)
+[Web and the future](https://drive.google.com/file/d/1rvRm5mKgx1Mq_79S2bzoRdykw7F9U189/view)
 
 ## PHP Units
 - Unit 2: [First concepts](https://drive.google.com/file/d/1xIvgg8bbaVnaRNGP_m02cVLdcim2VhxV/view)
