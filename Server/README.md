@@ -1,5 +1,5 @@
 ## Deploy
-<a href="https://rafael2026.github.io/PHP/Server%20connection/">Connect in different ways</a>
+<a href="https://rafael2026.github.io/PHP/Server%20connection/">Server connection</a>
 
 ## Text
 SQL queries: <a href="https://docs.google.com/document/d/1bBGF4H5MIadC93QFxoMHiiByliY6P0SBr7bXNkiLFzI/edit">link</a>
