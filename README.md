@@ -42,4 +42,6 @@
 - Apache HTTP server: [File .htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html)
 
 ## Update composer dependencies
+```bash
 composer update
+```
