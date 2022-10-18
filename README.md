@@ -45,3 +45,19 @@
 ```bash
 composer update
 ```
+
+## Update node.js dependencies
+1º Install package npm-check-updates
+```bash
+npm install -g npm-check-updates
+```
+
+2º Check the mistakes inside package.json and show you the last verion of each outdated dependency
+```bash
+npm audit && ncu
+```
+
+3º Update all the dependencies to the last version
+```bash
+ncu -u
+```
