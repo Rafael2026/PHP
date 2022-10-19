@@ -61,3 +61,12 @@ npm audit && ncu
 ```bash
 ncu -u
 ```
+
+## OpenWebinars PHP IDES
+Top 5 PHP Editors
+
+1. Netbeans: [Download](https://netbeans.apache.org/download/index.html)
+2. PHPStorm: [Download](https://www.jetbrains.com/phpstorm/)
+3. Eclipse: [Download](https://www.eclipse.org/downloads/)
+4. Sublime Text: [Download](https://www.sublimetext.com/download)
+5. Atom: [Download](https://atom.io/)
