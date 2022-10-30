@@ -21,8 +21,6 @@
 
     <section>
 
-      <h1>Perímetro</h1>
-
       <?php
 
         require_once("triangle/Triangle.php");
@@ -46,7 +44,7 @@
         /*Triangulo ,cuadrado, circulo, recangulo */
         $array = array("triangle", "square", "circle");
 
-        echo "<pre>";
+        /*echo "<pre>";
         var_dump($array);
         echo "</pre>";
 
@@ -56,7 +54,7 @@
 
         echo $array[0];
 
-        echo "<br><br>Longitud del array: ". count($array) . "<br>";
+        echo "<br><br>Longitud del array: ". count($array) . "<br>";*/
 
         for ($i = 0; $i < count($array); $i++) {
 
@@ -104,8 +102,6 @@
 
     <section>
 
-      <!--<h1>Área</h1>-->
-
       <?php
         for ($i = 0; $i < count($array); $i++) {
       ?>
@@ -117,6 +113,52 @@
             <tr>
               <th>
                 <h2>Área del <?php echo $array[$i]; ?></h2>
+              </th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>
+                <img src=<?php echo "img/". $array[$i] .".svg"; ?> alt="<?php echo $array[$i]; ?>">
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p><?php echo $figuras[$i]->area(); ?></p>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+
+        </div>
+
+        </div>
+
+      <?php
+        }
+      ?>
+    </section>
+
+    <hr>
+
+    <section>
+
+      <?php
+        for ($i = 0; $i < count($array); $i++) {
+      ?>
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>
+                <h2>Volumen del <?php echo $array[$i]; ?></h2>
               </th>
             </tr>
 

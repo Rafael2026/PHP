@@ -4,7 +4,7 @@
 
     public $width;
 
-    public function __construct ($val1) {
+    public function __construct($val1) {
       $this->width = $val1;
     }
 
