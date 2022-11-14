@@ -1,0 +1,4 @@
+- name: Action - Deployer php
+  # You may pin to the exact commit or the version.
+  # uses: musps/action-deployer-php@a97c1fb7a1456ec851e8f45177093b554d27a94a
+  uses: musps/action-deployer-php@v0.0.2
