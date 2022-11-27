@@ -1,8 +1,3 @@
-<?php
-  error_reporting(E_ERROR);
-  ini_set("display-errors", 0);
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Validar fechas</title>
-  <link href="fecha.css"rel="stylesheet">
+  <link href="css/fecha.css"rel="stylesheet">
 </head>
 
 <body>
@@ -50,7 +45,10 @@
 
   </main>
 
-  <script src="fecha.js" type="text/javascript" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com/" defer></script>
+  <script src="js/fecha.js" defer></script>
 
 </body>
 

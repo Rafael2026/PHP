@@ -31,5 +31,5 @@ main {
   box-shadow: 6px 10px 15px 1px rgb(8, 0, 0, 0.507);
   border: 100px solid linear-gradient(to bottom, #dd4249, #6fb2b9, #022431);
   background: linear-gradient(to right, #f7444e, #78bcc4, #002c3e);
-  color: azure;
+  color: rgb(240, 255, 255);
 }

@@ -3,6 +3,6 @@
   error_reporting(E_ERROR);
   ini_set("display-errors", 0);
 
-  require_once("Controllers/subasta.php");
+  require_once("Controllers/usuarios.php");
   
 ?>

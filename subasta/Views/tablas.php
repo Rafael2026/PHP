@@ -1,12 +1,3 @@
-<?php
-  
-  error_reporting(E_ERROR);
-  ini_set("display-errors", 0);
-
-  $conexion = mysqli_connect("localhost", "root", "", "subasta");
-  
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,12 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Todas las tablas</title>
-  <link href="tablas.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/tablas.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
+  <!-- Formulario categoría del producto -->
   <form action="" method="POST" enctype="multipart/form-data">
 
     <div class="row">
@@ -53,16 +45,18 @@
 
   <?php
 
-    $category = $_POST['categoria'];
+  $category = $_POST['categoria'];
 
-    $productQuery = "SELECT * FROM producto";
-    $productResult = mysqli_query($conexion, $productQuery);
+  $productQuery = "SELECT * FROM producto";
+  $productResult = mysqli_query($conexion, $productQuery);
 
-    while ($row = mysqli_fetch_array($productResult)) { $productos[] = $row; }
+  while ($row = mysqli_fetch_array($productResult)) {
+    $productos[] = $row;
+  }
 
-    if (isset($_POST['submit'])) {
+  if (isset($_POST['submit'])) {
 
-      if (!empty($category)) {
+    if (!empty($category)) {
   ?>
 
       <!-- Tabla productos -->
@@ -73,13 +67,13 @@
           <thead>
 
             <tr>
-              <td>Código producto</td>
-              <td>Nombre producto</td>
-              <td>Material</td>
-              <td>Anchura</td>
-              <td>Altura</td>
-              <td>Categoría</td>
-              <td>Código subasta</td>
+              <th>Código producto</th>
+              <th>Nombre producto</th>
+              <th>Material</th>
+              <th>Anchura</th>
+              <th>Altura</th>
+              <th>Categoría</th>
+              <th>Código subasta</th>
             </tr>
 
           </thead>
@@ -87,7 +81,6 @@
           <tbody>
 
             <?php
-
             for ($i = 0; $i < count($productos); $i++) {
 
               if (strcmp($productos[$i]['categoria'], $category) == 0) {
@@ -103,11 +96,7 @@
                   <td><?php echo $productos[$i]['codSubasta']; ?></td>
                 </tr>
 
-            <?php
-                break;
-              }
-            }
-            ?>
+
 
           </tbody>
 
@@ -117,12 +106,14 @@
 
       <?php
 
-      $codigo = $productos[$i]['codSubasta'];
+                $codigo = $productos[$i]['codSubasta'];
 
-      $subastaQuery = "SELECT * FROM subasta WHERE codSubasta = $codigo AND precIni > 0";
-      $subastaResult = mysqli_query($conexion, $subastaQuery);
+                $subastaQuery = "SELECT * FROM subasta WHERE codSubasta = $codigo AND precIni > 0";
+                $subastaResult = mysqli_query($conexion, $subastaQuery);
 
-      while ($row = mysqli_fetch_array($subastaResult)) { $subastas[] = $row; }
+                while ($row = mysqli_fetch_array($subastaResult)) {
+                  $subastas[] = $row;
+                }
 
       ?>
 
@@ -134,10 +125,10 @@
           <thead>
 
             <tr>
-              <td>Código Subasta</td>
-              <td>fecha inicial</td>
-              <td>fecha fin</td>
-              <td>precio inicial</td>
+              <th>Código Subasta</th>
+              <th>fecha inicial</th>
+              <th>fecha fin</th>
+              <th>precio inicial</th>
             </tr>
 
           </thead>
@@ -145,7 +136,7 @@
           <tbody>
 
             <?php
-            for ($j = 0; $j < count($subastas); $j++) {
+                for ($j = 0; $j < count($subastas); $j++) {
             ?>
 
               <tr>
@@ -156,7 +147,7 @@
               </tr>
 
             <?php
-            }
+                }
             ?>
 
           </tbody>
@@ -167,10 +158,12 @@
 
       <?php
 
-      $pujaQuery = "SELECT * FROM puja WHERE codSubasta=". $productos[$i]['codSubasta'];
-      $pujaResult = mysqli_query($conexion, $pujaQuery);
+                $pujaQuery = "SELECT * FROM puja WHERE codSubasta=" . $productos[$i]['codSubasta'];
+                $pujaResult = mysqli_query($conexion, $pujaQuery);
 
-      while ($row = mysqli_fetch_array($pujaResult)) { $pujas[] = $row; }
+                while ($row = mysqli_fetch_array($pujaResult)) {
+                  $pujas[] = $row;
+                }
 
       ?>
 
@@ -182,11 +175,11 @@
           <thead>
 
             <tr>
-              <td>Código puja</td>
-              <td>valor</td>
-              <td>fecha</td>
-              <td>Código usuario</td>
-              <td>Código subasta</td>
+              <th>Código puja</th>
+              <th>valor</th>
+              <th>fecha</th>
+              <th>Código usuario</th>
+              <th>Código subasta</th>
             </tr>
 
           </thead>
@@ -194,7 +187,7 @@
           <tbody>
 
             <?php
-            for ($p = 0; $p < count($pujas); $p++) {
+                for ($p = 0; $p < count($pujas); $p++) {
             ?>
 
               <tr>
@@ -206,7 +199,7 @@
               </tr>
 
             <?php
-            }
+                }
             ?>
 
           </tbody>
@@ -217,10 +210,12 @@
 
       <?php
 
-      $usuarioQuery = "SELECT codUsu, nomUsu, apeUsu, fechaUnion FROM usuario WHERE permiso < 1";
-      $usuarioResult = mysqli_query($conexion, $usuarioQuery);
+                $usuarioQuery = "SELECT codUsu, nomUsu, apeUsu, fechaUnion FROM usuario WHERE permiso < 1";
+                $usuarioResult = mysqli_query($conexion, $usuarioQuery);
 
-      while ($row = mysqli_fetch_array($usuarioResult)) {$usuarios[] = $row; }
+                while ($row = mysqli_fetch_array($usuarioResult)) {
+                  $usuarios[] = $row;
+                }
 
       ?>
 
@@ -232,10 +227,10 @@
           <thead>
 
             <tr>
-              <td>Código usuario</td>
-              <td>nombre usuario</td>
-              <td>apellidos usuario</td>
-              <td>fecha union</td>
+              <th>Código usuario</th>
+              <th>nombre usuario</th>
+              <th>apellidos usuario</th>
+              <th>fecha union</th>
             </tr>
 
           </thead>
@@ -243,7 +238,7 @@
           <tbody>
 
             <?php
-            for ($u = 0; $u < count($usuarios); $u++) {
+                for ($u = 0; $u < count($usuarios); $u++) {
             ?>
 
               <tr>
@@ -254,7 +249,7 @@
               </tr>
 
             <?php
-            }
+                }
             ?>
 
           </tbody>
@@ -263,25 +258,29 @@
 
       </div>
 
-  <?php
+<?php
 
-    echo "Puja ganadora: " . $pujas[(count($pujas) - 1)]['valor'];
+                echo "Puja ganadora: " . $pujas[(count($pujas) - 1)]['valor'];
 
-        for ($u = 0; $u < count($usuarios); $u++) {
+                for ($u = 0; $u < count($usuarios); $u++) {
 
-          if ($usuarios[$u]['codUsu'] == $pujas[(count($pujas) - 1)]['codUsu']) {
-            echo "<br/>Ganador de la subasta: " . $usuarios[$u]['nomUsu'] . " " . $usuarios[$u]['apeUsu'];
-            break;
+                  if ($usuarios[$u]['codUsu'] == $pujas[(count($pujas) - 1)]['codUsu']) {
+                    echo "<br/>Ganador de la subasta: " . $usuarios[$u]['nomUsu'] . " " . $usuarios[$u]['apeUsu'];
+                    break;
+                  }
+                }
+
+                echo "<br/>Precio inicial de subasta: " . $subastas[count($subastas) - 1]['precIni'];
+
+                break;
+              }
+            }
           }
         }
-      }
-    }
 
-    echo "<br/>Precio inicial de subasta: ". $subastas[count($subastas) - 1]['precIni'];
+?>
 
-  ?>
-
-  <hr>
+  <hr />
 
   <form action="../pujar/pujar.php" method="POST" enctype="multipart/form-data">
 
@@ -304,7 +303,7 @@
       </div>
 
       <div class="col-75">
-        <input type="number" name="actual" id="actual" min="<?php echo $subastas[count($subastas) - 1]['precIni'] ?>">
+        <input type="number" name="actual" id="actual" min="<?php echo ($subastas[count($subastas) - 1]['precIni'] + 1) ?>">
       </div>
 
     </div>
@@ -323,14 +322,10 @@
 
   </form>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" type="text/javascript" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" type="text/javascript" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
+  <script src="https://cdn.tailwindcss.com/" defer></script>
 
 </body>
 
 </html>
-
-<?php
-  mysqli_close($conexion);
-?>

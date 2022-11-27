@@ -1,6 +1,6 @@
 var inicio = document.getElementById("fecha1");
 var fin = document.getElementById("fecha2");
-var reloj = document.getElementById("tictac");
+var reloj = document.getElementById("tictac").innerHTML;
 var final = false;
 
 function showTime() {

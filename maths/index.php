@@ -41,8 +41,7 @@
 
         $figuras = [$figura, $cuadro, $rueda];
 
-        /*Triangulo ,cuadrado, circulo, recangulo */
-        $array = array("triangle", "square", "circle");
+        $array = array("Triangle", "Square", "Circle");
 
         /*echo "<pre>";
         var_dump($array);
@@ -66,7 +65,7 @@
 
             <tr>
               <th>
-                <h2>Perímetro del <?php echo $array[$i]; ?></h2>
+                <h2><?php echo $array[$i]; ?> perimeter</h2>
               </th>
             </tr>
 
@@ -112,7 +111,7 @@
 
             <tr>
               <th>
-                <h2>Área del <?php echo $array[$i]; ?></h2>
+                <h2><?php echo $array[$i]; ?> area</h2>
               </th>
             </tr>
 
@@ -158,7 +157,7 @@
 
             <tr>
               <th>
-                <h2>Volumen del <?php echo $array[$i]; ?></h2>
+                <h2><?php echo $array[$i]; ?> volume</h2>
               </th>
             </tr>
 
@@ -188,6 +187,13 @@
       <?php
         }
       ?>
+
+    </section>
+
+    <hr/>
+
+    <section>
+      <img src="img/tabla.png" alt="Tabla de figuras (Perímetros y áreas)">
     </section>
 
   </main>
