@@ -4,15 +4,10 @@
 
     public $width;
     public $height;
-    public $lado;
 
     public function __construct($val1, $val2) {
-      $this->width = $val1;
+      $this->area = $val1;
       $this->height = $val2;
-    }
-
-    public function __construct1($value) {
-      $this->lado = $value;
     }
 
     function getPerimetro() {

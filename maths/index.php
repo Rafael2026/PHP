@@ -26,10 +26,11 @@
         require_once("triangle/Triangle.php");
         require_once("square/Square.php");
         require_once("circle/Circle.php");
+        require_once("cube/Cube.php");
 
-        $figura = new Triangle(2, 4);
-        $figura2 = new Triangle(4, 8);
-        $figura3 = new Triangle(3, 5);
+        $flecha = new Triangle(2, 4);
+        $flecha2 = new Triangle(4, 8);
+        $flecha3 = new Triangle(3, 5);
 
         $cuadro = new Square(2, 4);
         $cuadro2 = new Square(4, 8);
@@ -39,7 +40,10 @@
         $rueda2 = new Circle(4);
         $rueda3 = new Circle(3);
 
-        $figuras = [$figura, $cuadro, $rueda];
+        $cubo = new Cube(4);
+
+        $figuras2D = [$flecha, $cuadro, $rueda];
+        $figuras3D = [$cubo];
 
         $array = array("Triangle", "Square", "Circle");
 
@@ -81,7 +85,7 @@
 
             <tr>
               <td>
-                <p><?php echo $figuras[$i]->perimetro(); ?></p>
+                <p><?php echo $figuras2D[$i]->perimetro(); ?></p>
               </td>
             </tr>
           </tbody>
@@ -95,13 +99,15 @@
       <?php
         }
       ?>
+
     </section>
     
-    <hr>
+    <hr/>
 
     <section>
 
       <?php
+
         for ($i = 0; $i < count($array); $i++) {
       ?>
 
@@ -127,7 +133,7 @@
 
             <tr>
               <td>
-                <p><?php echo $figuras[$i]->area(); ?></p>
+                <p><?php echo $figuras2D[$i]->area(); ?></p>
               </td>
             </tr>
           </tbody>
@@ -143,12 +149,15 @@
       ?>
     </section>
 
-    <hr>
+    <hr/>
 
     <section>
 
       <?php
-        for ($i = 0; $i < count($array); $i++) {
+
+        $array2 = array("Cube");
+
+        for ($i = 0; $i < count($array2); $i++) {
       ?>
 
         <table>
@@ -157,7 +166,7 @@
 
             <tr>
               <th>
-                <h2><?php echo $array[$i]; ?> volume</h2>
+                <h2><?php echo $array2[$i]; ?> volume</h2>
               </th>
             </tr>
 
@@ -167,13 +176,13 @@
 
             <tr>
               <td>
-                <img src=<?php echo "img/". $array[$i] .".svg"; ?> alt="<?php echo $array[$i]; ?>">
+                <img src=<?php echo "img/". $array2[$i] .".svg"; ?> alt="<?php echo $array2[$i]; ?>">
               </td>
             </tr>
 
             <tr>
               <td>
-                <p><?php echo $figuras[$i]->area(); ?></p>
+                <p><?php echo $figuras3D[$i]->volume(); ?></p>
               </td>
             </tr>
           </tbody>
@@ -193,7 +202,7 @@
     <hr/>
 
     <section>
-      <img src="img/tabla.png" alt="Tabla de figuras (Perímetros y áreas)">
+      <img src="img/tabla.webp" alt="Tabla de figuras2D (Perímetros y áreas)">
     </section>
 
   </main>
