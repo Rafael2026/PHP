@@ -20,7 +20,7 @@ section table {
   margin: 20px 0;
 }
 
-img svg{
+img svg {
   fill: rgb(0, 0, 255); /* Color: blue */
   stroke: rgb(255, 0, 0); /* Color: red */
 }
