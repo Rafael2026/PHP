@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+  return view('login');
 });
 
 Route::get('/registro', function () {
-    return view('registro');
+  return view('registro');
 });
 
 Route::get('/portal', function () {
-    return view('portal');
+  return view('portal');
 });
 
 Route::get('/subasta', function () {
-    return view('subasta');
+  return view('subasta');
 });
