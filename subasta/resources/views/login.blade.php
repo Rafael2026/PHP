@@ -90,29 +90,38 @@
 
     <?php
 
-  $usuarioExiste = false;
+      $usuarioExiste = false;
+      $permiso = 0;
 
-  if (isset($_POST['submit'])) {
+      if (isset($_POST["submit"])) {
 
-    if (!empty($_POST['usuario']) && !empty($_POST['passw'])) {
+        $user = $_POST["usuario"];
+        $password = $_POST["passw"];
 
-      for ($i = 0; $i < count($users); $i++) {
+        for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
 
-        if (strcmp($_POST["usuario"], $users[$i]["user"]) && strcmp($users[$i]["password"], intval(hash('sha512', $_POST["passw"])))) {
-
-          if (strcmp($users[$i]["permiso"], 0)) {
-            header("Location: portal.php");
-            die();
-          } else if (strcmp($users[$i]["permiso"], 1)) {
-            header("Location: Views/tablas.php");
-            die();
+          if (strcmp($user, $users[$i]["user"]) == 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) == 0) {
+            $usuarioExiste = true;
+            $permiso = intval($users[$i]["permiso"]);
           }
         }
-      }
-    }
-  }
 
-?>
+        if ($usuarioExiste) {
+
+          if ($permiso == 1) {
+            header("Location: tablas.php");
+            exit();
+          } else {
+            header("Location: portal.php");
+            exit();
+          }
+
+        } else {
+          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
+        }
+      }
+
+    ?>
 
   </main>
 

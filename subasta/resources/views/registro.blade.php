@@ -50,73 +50,96 @@
 
       <h2>Subastas. Busqueda avanzada</h2>
 
-      <div class="container h-100">
+      <form action="" method="POST">
 
-        <div class="row d-flex justify-content-center align-items-center h-100">
+        <h2 class="text-center text-info">Login</h2>
 
-          <div class="col-xl-9">
-
-            <div class="card" style="border-radius: 15px;">
-
-              <div class="card-body">
-
-                <div class="row align-items-center pt-4 pb-3">
-
-                  <div class="col-md-3 ps-5">
-                    <h6 class="mb-0">Full name</h6>
-                  </div>
-
-                  <div class="col-md-9 pe-5">
-                    <input type="text" class="form-control form-control-lg" />
-                  </div>
-
-                </div>
-
-                <hr class="mx-n3">
-
-                <div class="row align-items-center py-3">
-
-                  <div class="col-md-3 ps-5">
-                    <h6 class="mb-0">Email address</h6>
-                  </div>
-
-                  <div class="col-md-9 pe-5">
-                    <input type="email" class="form-control form-control-lg" placeholder="example@example.com"/>
-                  </div>
-
-                </div>
-
-                <hr class="mx-n3">
-
-                <div class="row align-items-center py-3">
-
-                  <div class="col-md-3 ps-5">
-                    <h6 class="mb-0">Password</h6>
-                  </div>
-
-                  <div class="col-md-9 pe-5">
-                    <input type="password"  class="form-control" placeholder="Write your secret code">
-                  </div>
-
-                </div>
-
-                <hr class="mx-n3">
-
-                <div class="px-5 py-4">
-                  <button type="submit" class="btn btn-primary btn-lg">Send application</button>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
+        <div class="form-group">
+          <label for="nombre" class="text-info">Name</label>
+          <input type="text" name="nombre" id="nombre" class="form-control" required autofocus>
         </div>
 
-      </div>
+        <div class="fin-float"></div>
+
+        <div class="form-group">
+          <label for="apellidos" class="text-info">Surname</label>
+          <input type="text" name="apellidos" id="apellidos" class="form-control" required autofocus>
+        </div>
+
+        <div class="fin-float"></div>
+
+        <div class="form-group">
+          <label for="usuario" class="text-info">User</label>
+          <input type="email" name="usuario" id="usuario" class="form-control" required autofocus>
+        </div>
+
+        <div class="fin-float"></div>
+
+        <div class="form-group">
+          <label for="passw" class="text-info">Pass</label>
+          <input type="password" name="passw" id="passw" class="form-control" required>
+        </div>
+
+        <div class="fin-float"></div>
+
+        <div class="form-group">
+          <input type="submit" name="submit" id="submit" value="Registrarse">
+        </div>
+
+      </form>
 
     </section>
+
+    <?php
+
+      if (isset($_POST["submit"])) {
+
+        $name = $_POST["nombre"];
+        $surname = $_POST["apellidos"];
+        $user = $_POST["usuario"];
+        $password = $_POST["passw"];
+
+        $regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü ]{1,50}$/";
+        //$regex = "/^[A-Za-z]{1,50}$/";
+
+        if(preg_match($regex, ($name)) && preg_match($regex, ($surname))) {
+          echo "Nombre: ". $name. "<br>";
+          echo "Apellidos: ". $surname. "<br>";
+          echo "Usuario: ". $user. "<br>";
+          echo "Contraseña: ". $password. "<br>";
+          echo "Fecha actual: ". date("Y-m-d");
+
+          $usuario = new Usuario();
+          $users = $usuario->addUsuarios($name, $surname, $user, hash('sha512', $password), date("Y-m-d"));
+        }
+        /* else {
+          echo "<script>alert('Hay agún error en el registro');</script>";
+        }*/
+
+        /*for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
+
+          if (strcmp($user, $users[$i]["user"]) == 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) == 0) {
+            $usuarioExiste = true;
+            $permiso = intval($users[$i]["permiso"]);
+          }
+        }
+
+        if ($usuarioExiste) {
+
+          if ($permiso == 1) {
+            header("Location: tablas.php");
+            exit();
+          } else {
+            header("Location: portal.php");
+            exit();
+          }
+
+        } else {
+          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
+        }*/
+      }
+
+    ?>
 
   </main>
 
