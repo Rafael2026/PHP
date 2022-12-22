@@ -49,7 +49,7 @@
 
     <section>
 
-      <form action="" method="GET">
+      <form action="" method="POST">
 
         <h2 class="text-center text-info">Login</h2>
 
@@ -80,10 +80,10 @@
       $usuarioExiste = false;
       $permiso = 0;
 
-      if (isset($_GET["submit"])) {
+      if (isset($_POST["submit"])) {
 
-        $user = $_GET["usuario"];
-        $password = $_GET["passw"];
+        $user = $_POST["usuario"];
+        $password = $_POST["passw"];
 
         for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
 

@@ -2,5 +2,5 @@
   require_once("Models/Usuario.php");
   $usuarios = new Usuario();
   $users = $usuarios->getUsuarios();
-  require_once("Views/registro.blade.php");
+  require_once("views/registro.php");
 ?>

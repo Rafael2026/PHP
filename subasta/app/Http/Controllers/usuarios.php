@@ -9,5 +9,5 @@
   $subastas = new Subasta();
   $sub = $subastas->getSubastas();
 
-  require_once("Views/usuarios.blade.php");
+  require_once("views/usuarios.php");
 ?>

@@ -9,5 +9,5 @@
   $subastas = new Subasta();
   $sub = $subastas->getSubastas();
 
-  require_once("Views/portal.blade.php");
+  require_once("views/portal.php");
 ?>

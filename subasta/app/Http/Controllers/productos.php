@@ -2,5 +2,5 @@
   require_once("Models/Producto.php");
   $productos = new Producto();
   $products = $productos->getProductos();
-  require_once("Views/productos.blade.php");
+  require_once("views/productos.php");
 ?>

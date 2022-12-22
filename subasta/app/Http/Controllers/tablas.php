@@ -16,5 +16,5 @@
   $pujas = new Puja();
   $pu = $pujas->getPujas();
 
-  require_once("Views/tablas.blade.php");
+  require_once("views/tablas.php");
 ?>

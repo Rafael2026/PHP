@@ -8,5 +8,5 @@
   $subastas = new Subasta();
   $sub = $subastas->getSubastas();
 
-  require_once("Views/subasta.blade.php");
+  require_once("views/subasta.php");
 ?>
