@@ -31,7 +31,7 @@ Route::get('/', function() {
   return view('usuario');
 });
 
-Route::view('usuario', [UsuarioController::class, 'index'])->name('usuario');
+//Route::view('usuario', [UsuarioController::class, 'index'])->name('usuario');
 
 Route::get('/tarea', function() {
   return view('tarea');

@@ -20,10 +20,10 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="/" class="active">Inicio</a>
+    <a href="index.php" class="active">Inicio</a>
     <a href="/buscar">Buscar</a>
     <a href="/ayuda">Ayuda</a>
-    <a href="/">Iniciar sesion</a>
+    <a href="index.php">Iniciar sesion</a>
     <a href="/registro">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -49,7 +49,7 @@
 
     <section>
 
-      <form action="" method="POST">
+      <form action="" method="GET">
 
         <h2 class="text-center text-info">Login</h2>
 
@@ -80,10 +80,10 @@
       $usuarioExiste = false;
       $permiso = 0;
 
-      if (isset($_POST["submit"])) {
+      if (isset($_GET["submit"])) {
 
-        $user = $_POST["usuario"];
-        $password = $_POST["passw"];
+        $user = $_GET["usuario"];
+        $password = $_GET["passw"];
 
         for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
 
@@ -96,10 +96,10 @@
         if ($usuarioExiste) {
 
           if ($permiso == 1) {
-            header("Location: /tablas");
+            header("Location: tablas.blade.php");
             exit();
           } else {
-            header("Location: /portal");
+            header("Location: portal.blade.php");
             exit();
           }
 
