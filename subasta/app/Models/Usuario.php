@@ -18,10 +18,20 @@
       return $usuarios;
     }
 
-    // Añadir un usuario
-    public function addUsuarios($nombre, $ape, $correo, $passw, $inicio) {
+    // Obtener el último usuario
+    public function getLastId() {
 
-      $insertUsers = $this->con->query("INSERT INTO usuario(nomUsu, apeUsu, user, password, fechaUnion, permiso) VALUES (nomUsu=$nombre, apeUsu=$ape, user=$correo, password=$passw, fechaUnion=$inicio, permiso=0)");
+      $lastId = $this->con->query("SELECT * FROM usuario ORDER BY codUsu DESC LIMIT 1;");
+
+      while ($row = mysqli_fetch_array($lastId)) { $id[] = $row; }
+
+      return $id;
+    }
+
+    // Añadir un usuario
+    public function addUsuarios($id, $nombre, $ape, $correo, $passw, $inicio) {
+
+      $insertUsers = $this->con->query("INSERT INTO usuario(codUsu, nomUsu, apeUsu, user, password, fechaUnion, permiso) VALUES ('$id', '$nombre', '$ape', '$correo', '$passw', '$inicio', '0')");
 
       while ($row = mysqli_fetch_array($insertUsers)) { $usuarios[] = $row; }
 

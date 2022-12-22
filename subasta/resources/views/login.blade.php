@@ -15,7 +15,7 @@
 <body>
 
   <header>
-    <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+    <img src="{{ asset('img/cabera.webp') }}" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
@@ -24,7 +24,7 @@
     <a href="buscar.php">Buscar</a>
     <a href="ayuda.php">Ayuda</a>
     <a href="index.php">Iniciar sesion</a>
-    <a href="/registro">Registrarse</a>
+    <a href="registro.php">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -33,8 +33,6 @@
   </nav>
 
   <main>
-
-    <div class="fin-float"></div>
 
     <section>
 
@@ -47,36 +45,25 @@
 
     </section>
 
+    <div class="fin-float"></div>
+
     <section>
 
-      <form action="/portal" method="POST" class="container">
+      <form action="" method="POST">
 
         <h2 class="text-center text-info">Login</h2>
 
         <div class="form-group">
           <label for="usuario" class="text-info">User:</label>
-          <input type="email" name="usuario" id="usuario" class="form-control w-50" required autofocus>
+          <input type="email" name="usuario" id="usuario" class="form-control" required autofocus>
         </div>
 
         <div class="fin-float"></div>
 
         <div class="form-group">
           <label for="passw" class="text-info">Pass:</label>
-          <input type="text" name="passw" id="passw" class="form-control w-50" required>
+          <input type="password" name="passw" id="passw" class="form-control" required>
         </div>
-
-        <div class="fin-float"></div>
-
-        <!--<div class="form-group">
-
-          <label for="rol">Seleccionar rol:</label>
-
-          <select name="rol">
-            <option value="usuario">usuario</option>
-            <option value="admin">admin</option>
-          </select>
-
-        </div>-->
 
         <div class="fin-float"></div>
 

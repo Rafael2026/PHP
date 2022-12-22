@@ -48,7 +48,5 @@
       return $pujas;
     }
   }
-
-  //$this->con->close();
   
 ?>

@@ -1,0 +1,126 @@
+/* Hecho por: Rafael Aguilar Muñoz */
+body { height: 100%; }
+
+#correo input, #passw input { color:rgb(0, 0, 0); }
+
+button {
+  margin: 30px 0px 30px 25px;
+  width: 92.5%;
+  border: 20px solid rgb(0, 0, 0); /* Anchura, estilo, color */
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 1280px) {
+
+  form {
+    margin: 10% 0%;
+    background-color: rgb(218, 169, 137);
+    border: 2px solid rgb(218, 169, 137); /* Anchura, estilo, color */
+    border-radius: 30px;
+  }
+
+  #correo, #passw { margin: 30px 0px 0px 25px; }
+
+  #correo label, #passw label {
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 52.5px;
+  }
+
+  #correo input, #passw input {
+    height: 30px;
+    border: 2px solid rgb(245, 232, 224); /* Anchura, estilo, color */
+    font-size: 20px;
+    padding-left: 15px;
+    border-radius: 10px;
+    width: 62%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279.9px) {
+
+  form {
+    margin: 10% 0%;
+    background-color: rgb(218, 169, 137);
+    border: 2px solid rgb(218, 169, 137); /* Anchura, estilo, color */
+    border-radius: 30px;
+  }
+
+  #correo, #passw { margin: 30px 0px 0px 25px; }
+
+  #correo label, #passw label {
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 52.5px;
+  }
+
+  #correo input, #passw input {
+    height: 30px;
+    background-color: rgb(245, 232, 224);
+    border: 2px solid rgb(245, 232, 224); /* Anchura, estilo, color */
+    color: rgb(131, 86, 55);
+    font-size: 20px;
+    padding-left: 15px;
+    width: 50%;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023.9px) {
+
+  form {
+    margin: 10% 0%;
+    background-color: rgb(218, 169, 137);
+    border: 2px solid rgb(218, 169, 137); /* Anchura, estilo, color */
+    border-radius: 30px;
+  }
+
+  #correo, #passw { margin: 30px 0px 0px 25px; }
+
+  #correo label, #passw label {
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 52.5px;
+  }
+
+  #correo input, #passw input {
+    height: 30px;
+    background-color: rgb(245, 232, 224);
+    border: 2px solid rgb(245, 232, 224); /* Anchura, estilo, color */
+    color: rgb(131, 86, 55);
+    font-size: 20px;
+    padding-left: 15px;
+    width: 230px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 767.9px) and (min-width: 425px) {
+
+  form {
+    margin: 10% 0%;
+    background-color: rgb(218, 169, 137);
+    border: 2px solid rgb(218, 169, 137); /* Anchura, estilo, color */
+    border-radius: 30px;
+  }
+
+  #correo, #passw { margin: 30px 0px 0px 25px; }
+
+  #correo label, #passw label {
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 52.5px;
+  }
+
+  #correo input, #passw input {
+    height: 100px;
+    border: 2px solid rgb(245, 232, 224); /* Anchura, estilo, color */
+    color: rgb(131, 86, 55);
+    font-size: 20px;
+    padding-left: 15px;
+    width: 200px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+}
