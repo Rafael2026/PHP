@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrarse</title>
+  <link href="{{ asset('img/favicon.ico') }}" type="image/x-icon" rel="icon">
   <link href="{{ asset('css/registro.css') }}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -19,10 +20,10 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="index.php" class="active">Inicio</a>
-    <a href="buscar.php">Buscar</a>
-    <a href="ayuda.php">Ayuda</a>
-    <a href="index.php">Iniciar sesion</a>
+    <a href="/" class="active">Inicio</a>
+    <a href="/buscar">Buscar</a>
+    <a href="/ayuda">Ayuda</a>
+    <a href="/">Iniciar sesion</a>
     <a href="/registro">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -96,13 +97,14 @@
 
         $name = $_POST["nombre"];
         $surname = $_POST["apellidos"];
-        $user = $_POST["usuario"];
+        $correo = $_POST["usuario"];
         $password = $_POST["passw"];
 
         $regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü ]{1,50}$/";
         //$regex = "/^[A-Za-z]{1,50}$/";
 
         if(preg_match($regex, ($name)) && preg_match($regex, ($surname))) {
+
           echo "Nombre: ". $name. "<br>";
           echo "Apellidos: ". $surname. "<br>";
           echo "Usuario: ". $user. "<br>";
@@ -110,33 +112,16 @@
           echo "Fecha actual: ". date("Y-m-d");
 
           $usuario = new Usuario();
-          $users = $usuario->addUsuarios($name, $surname, $user, hash('sha512', $password), date("Y-m-d"));
-        }
-        /* else {
-          echo "<script>alert('Hay agún error en el registro');</script>";
-        }*/
+          $user = $usuario->getLastId();
 
-        /*for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
+          $codigo = intval($user[0]['codUsu']) + 1;
 
-          if (strcmp($user, $users[$i]["user"]) == 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) == 0) {
-            $usuarioExiste = true;
-            $permiso = intval($users[$i]["permiso"]);
-          }
-        }
-
-        if ($usuarioExiste) {
-
-          if ($permiso == 1) {
-            header("Location: tablas.php");
-            exit();
-          } else {
-            header("Location: portal.php");
-            exit();
-          }
+          $usuario = new Usuario();
+          $users = $usuario->addUsuarios($codigo, $name, $surname, $correo, hash('sha512', $password), date("Y-m-d"));
 
         } else {
-          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
-        }*/
+          echo "<script>alert('Hay agún error en el registro');</script>";
+        }
       }
 
     ?>
@@ -144,13 +129,8 @@
   </main>
 
   <footer>
-
-    <h2>
-      <abbr title="proyecto">Proyecto final de Grado Superior</abbr>
-    </h2>
-
+    <h2>Proyecto final de Grado Superior</h2>
     <p>Autor: Rafael Aguilar Muñoz</p>
-
   </footer>
 
   <script src="https://subastas.boe.es/lib/js/desplegable.js" defer></script>

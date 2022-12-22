@@ -3,7 +3,7 @@
   require_once("Models/Subasta.php");
   require_once("Models/Producto.php");
   require_once("Models/Puja.php");
-  
+
   $productos = new Producto();
   $products = $productos->getProductos();
 
@@ -16,5 +16,5 @@
   $pujas = new Puja();
   $pu = $pujas->getPujas();
 
-  require_once("Views/tablas.php");
+  require_once("Views/tablas.blade.php");
 ?>

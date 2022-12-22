@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\TareaController;
+use App\Http\Controllers\EtiquetaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,27 +26,21 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';*/
 
-Route::get('usuario', [\pp\Http\Controllers\UsuarioController::class, 'index'])->name('usuario');
 
-require __DIR__.'/auth.php';
-
-Route::get('/', function () {
+Route::get('/', function() {
   return view('usuario');
 });
 
-Route::get('/tarea', function () {
+Route::view('usuario', [UsuarioController::class, 'index'])->name('usuario');
+
+Route::get('/tarea', function() {
   return view('tarea');
-});
+})->name("tarea");
 
-Route::view('tarea', [App\Http\Controllers\TareaController::class, 'show'])->name('tarea');
+//Route::view('/tarea', [TareaController::class, 'show'])->name('tarea');
 
-//Route::get("tarea", [TareaController::class, 'show']);
-
-
-Route::get('/etiqueta', function () {
+Route::get('/etiqueta', function() {
   return view('etiqueta');
-});
+})->name("etiqueta");
 
-Route::view('etiqueta', [App\Http\Controllers\EtiquetaController::class, 'show'])->name('tarea');
-
-Route::get("etiqueta", [EtiquetaController::class, 'show']);
+//Route::view('etiqueta', [EtiquetaController::class, 'show'])->name('etiqueta');

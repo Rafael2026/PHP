@@ -15,16 +15,16 @@
 <body>
 
   <header>
-    <img src="{{ asset('img/cabera.webp') }}" alt="Logo de Subasta total">
+    <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="index.php" class="active">Inicio</a>
-    <a href="buscar.php">Buscar</a>
-    <a href="ayuda.php">Ayuda</a>
-    <a href="index.php">Iniciar sesion</a>
-    <a href="registro.php">Registrarse</a>
+    <a href="/" class="active">Inicio</a>
+    <a href="/buscar">Buscar</a>
+    <a href="/ayuda">Ayuda</a>
+    <a href="/">Iniciar sesion</a>
+    <a href="/registro">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -96,10 +96,10 @@
         if ($usuarioExiste) {
 
           if ($permiso == 1) {
-            header("Location: tablas.php");
+            header("Location: /tablas");
             exit();
           } else {
-            header("Location: portal.php");
+            header("Location: /portal");
             exit();
           }
 

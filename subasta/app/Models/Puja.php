@@ -29,7 +29,7 @@
     }
 
     // Eliminar una puja
-    public function deleteUsuarios($codigo) {
+    public function deletePujas($codigo) {
       
       $deletePujas = $this->con->query("DELETE FROM puja WHERE codPuja=$codigo");
 
@@ -39,7 +39,7 @@
     }
 
     // Actualizar una puja
-    public function updateUsuarios($codigo, $value, $date, $codigoUsu, $codigoSub) {
+    public function updatePujas($codigo, $value, $date, $codigoUsu, $codigoSub) {
 
       $updatePujas = $this->con->query("UPDATE puja SET valor=$value, fecha=$date, codUsu=$codigoUsu, codSubasta=$codigoSub WHERE codPuja=$codigo");
 
