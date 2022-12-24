@@ -22,8 +22,8 @@ header img {
 
 /***** Nav styles *****/
 nav {
-  color: rgb(255, 255, 255); /* Color: white */
-  background-color: rgb(0, 0, 0); /* Color: black */
+  color: rgb(255, 255, 255); /* White */
+  background-color: rgb(0, 0, 0); /* Black */
   text-align: left;
   width: 100%;
   justify-content: center;
@@ -37,6 +37,37 @@ nav a {
   padding: 0;
   margin: 25px 50px;
 }
+
+nav .disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+nav .enabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+nav input[type=text] {
+  padding: 6px;
+  margin: 35px 0 0 250px;
+  font-size: 17px;
+  border: none;
+  float: left;
+}
+
+nav  button {
+  padding: 6px 10px;
+  margin: 35px 50px 0px 0px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  float: left;
+}
+
+nav  button:hover { background: #ccc; }
 
 /*** Contenido princiapl ***/
 main { text-align: center; }
@@ -67,23 +98,23 @@ section:nth-child(2) div {
   height: 50px;
 }
 
-form {
-  width: 25%;
+main form {
+  width: 20%;
   height: 400px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
   padding: 25px 50px;
-  margin: 30px 0 30px 37.5%;
+  margin: 30px 0 30px 40%;
 }
 
-form h2 { margin-top: 30px; }
+main form h2 { margin-top: 30px; }
 
-.form-group {
+main .form-group {
   margin-top: 30px;
   width: 100%;
 }
 
-form label, form input, form select { float: left; }
+main form label, main form input, main form select { float: left; }
 
 /***** Pie *****/
 footer {
@@ -109,12 +140,78 @@ footer h2, footer p {
 
 .fin-float { clear: both; }
 
-/*@media only screen and (max-width: 1024px) {
+/* Small mobile */
+@media only screen and (max-width: 320px) {
 
-  nav { height: 200px; }
+  section:first-child div { height: 100px; }
 
   form {
-    width: 400px;
-    height: 400px;
+    width: 70%;
+    height: 350px;
+    /*border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;*/
+    padding: 25px 40px;
+    margin: 30px 15%;
   }
-}*/
+}
+
+/* Medium mobile */
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+
+  section:first-child div { height: 100px; }
+
+  form {
+    width: 60%;
+    height: 350px;
+    /*border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;*/
+    padding: 25px 50px;
+    margin: 30px 20%;
+  }
+}
+
+
+/* Big mobile */
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+
+  section:first-child div { height: 80px; }
+
+  form {
+    width: 50%;
+    height: 350px;
+    /*border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;*/
+    padding: 25px 50px;
+    margin: 30px 25%;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+
+  /*section:first-child div { height: 80px; }*/
+
+  form {
+    width: 40%;
+    height: 350px;
+    /*border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;*/
+    padding: 25px 50px;
+    margin: 30px 30%;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  /*section:first-child div { height: 80px; }*/
+
+  form {
+    width: 40%;
+    height: 350px;
+    /*border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;*/
+    padding: 25px 50px;
+    margin: 30px 30%;
+  }
+}

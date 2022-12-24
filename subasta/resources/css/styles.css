@@ -224,14 +224,23 @@ footer {
   margin-top: 10px;
 }
 
-footer h2 { border-color: rgb(255, 255, 255); } /* Color: white */
-
 footer p { margin-top: 1.5em; }
 
 footer h2, footer p {
   box-sizing: border-box;
   padding: 0.5em;
-  font-size: 0.75em;
   /*margin: 0.3em auto;*/
   height: 50px;
 }
+
+.fin-float { clear: both; }
+
+/*@media only screen and (max-width: 1024px) {
+  
+  nav { height: 200px; }
+
+  form {
+    width: 400px;
+    height: 400px;
+  }
+}*/
