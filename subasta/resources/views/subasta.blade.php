@@ -78,7 +78,7 @@
 
       <?php
 
-        $numeroSubasta = $_GET["indice"];
+        $numeroSubasta = $_POST["indice"];
         echo $numeroSubasta;
 
         for ($i = 0; $i < count($products) - 1; $i++) {

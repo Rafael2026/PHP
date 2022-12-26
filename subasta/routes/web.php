@@ -20,12 +20,13 @@ use App\Http\Controllers\Usuario;
 |
 */
 
-Route::post('/', Login::class);
-Route::post('/productos', Producto::class);
-Route::post('/registro', Registro::class);
-Route::post('/portal', Portal::class);
-Route::post('/subasta', Subasta::class);
-Route::post('/usuario', Usuario::class);
+Route::post('/', Principal::class, 'store');
+Route::post('/login', Login::class, 'store');
+Route::post('/productos', Producto::class, 'store');
+Route::post('/registro', Registro::class, 'store');
+Route::post('/portal', Portal::class, 'store');
+Route::post('/subasta', Subasta::class, 'store');
+Route::post('/usuario', Usuario::class, 'store');
 
 /*Route::post('/', function() {
   return view('login');

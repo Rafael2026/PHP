@@ -14,7 +14,7 @@
 <body>
 
   <!-- Formulario categoría del producto -->
-  <form action="" method="GET" enctype="multipart/form-data">
+  <form action="" method="POST" enctype="multipart/form-data">
 
     <div class="row">
 
@@ -45,7 +45,7 @@
 
   <?php
 
-    $category = $_GET['categoria'];
+    $category = $_POST['categoria'];
 
     $productQuery = "SELECT * FROM producto";
     $productResult = mysqli_query($conexion, $productQuery);
@@ -54,7 +54,7 @@
       $productos[] = $row;
     }
 
-    if (isset($_GET['submit'])) {
+    if (isset($_POST['submit'])) {
 
       if (!empty($category)) {
   ?>
@@ -280,7 +280,7 @@
 
   <hr />
 
-  <form action="../pujar/pujar.php" method="GET" enctype="multipart/form-data">
+  <form action="../pujar/pujar.php" method="POST" enctype="multipart/form-data">
 
     <div class="row">
 

@@ -51,7 +51,7 @@
 
       <h2>Subastas. Busqueda avanzada</h2>
 
-      <form action="" method="GET">
+      <form action="" method="POST">
 
         <h2 class="text-center text-info">Login</h2>
 
@@ -93,12 +93,12 @@
 
     <?php
 
-      if (isset($_GET["submit"])) {
+      if (isset($_POST["submit"])) {
 
-        $name = $_GET["nombre"];
-        $surname = $_GET["apellidos"];
-        $correo = $_GET["usuario"];
-        $password = $_GET["passw"];
+        $name = $_POST["nombre"];
+        $surname = $_POST["apellidos"];
+        $correo = $_POST["usuario"];
+        $password = $_POST["passw"];
 
         $regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü ]{1,50}$/";
         //$regex = "/^[A-Za-z]{1,50}$/";
