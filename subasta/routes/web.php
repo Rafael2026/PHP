@@ -20,26 +20,26 @@ use App\Http\Controllers\Usuario;
 |
 */
 
-Route::post('/', Principal::class, 'store');
-Route::post('/login', Login::class, 'store');
+//Route::post('/', Principal::class, 'store');
+/*Route::post('/', Login::class, 'store');
 Route::post('/productos', Producto::class, 'store');
 Route::post('/registro', Registro::class, 'store');
 Route::post('/portal', Portal::class, 'store');
 Route::post('/subasta', Subasta::class, 'store');
-Route::post('/usuario', Usuario::class, 'store');
+Route::post('/usuario', Usuario::class, 'store');*/
 
-/*Route::post('/', function() {
+Route::get('/', function() {
   return view('login');
 });
 
-Route::post('/registro', function() {
+Route::get('/registro', function() {
   return view('registro');
 });
 
-Route::post('/portal', function() {
+Route::get('/portal', function() {
   return view('portal');
 });
 
-Route::post('/subasta', function() {
+Route::get('/subasta', function() {
   return view('subasta');
-});*/
+});

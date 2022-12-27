@@ -280,7 +280,7 @@
 
   <hr />
 
-  <form action="../pujar/pujar.php" method="POST" enctype="multipart/form-data">
+  <form action="../pujar/pujar.php" method="GET" enctype="multipart/form-data">
 
     <div class="row">
 

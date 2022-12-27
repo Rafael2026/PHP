@@ -1,11 +1,11 @@
 <?php
 
-  namespace App\Http\Controllers;
+  //namespace App\Http\Controllers;
 
   //use App\Http\Controllers\Login;
-  use App\Models\Usuario;
+  //use App\Models\Usuario;
 
-  class Usuarios extends Controller {
+  /*class Usuarios extends Controller {
 
     public function store() {
 
@@ -14,15 +14,8 @@
 
       return view('Usuarios');
     }
-    /*require_once("Models/Usuario.php");
-    $usuarios = new Usuario();
-    $users = $usuarios->getUsuarios();
-    require_once("views/login.php");*/
-  }
+  }*/
 
-?>
-
-<?php
   require_once("Models/Usuario.php");
   require_once("Models/Subasta.php");
   require_once("Models/Producto.php");
@@ -34,4 +27,5 @@
   $sub = $subastas->getSubastas();
 
   require_once("views/usuarios.php");
+
 ?>

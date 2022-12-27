@@ -1,11 +1,11 @@
 <?php
 
-  namespace App\Http\Controllers;
+  //namespace App\Http\Controllers;
 
   //use App\Http\Controllers\Login;
-  use App\Models\Producto;
+  //use App\Models\Producto;
 
-  class Productos extends Controller {
+  /*class Productos extends Controller {
 
     public function store() {
 
@@ -14,11 +14,11 @@
 
       return view('productos');
     }
-    /*require_once("Models/Producto.php");
+  }*/
+
+  require_once("Models/Producto.php");
   $productos = new Producto();
   $products = $productos->getProductos();
-  require_once("views/productos.php");*/
-  }
+  require_once("views/productos.php");
 
 ?>
-

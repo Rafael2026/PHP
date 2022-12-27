@@ -1,7 +1,11 @@
 <?php
 
+  /*namespace App\Models;
+
+  use Illuminate\Database\Eloquent\Model;*/
+
   class Producto {
-  
+
     private $con;
 
     public function __construct() {
@@ -30,7 +34,7 @@
 
     // Eliminar un producto
     public function deleteProductos($codigo) {
-      
+
       $deleteProductos = $this->con->query("DELETE FROM producto WHERE codProd=$codigo");
 
       while ($row = mysqli_fetch_array($deleteProductos)) { $productos[] = $row; }
@@ -48,5 +52,5 @@
       return $productos;
     }
   }
-  
+
 ?>

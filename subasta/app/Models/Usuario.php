@@ -1,7 +1,11 @@
 <?php
 
+  /*namespace App\Models;
+
+  use Illuminate\Database\Eloquent\Model;*/
+
   class Usuario {
-  
+
     private $con;
 
     public function __construct() {
@@ -40,7 +44,7 @@
 
     // Eliminar un usuario
     public function deleteUsuarios($correo) {
-      
+
       $deleteUsers = $this->con->query("DELETE FROM usuario WHERE user=$correo");
 
       while ($row = mysqli_fetch_array($deleteUsers)) { $usuarios[] = $row; }
@@ -58,5 +62,5 @@
       return $usuarios;
     }
   }
-  
+
 ?>

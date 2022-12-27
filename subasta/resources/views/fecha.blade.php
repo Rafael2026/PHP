@@ -34,7 +34,6 @@
 
     </div>
 
-
     <div class="fin">
 
       <div class="fecha">
