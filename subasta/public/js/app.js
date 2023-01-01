@@ -1,32 +1,102 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+// AGREGA CLASE boxCardAnimated AL HACER SCROLL PARA ANIMAR COMPONENTE CARD 
+window.onscroll = function() {
 
-require('./bootstrap');
+  let scrollPosY = window.pageYOffset | document.body.scrollTop;
 
-window.Vue = require('vue').default;
+  if (scrollPosY >= 400) {
+    subir = document.querySelector('#subir');
+    subir.classList.add("irArriba");
+  } else {
+    subir = document.querySelector('#subir');
+    subir.classList.remove("irArriba");
+  }
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+  if (scrollPosY >= 910) {
+    cardAnimated = document.getElementById('cardAnimada');
+    cardAnimated.classList.add("boxCardAnimated");
+  } else {
+    cardAnimated = document.getElementById('cardAnimada');
+    cardAnimated.classList.remove("boxCardAnimated");
+  }
+};
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// AGREGA CLASE current AL HACER SCROLL 
+let mainNavLinks = document.querySelectorAll("nav div ul li a");
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+window.addEventListener("scroll", event => {
 
-const app = new Vue({
-    el: '#app',
+  event.preventDefault();
+
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach(link => {
+    
+    let section = document.querySelector(link.hash);
+    
+    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add("current");
+    } else {
+      link.classList.remove("current");
+    }
+  });
 });
+
+
+// DESPLAZAMIENTO SMOOTH SCROLL
+window.onload = function() {
+
+  const easeInCubic = function (t) { return t * t * t }
+  const scrollElems = document.getElementsByClassName('scroll');
+
+  const scrollToElem = (start, stamp, duration, scrollEndElemTop, startScrollOffset) => {
+
+    const runtime = stamp - start;
+    let progress = runtime / duration;
+    const ease = easeInCubic(progress);
+
+    progress = Math.min(progress, 1);
+
+    const newScrollOffset = startScrollOffset + (scrollEndElemTop * ease);
+    window.scroll(0, startScrollOffset + (scrollEndElemTop * ease));
+
+    if (runtime < duration) {
+
+      requestAnimationFrame((timestamp) => {
+        const stamp = new Date().getTime();
+        scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
+      })
+    }
+  }
+
+  for (let i = 0; i < scrollElems.length; i++) {
+    
+    const elem = scrollElems[i];
+
+    elem.addEventListener('click', function(e) {
+
+      e.preventDefault();
+
+      const scrollElemId = e.target.href.split('#')[1];
+      const scrollEndElem = document.getElementById(scrollElemId);
+
+      const anim = requestAnimationFrame(() => {
+
+        const stamp = new Date().getTime();
+        const duration = 1200;
+        const start = stamp;
+
+        const startScrollOffset = window.pageYOffset;
+
+        const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
+
+        scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
+      });
+    });
+  }
+};
+
+function enviarMensaje() {
+  alert('Mensaje enviado con éxito!');
+  document.getElementById("miForm").reset();
+}
