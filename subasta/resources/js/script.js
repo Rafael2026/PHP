@@ -22,3 +22,6 @@ for (let i = 0; i < links.lenght; i++) {
     }
   };
 }
+
+/*window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () { window.history.go(1); };*/
