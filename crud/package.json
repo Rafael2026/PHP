@@ -13,10 +13,10 @@
         "axios": ">=1.2",
         "laravel-mix": ">=6.0.49",
         "lodash": ">=4.17.21",
-        "postcss": ">=8.4.20"
+        "postcss": ">=8.4.21"
     },
     "dependencies": {
-        "next": ">=13.0.7",
+        "next": ">=13.1.1",
         "react": ">=18.2.0",
         "react-dom": ">=18.2.0"
     }
