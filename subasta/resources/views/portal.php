@@ -1,14 +1,21 @@
+<?php
+  //session_start();
+?>
+
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Subastas</title>
-  <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  <link href="img/logo.png" type="image/x-icon" rel="icon">
+  <link href="css/login.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,7 +34,7 @@
 
     <input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>
-
+    
     <button name="out" id="out">Log out</button>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -80,7 +87,7 @@
     </section>
 
     <section>
-
+      
       <?php
         for ($i = 0; $i < count($products); $i++) {
       ?>
@@ -88,7 +95,7 @@
       <div class="productos">
 
         <ul>
-
+        
           <li>
             <h3>Producto: <?php echo $products[$i]['nomProd'] ?></h3>
           </li>
@@ -122,7 +129,7 @@
           </li>
 
         </ul>
-
+        
         <button class="buscarSubasta">Buscar subasta</button>
 
       </div>

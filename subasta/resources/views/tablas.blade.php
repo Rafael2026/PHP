@@ -7,321 +7,183 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Todas las tablas</title>
-  <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">
+  <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- Formulario categoría del producto -->
-  <form action="" method="POST" enctype="multipart/form-data">
+  <header>
+    <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+  </header>
 
-    <div class="row">
+  <nav class="topnav" id="myTopnav">
 
-      <div class="col-25">
-        <label for="categoria">Según la categoría:</label>
+    <a href="index.php" class="active">Inicio</a>
+    <a href="subasta.php" class="disabled">Subastas</a>
+    <a href="puja.php" class="disabled">Pujas</a>
+    <a href="login.php">Iniciar sesion</a>
+    <a href="registro.php">Registrarse</a>
+
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+
+    <button name="out" id="out">Log out</button>
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+
+  </nav>
+
+  <div class="fin-float"></div>
+
+  <main>
+
+    <section>
+
+      <!-- Title: Hora Central Europea / Central European Time -->
+      <div>
+        <span class="fecha"></span>
+        <span class="tiempo"></span>
+        <span class="horario">CET</span>
       </div>
 
-      <div class="col-75">
+    </section>
 
-        <select name="categoria" id="categoria">
-          <option></option>
-          <option value="Multiherramientas">Multiherramientas</option>
-          <option value="Mueble Autotransformable">Mueble Autotransformable</option>
-          <option value="Super coches">Super coches</option>
-          <option value="Dispositivo cambiante">Dispositivo cambiante</option>
-          <option value="Piedras preciosas" disabled>Piedras preciosas</option>
-        </select>
+    <div class="fin-float"></div>
 
-      </div>
+    <!--
+    <section>
 
-    </div>
+      <form action="" method="POST" enctype="multipart/form-data">
 
-    <div class="row">
-      <input type="submit" name="submit" id="submit" value="Mostrar datos">
-    </div>
+        <div class="row">
 
-  </form>
+          <div class="col-25">
+            <label for="categoria">Según la categoría:</label>
+          </div>
 
-  <?php
+          <div class="col-75">
 
-    $category = $_POST['categoria'];
+            <select name="categoria" id="categoria">
+              <option></option>
+              <option value="Multiherramientas">Multiherramientas</option>
+              <option value="Mueble Autotransformable">Mueble Autotransformable</option>
+              <option value="Super coches">Super coches</option>
+              <option value="Dispositivo cambiante">Dispositivo cambiante</option>
+              <option value="Piedras preciosas" disabled>Piedras preciosas</option>
+            </select>
 
-    $productQuery = "SELECT * FROM producto";
-    $productResult = mysqli_query($conexion, $productQuery);
+          </div>
 
-    while ($row = mysqli_fetch_array($productResult)) {
-      $productos[] = $row;
-    }
+        </div>
 
-    if (isset($_POST['submit'])) {
+        <div class="row">
+          <input type="submit" name="submit" id="submit" value="Mostrar datos">
+        </div>
 
-      if (!empty($category)) {
-  ?>
-
-  <!-- Tabla productos -->
-  <div class="table-responsive">
-
-    <table class="table table-bordered border-primary container">
-
-      <thead>
-
-        <tr>
-          <th>Código producto</th>
-          <th>Nombre producto</th>
-          <th>Material</th>
-          <th>Anchura</th>
-          <th>Altura</th>
-          <th>Categoría</th>
-          <th>Código subasta</th>
-        </tr>
-
-      </thead>
-
-      <tbody>
-
-        <?php
-          for ($i = 0; $i < count($productos); $i++) {
-
-            if (strcmp($productos[$i]['categoria'], $category) == 0) {
-        ?>
-
-        <tr>
-          <td><?php echo $productos[$i]['codProd']; ?></td>
-          <td><?php echo $productos[$i]['nomProd']; ?></td>
-          <td><?php echo $productos[$i]['material']; ?></td>
-          <td><?php echo $productos[$i]['anchura']; ?></td>
-          <td><?php echo $productos[$i]['altura']; ?></td>
-          <td><?php echo $productos[$i]['categoria']; ?></td>
-          <td><?php echo $productos[$i]['codSubasta']; ?></td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-  <?php
-
-    $codigo = $productos[$i]['codSubasta'];
-
-    $subastaQuery = "SELECT * FROM subasta WHERE codSubasta = $codigo AND precIni > 0";
-    $subastaResult = mysqli_query($conexion, $subastaQuery);
-
-    while ($row = mysqli_fetch_array($subastaResult)) {
-      $subastas[] = $row;
-    }
-
-  ?>
-
-  <!-- Tabla subastas -->
-  <div class="table-responsive">
-
-    <table class="table table-bordered border-primary container">
-
-      <thead>
-
-        <tr>
-          <th>Código Subasta</th>
-          <th>fecha inicial</th>
-          <th>fecha fin</th>
-          <th>precio inicial</th>
-        </tr>
-
-      </thead>
-
-      <tbody>
-
-        <?php
-          for ($j = 0; $j < count($subastas); $j++) {
-        ?>
-
-          <tr>
-            <td><?php echo $subastas[$j]['codSubasta']; ?></td>
-            <td><?php echo $subastas[$j]['fechaInic']; ?></td>
-            <td><?php echo $subastas[$j]['fechaFin']; ?></td>
-            <td><?php echo $subastas[$j]['precIni']; ?></td>
-          </tr>
-
-        <?php
-          }
-        ?>
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-  <?php
-
-    $pujaQuery = "SELECT * FROM puja WHERE codSubasta=" . $productos[$i]['codSubasta'];
-    $pujaResult = mysqli_query($conexion, $pujaQuery);
-
-    while ($row = mysqli_fetch_array($pujaResult)) {
-      $pujas[] = $row;
-    }
-
-  ?>
-
-      <!-- Tabla pujas -->
-      <div class="table-responsive">
-
-        <table class="table table-bordered border-primary container">
-
-          <thead>
-
-            <tr>
-              <th>Código puja</th>
-              <th>valor</th>
-              <th>fecha</th>
-              <th>Código usuario</th>
-              <th>Código subasta</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <?php
-                for ($p = 0; $p < count($pujas); $p++) {
-            ?>
-
-              <tr>
-                <td><?php echo $pujas[$p]['codPuja'] ?></td>
-                <td><?php echo $pujas[$p]['valor'] ?></td>
-                <td><?php echo $pujas[$p]['fecha'] ?></td>
-                <td><?php echo $pujas[$p]['codUsu'] ?></td>
-                <td><?php echo $pujas[$p]['codSubasta'] ?></td>
-              </tr>
-
-            <?php
-                }
-            ?>
-
-          </tbody>
-
-        </table>
-
-      </div>
+      </form>
 
       <?php
 
-        $usuarioQuery = "SELECT codUsu, nomUsu, apeUsu, fechaUnion FROM usuario WHERE permiso < 1";
-        $usuarioResult = mysqli_query($conexion, $usuarioQuery);
+        //$category = $_POST['categoria'];
 
-        while ($row = mysqli_fetch_array($usuarioResult)) {
-          $usuarios[] = $row;
-        }
+        //if (isset($_POST['submit'])) {
 
+        //if (!empty($category)) {
       ?>
 
-      <!-- Tabla usuarios -->
-      <div class="table-responsive">
+    </section>
+    -->
+    <?php
+      require_once("crud/Productos.php");
+    ?>
 
-        <table class="table table-bordered border-primary container">
+    <div class="fin-float"></div><hr />
 
-          <thead>
+    <?php
+      require_once("crud/Subastas.php");
+    ?>
 
-            <tr>
-              <th>Código usuario</th>
-              <th>nombre usuario</th>
-              <th>apellidos usuario</th>
-              <th>fecha union</th>
-            </tr>
+    <div class="fin-float"></div> <hr />
 
-          </thead>
+    <?php
+      require_once("crud/Pujas.php");
+    ?>
 
-          <tbody>
+    <div class="fin-float"></div><hr />
 
-            <?php
-                for ($u = 0; $u < count($usuarios); $u++) {
-            ?>
+    <?php
+      require_once("crud/Usuarios.php");
+    ?>
 
-              <tr>
-                <td><?php echo $usuarios[$u]['codUsu'] ?></td>
-                <td><?php echo $usuarios[$u]['nomUsu'] ?></td>
-                <td><?php echo $usuarios[$u]['apeUsu'] ?></td>
-                <td><?php echo $usuarios[$u]['fechaUnion'] ?></td>
-              </tr>
+    <div class="fin-float"></div>
 
-            <?php
-                }
-            ?>
+    <!--
+    <section>
 
-          </tbody>
+      <form action="../pujar/pujar.php" method="POST" enctype="multipart/form-data">
 
-        </table>
+        <div class="row">
 
-      </div>
+          <div class="col-25">
+            <label for="inicial">Precio inicial de la subasta</label>
+          </div>
 
-<?php
+          <div class="col-75">
+            <input type="number" name="inicial" id="inicial" value="<?php echo $sub[count($sub) - 1]['precIni'] ?>"
+              readonly>
+          </div>
 
-                echo "Puja ganadora: " . $pujas[(count($pujas) - 1)]['valor'];
+        </div>
 
-                for ($u = 0; $u < count($usuarios); $u++) {
+        <div class="row">
 
-                  if ($usuarios[$u]['codUsu'] == $pujas[(count($pujas) - 1)]['codUsu']) {
-                    echo "<br/>Ganador de la subasta: " . $usuarios[$u]['nomUsu'] . " " . $usuarios[$u]['apeUsu'];
-                    break;
-                  }
-                }
+          <div class="col-25">
+            <label for="actual">Precio actual de la subasta</label>
+          </div>
 
-                echo "<br/>Precio inicial de subasta: " . $subastas[count($subastas) - 1]['precIni'];
+          <div class="col-75">
+            <input type="number" name="actual" id="actual" min="<?php echo ($sub[count($sub) - 1]['precIni'] + 1) ?>">
+          </div>
 
-                break;
-              }
-            }
-          }
-        }
+        </div>
 
-?>
+        <div class="row">
+          <input type="hidden" name="fecha1" id="fecha1" value="<?php echo $sub[count($sub) - 1]['fechaInic']; ?>"
+            readonly>
+        </div>
 
-  <hr />
+        <div class="row">
+          <input type="hidden" name="fecha2" id="fecha2" value="<?php echo $sub[count($sub) - 1]['fechaFin']; ?>"
+            readonly>
+        </div>
 
-  <form action="../pujar/pujar.php" method="GET" enctype="multipart/form-data">
+        <div class="row">
+          <input type="submit" name="submit" id="submit" value="Pujar">
+        </div>
 
-    <div class="row">
+      </form>
 
-      <div class="col-25">
-        <label for="inicial">Precio inicial de la subasta</label>
-      </div>
+    </section>
+    -->
 
-      <div class="col-75">
-        <input type="number" name="inicial" id="inicial" value="<?php echo $subastas[count($subastas) - 1]['precIni'] ?>" readonly>
-      </div>
+  </main>
 
-    </div>
-
-    <div class="row">
-
-      <div class="col-25">
-        <label for="actual">Precio actual de la subasta</label>
-      </div>
-
-      <div class="col-75">
-        <input type="number" name="actual" id="actual" min="<?php echo ($subastas[count($subastas) - 1]['precIni'] + 1) ?>">
-      </div>
-
-    </div>
-
-    <div class="row">
-      <input type="hidden" name="fecha1" id="fecha1" value="<?php echo $subastas[count($subastas) - 1]['fechaInic']; ?>" readonly>
-    </div>
-
-    <div class="row">
-      <input type="hidden" name="fecha2" id="fecha2" value="<?php echo $subastas[count($subastas) - 1]['fechaFin']; ?>" readonly>
-    </div>
-
-    <div class="row">
-      <input type="submit" name="submit" id="submit" value="Pujar">
-    </div>
-
-  </form>
+  <footer>
+    <h2>Proyecto final de Grado Superior</h2>
+    <p>Autor: Rafael Aguilar Muñoz</p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
+  <script src="{{ asset('js/reloj.js') }}" defer></script>
+  <script src="{{ asset('js/script.js') }}" defer></script>
+  <script src="{{ asset('js/nav.js') }}" defer></script>
+  <script src="{{ asset('js/tablas.js') }}" defer></script>
 
 </body>
 

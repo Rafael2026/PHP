@@ -18,10 +18,20 @@
       return $pujas;
     }
 
-    // Añadir una puja
-    public function addPujas($value, $date, $codigoUsu, $codigoSub) {
+    // Obtener puja ganadora
+    public function getPujaWin() {
 
-      $insertPujas = $this->con->query("INSERT INTO puja(valor, fecha, codUsu, codSubasta) VALUES (valor=$value, fecha=$date, codUsu=$codigoUsu, codSubasta=$codigoSub)");
+      $winner = $this->con->query("SELECT * FROM puja ORDER BY codPuja desc LIMIT 1;");
+
+      while ($row = mysqli_fetch_array($winner)) { $pujaWin[] = $row; }
+
+      return $pujaWin;
+    }
+
+    // Añadir una puja
+    public function addPujas($codigo, $value, $date, $codigoUsu, $codigoSub) {
+
+      $insertPujas = $this->con->query("INSERT INTO puja VALUES ('$codigo', '$value', '$date', '$codigoUsu', '$codigoSub')");
 
       while ($row = mysqli_fetch_array($insertPujas)) { $pujas[] = $row; }
 

@@ -66,7 +66,7 @@ nav button {
 nav  button:hover { background: #ccc; }
 
 /*** Contenido princiapl ***/
-/*main { text-align: center; }*/
+/* main { text-align: center; } */
 
 section:first-child {
   width: 100%;
@@ -121,6 +121,8 @@ form {
   float: left;
 }
 
+.usuario { height: 475px; }
+
 form input { width: 80%; }
 
 form input:first-child {
@@ -170,9 +172,9 @@ main table tr > * { border: 1px solid #0d6efd; }
   border-radius: 1rem;
   padding: 20px;
   
-}*/
+}
 
-/*main input[type=text], main select, main textarea {
+main input[type=text], main select, main textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -218,7 +220,7 @@ footer {
   padding: 1em 0;
   font-size: 1.5em;
   text-align: center;
-  color: rgb(255, 255, 255); /* White */
+  color: rgb(255, 255, 255);
   border-top: 1px solid #ddd; /* Width | Style | Color */
   margin-top: 10px;
 }

@@ -20,10 +20,13 @@
   <nav class="topnav" id="myTopnav">
 
     <a href="index.php" class="active">Inicio</a>
-    <a href="buscar.php">Buscar</a>
-    <a href="ayuda.php">Ayuda</a>
-    <a href="index.php">Iniciar sesion</a>
+    <a href="subasta.php">Subastas</a>
+    <a href="puja.php">Pujas</a>
+    <a href="login.php">Iniciar sesion</a>
     <a href="registro.php">Registrarse</a>
+
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -78,15 +81,15 @@
 
       <?php
 
-        $numeroSubasta = $_POST["indice"];
-        echo $numeroSubasta;
+        $numeroSubasta = $_GET["indice"];
+        //echo $numeroSubasta;
 
         for ($i = 0; $i < count($products) - 1; $i++) {
 
-          if ($i == $numeroSubasta) {
+          if ((intval($i) + 1) == $numeroSubasta) {
       ?>
 
-      <div>
+      <div class="subasta">
 
         <ul>
 
@@ -122,7 +125,11 @@
             <p>Precio inicial: <?php echo $sub[$i]['precIni'] ?></p>
           </li>
 
-          </ul>
+        </ul>
+
+        <button>
+          <a href="portal.php" class="atras">Volver atrás</a>
+        </button>
 
       </div>
 
@@ -169,6 +176,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <script src="{{ asset('js/reloj.js') }}" defer></script>
   <script src="{{ asset('js/script.js') }}" defer></script>
+  <script src="{{ asset('js/nav.js') }}" defer></script>
 
 </body>
 

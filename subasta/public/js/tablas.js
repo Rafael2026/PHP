@@ -6,21 +6,18 @@ var columnas = [];
 var col = 0;
 
 for (var fil = 1;  fil < filas.length; fil++) {
-
-  //console.log(filas[fil].innerHTML);
-
-  columnas[col] = filas[fil].getElementsByTagName("td")[0].innerHTML;
+  columnas[col] = filas[fil].getElementsByTagName("td")
   col++;
 }
 
-console.log(columnas);
+//console.log(columnas);
 
-for (let column = 0; column < columnas.length; column++) {
+/*for (let column = 0; column < columnas.length; column++) {
 
   console.log(columnas[column]);
 
-  //columnas[fil] = filas[fil].getElementsByTagName("td")[0];
-}
+  columnas[fil] = filas[fil].getElementsByTagName("td")[0];
+}*/
 
 for (var f = 0; f < formularios.length; f++) {
 
@@ -28,39 +25,39 @@ for (var f = 0; f < formularios.length; f++) {
   let input = formularios[f].getElementsByTagName("input");
   let botones = formularios[f].getElementsByTagName("button");
   
-  input[0].disabled = false;
-  input[(input.length - 1)].disabled = false;
   botones[1].type = "button";
   botones[2].type = "button";
 
-  /*for (var b = 0; b < botones.length; b++) {
+  for (var b = 0; b < botones.length; b++) {
 
-    //tablas[0].getElementsByTagName("tr")
+    //input[0].disabled = false;
+    //input[(input.length - 1)].disabled = false;
 
     botones[b].onclick = function() {
 
-      //input[0].disabled = false;
-
       if (b != 0) {
-        
         botones[1].type = "submit";
         botones[2].type = "submit";
-        //input[(input.length - 1)].disabled = false;
-      }
-
-      if (b == 0) {
-        input[0].innerHTML = columnas[(columnas.length - 1)] + 1;
+        input[0].min = 1;
+        input[0].max = columnas[col][(columnas.length - 1)] + 1;
       } else {
-        input[0].innerHTML = "";
-        input[0].disabled = true;
-        botones[1].type = "submit";
-        botones[2].type = "submit";
+
+        for (let c = 0; c < columnas.length; c++) {
+
+          for (let col = 0; col < columnas[0].lenght; col++) {
+            
+            input[0].innerHTML = columnas[col][(columnas.length - 1)] + 1;
+            input[0].min = columnas[col][(columnas.length - 1)] + 1;
+            input[0].max = columnas[col][(columnas.length - 1)] + 1;
+
+            input[(input.length - 1)].innerHTML = columnas[(columnas.length - 1)] + 1;
+            input[(input.length - 1)].min = columnas[(columnas.length - 1)] + 1;
+            input[(input.length - 1)].max = columnas[(columnas.length - 1)] + 1;
+          }
+        }
       }
     };
-  }*/
 
-  formularios[f].onsubmit = function() {
-    input[0].disabled = true;
-    input[(input.length - 1)].disabled = true;
-  };
+    input[0].innerHTML = "";
+  }
 }

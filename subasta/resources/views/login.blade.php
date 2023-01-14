@@ -7,9 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar sesión</title>
-  <link href="{{ asset('img/favicon.ico') }}" type="image/x-icon" rel="icon">
-  <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+  <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -21,16 +22,21 @@
   <nav class="topnav" id="myTopnav">
 
     <a href="index.php" class="active">Inicio</a>
-    <a href="/buscar">Buscar</a>
-    <a href="/ayuda">Ayuda</a>
-    <a href="index.php">Iniciar sesion</a>
-    <a href="/registro">Registrarse</a>
+    <a href="subasta.php" class="disabled">Subastas</a>
+    <a href="puja.php" class="disabled">Pujas</a>
+    <a href="login.php">Iniciar sesion</a>
+    <a href="registro.php">Registrarse</a>
+
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
 
   </nav>
+
+  <div class="fin-float"></div>
 
   <main>
 
@@ -49,7 +55,7 @@
 
     <section>
 
-      <form action="" method="POST">
+      <form action="<?php //echo $_SERVER['HTTP_REFERER'] ?>" method="POST">
 
         <h2 class="text-center text-info">Login</h2>
 
@@ -68,7 +74,7 @@
         <div class="fin-float"></div>
 
         <div class="form-group">
-          <input type="submit" name="submit" id="submit" value="Verificar credenciales">
+          <input type="submit" name="login" id="login" value="Verificar credenciales">
         </div>
 
       </form>
@@ -80,7 +86,7 @@
       $usuarioExiste = false;
       $permiso = 0;
 
-      if (isset($_POST["submit"])) {
+      if (isset($_POST["login"])) {
 
         $user = $_POST["usuario"];
         $password = $_POST["passw"];
@@ -90,22 +96,35 @@
           if (strcmp($user, $users[$i]["user"]) == 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) == 0) {
             $usuarioExiste = true;
             $permiso = intval($users[$i]["permiso"]);
+            //$_SESSION["usuario"] = $user;
+            //$_SESSION["permiso"] = $permiso;
           }
         }
 
         if ($usuarioExiste) {
 
           if ($permiso == 1) {
-            header("Location: tablas.blade.php");
+            header("Location: tablas.php");
             exit();
           } else {
-            header("Location: portal.blade.php");
+            header("Location: portal.php");
             exit();
           }
 
         } else {
           echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
         }
+
+        /*if (isset($_SESSION["usuario"])) {
+
+          if ($permiso == 1) {
+            header("Location: tablas.php");
+            exit();
+          } else {
+            header("Location: portal.php");
+            exit();
+          }
+        }*/
       }
 
     ?>
@@ -120,6 +139,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <script src="{{ asset('js/reloj.js') }}" defer></script>
+  <script src="{{ asset('js/nav.js') }}" defer></script>
 
 </body>
 

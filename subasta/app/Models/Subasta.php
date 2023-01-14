@@ -1,11 +1,7 @@
 <?php
 
-  /*namespace App\Models;
-
-  use Illuminate\Database\Eloquent\Model;*/
-
   class Subasta {
-
+  
     private $con;
 
     public function __construct() {
@@ -34,7 +30,7 @@
 
     // Eliminar una subasta
     public function deleteSubastas($indice) {
-
+      
       $deleteSubastas = $this->con->query("DELETE FROM subasta WHERE codSubasta=$indice");
 
       while ($row = mysqli_fetch_array($deleteSubastas)) { $subastas[] = $row; }
@@ -52,5 +48,5 @@
       return $subastas;
     }
   }
-
+  
 ?>

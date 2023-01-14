@@ -20,11 +20,14 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="/" class="active">Inicio</a>
-    <a href="/buscar">Buscar</a>
-    <a href="/ayuda">Ayuda</a>
-    <a href="/">Iniciar sesion</a>
-    <a href="/registro">Registrarse</a>
+    <a href="index.php" class="active">Inicio</a>
+    <a href="subasta.php" class="disabled">Subastas</a>
+    <a href="puja.php" class="disabled">Pujas</a>
+    <a href="login.php">Iniciar sesion</a>
+    <a href="registro.php">Registrarse</a>
+
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -32,9 +35,9 @@
 
   </nav>
 
-  <main>
+  <div class="fin-float"></div>
 
-    <div class="fin-float"></div>
+  <main>
 
     <section>
 
@@ -47,13 +50,15 @@
 
     </section>
 
+    <div class="fin-float"></div>
+
     <section>
 
       <h2>Subastas. Busqueda avanzada</h2>
 
-      <form action="" method="POST">
+      <form action="login.php" method="POST">
 
-        <h2 class="text-center text-info">Login</h2>
+        <h2 class="text-center text-info">Registrarse</h2>
 
         <div class="form-group">
           <label for="nombre" class="text-info">Name</label>
@@ -71,56 +76,178 @@
 
         <div class="form-group">
           <label for="usuario" class="text-info">User</label>
-          <input type="email" name="usuario" id="usuario" class="form-control" required autofocus>
+          <input type="email" name="usuario" id="usuario" class="form-control" required autofocus minlength="1" maxlength="50">
         </div>
 
         <div class="fin-float"></div>
 
         <div class="form-group">
           <label for="passw" class="text-info">Pass</label>
-          <input type="password" name="passw" id="passw" class="form-control" required>
+          <input type="password" name="passw" id="passw" class="form-control" required minlength="1" maxlength="256">
         </div>
 
         <div class="fin-float"></div>
 
         <div class="form-group">
-          <input type="submit" name="submit" id="submit" value="Registrarse">
+          <input type="submit" name="register" id="register" value="Registrarse">
         </div>
 
       </form>
+
+      <!--
+        <div class="container h-100">
+
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
+          <div class="col-xl-9">
+
+            <div class="card" style="border-radius: 15px;">
+
+              <div class="card-body">
+
+                <div class="row align-items-center pt-4 pb-3">
+
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Full name</h6>
+                  </div>
+
+                  <div class="col-md-9 pe-5">
+                    <input type="text" name="nomApe" id="nomApe" class="form-control form-control-lg" />
+                  </div>
+
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center py-3">
+
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Email address</h6>
+                  </div>
+
+                  <div class="col-md-9 pe-5">
+                    <input type="email" name="usuario" id="usuario" class="form-control" required autofocus placeholder="example@subasta.com"/>
+                  </div>
+
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="row align-items-center py-3">
+
+                  <div class="col-md-3 ps-5">
+                    <h6 class="mb-0">Password</h6>
+                  </div>
+
+                  <div class="col-md-9 pe-5">
+                    <input type="password" name="passw" id="passw" class="form-control" required placeholder="Write your secret code">
+                  </div>
+
+                </div>
+
+                <hr class="mx-n3">
+
+                <div class="px-5 py-4">
+                  <input type="submit" name="submit" id="submit" value="Verificar credenciales">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>-->
 
     </section>
 
     <?php
 
-      if (isset($_POST["submit"])) {
+      $usuarioExiste = false;
+      $permiso = 0;
+
+      if (isset($_POST["register"])) {
 
         $name = $_POST["nombre"];
         $surname = $_POST["apellidos"];
         $correo = $_POST["usuario"];
         $password = $_POST["passw"];
 
-        $regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü ]{1,50}$/";
+        $regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü]@subasta\.com$/ism";
+
         //$regex = "/^[A-Za-z]{1,50}$/";
 
-        if(preg_match($regex, ($name)) && preg_match($regex, ($surname))) {
+        //$regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü]{1,50}$/";
 
-          echo "Nombre: ". $name. "<br>";
-          echo "Apellidos: ". $surname. "<br>";
-          echo "Usuario: ". $user. "<br>";
-          echo "Contraseña: ". $password. "<br>";
-          echo "Fecha actual: ". date("Y-m-d");
+        //$rege = "/^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/";
 
-          $usuario = new Usuario();
-          $user = $usuario->getLastId();
+        for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
 
-          $codigo = intval($user[0]['codUsu']) + 1;
+          if (strcmp($name, $users[$i]["nomUsu"]) != 0 && strcmp($surname, $users[$i]["apeUsu"]) != 0 &&
+              strcmp($user, $users[$i]["user"]) != 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) != 0 &&
+              $i != count($users)) {
 
-          $usuario = new Usuario();
-          $users = $usuario->addUsuarios($codigo, $name, $surname, $correo, hash('sha512', $password), date("Y-m-d"));
+            $usuarioExiste = true;
+            //$permiso = intval($users[$i]["permiso"]);
 
-        } else {
+            echo "Nombre: ". $name. "<br>";
+            echo "Apellidos: ". $surname. "<br>";
+            echo "Usuario: ". $correo. "<br>";
+            echo "Contraseña: ". $password. "<br>";
+            echo "Fecha actual: ". date("Y-m-d"). "<br>";
+
+            $usuario = new Usuario();
+            $codigo = $usuario->getLastId();
+
+            $id = intval($codigo[0]["codUsu"]) + 1;
+
+            /*echo "Codigo: ". $id. "<br>";
+            echo "Codigo: ". intval($codigo[0]["codUsu"]). "<br>";
+
+            echo "<pre>";
+            var_dump($codigo);
+            echo "</pre>";*/
+
+            //$usuario = new Usuario();
+            $users = $usuario->addUsuarios($id, strval($name), strval($surname), $correo, trim(strval(hash('sha512', $password))), date("Y-m-d"));
+          }
+
+          /*if (preg_match($regex, ($correo))) {
+
+            echo "Nombre: ". $name. "<br>";
+            echo "Apellidos: ". $surname. "<br>";
+            echo "Usuario: ". $correo. "<br>";
+            echo "Contraseña: ". $password. "<br>";
+            echo "Fecha actual: ". date("Y-m-d");
+
+            $usuario = new Usuario();
+            $user = $usuario->getLastId();
+
+            $codigo = intval($user[0]['codUsu']) + 1;
+
+            $usuario = new Usuario();
+            $users = $usuario->addUsuarios($codigo, $name, $surname, $correo, hash('sha512', $password), date("Y-m-d"));
+
+          } else {
           echo "<script>alert('Hay agún error en el registro');</script>";
+          }*/
+
+          /*if ($usuarioExiste) {
+
+            if ($permiso == 1) {
+              header("Location: tablas.php");
+              exit();
+            } else {
+              header("Location: portal.php");
+              exit();
+            }
+
+          } else {
+          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
+          }*/
+
         }
       }
 
@@ -133,11 +260,11 @@
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <script src="https://subastas.boe.es/lib/js/desplegable.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <script src="{{ asset('js/reloj.js') }}" defer></script>
-
+  <script src="{{ asset('js/nav.js') }}" defer></script>
+  <script srtc="{{ asset('js/form.js') }}"></script>
 
 </body>
 

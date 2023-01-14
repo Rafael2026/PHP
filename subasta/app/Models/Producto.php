@@ -1,11 +1,7 @@
 <?php
 
-  /*namespace App\Models;
-
-  use Illuminate\Database\Eloquent\Model;*/
-
   class Producto {
-
+  
     private $con;
 
     public function __construct() {
@@ -23,9 +19,9 @@
     }
 
     // Añadir un producto
-    public function addProductos($nombre, $material, $anchura, $altura, $codSubasta) {
+    public function addProductos($codigo, $nombre, $material, $anchura, $altura, $codSubasta) {
 
-      $insertProductos = $this->con->query("INSERT INTO producto(nomProd, material, anchura, altura, codSubasta) VALUES (nomProd=$nombre, material=$material, anchura=$anchura, altura=$altura, codSubasta=$codSubasta)");
+      $insertProductos = $this->con->query("INSERT INTO producto(codProd, nomProd, material, anchura, altura, codSubasta) VALUES (codProd=$codigo, nomProd=$nombre, material=$material, anchura=$anchura, altura=$altura, codSubasta=$codSubasta)");
 
       while ($row = mysqli_fetch_array($insertProductos)) { $productos[] = $row; }
 
@@ -34,7 +30,7 @@
 
     // Eliminar un producto
     public function deleteProductos($codigo) {
-
+      
       $deleteProductos = $this->con->query("DELETE FROM producto WHERE codProd=$codigo");
 
       while ($row = mysqli_fetch_array($deleteProductos)) { $productos[] = $row; }
@@ -52,5 +48,5 @@
       return $productos;
     }
   }
-
+  
 ?>

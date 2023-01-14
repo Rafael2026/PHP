@@ -1,11 +1,7 @@
 <?php
 
-  /*namespace App\Models;
-
-  use Illuminate\Database\Eloquent\Model;*/
-
   class Usuario {
-
+  
     private $con;
 
     public function __construct() {
@@ -43,9 +39,9 @@
     }
 
     // Eliminar un usuario
-    public function deleteUsuarios($correo) {
-
-      $deleteUsers = $this->con->query("DELETE FROM usuario WHERE user=$correo");
+    public function deleteUsuarios($id) {
+      
+      $deleteUsers = $this->con->query("DELETE FROM usuario WHERE codUsu='$id'");
 
       while ($row = mysqli_fetch_array($deleteUsers)) { $usuarios[] = $row; }
 
@@ -53,14 +49,14 @@
     }
 
     // Actualizar un usuario
-    public function updateUsuarios($nombre, $ape, $correo, $passw) {
+    public function updateUsuarios($codigo, $nombre, $ape, $correo, $passw) {
 
-      $updateUsers = $this->con->query("UPDATE usuario SET nomUsu=$nombre, apeUsu=$ape, user=$correo, password=$passw WHERE user=$correo AND password=$passw");
+      $updateUsers = $this->con->query("UPDATE usuario SET nomUsu='$nombre', apeUsu='$ape', user='$correo', password='$passw' WHERE codUsu='$codigo'");
 
       while ($row = mysqli_fetch_array($updateUsers)) { $usuarios[] = $row; }
 
       return $usuarios;
     }
   }
-
+  
 ?>
