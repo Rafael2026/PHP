@@ -22,11 +22,11 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="index.php" class="active">Inicio</a>
-    <a href="subasta.php">Subastas</a>
-    <a href="puja.php">Pujas</a>
-    <a href="login.php" class="disabled">Iniciar sesion</a>
-    <a href="registro.php" class="disabled">Registrarse</a>
+    <a href="/" class="active">Inicio</a>
+    <a href="/subasta">Subastas</a>
+    <a href="/puja">Pujas</a>
+    <a href="/login" class="disabled">Iniciar sesion</a>
+    <a href="/registro" class="disabled">Registrarse</a>
 
     <!--<input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>-->
@@ -61,16 +61,16 @@
       <ul>
 
         <li>
-          <a href="subastas.php">Busqueda</a>
+          <a href="/subasta">Busqueda</a>
         </li>
 
         <li>
-          <a href="resultados.php">Resultados</a>
+          <a href="/resultados">Resultados</a>
         </li>
 
         <li>
 
-          <a href="guardar.php" class="guardar">
+          <a href="/guardar" class="guardar">
             Guardar
             <span>Busqueda</span>
             <img src="img/logoAcceso.png" srcset="img/logoAcceso.svg" alt="Sesion activa" />

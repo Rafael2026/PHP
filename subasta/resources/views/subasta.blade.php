@@ -22,14 +22,14 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="index.php" class="active">Inicio</a>
-    <a href="subasta.php">Subastas</a>
-    <a href="puja.php">Pujas</a>
-    <a href="login.php">Iniciar sesion</a>
-    <a href="registro.php">Registrarse</a>
+    <a href="/" class="active">Inicio</a>
+    <a href="/subasta">Subastas</a>
+    <a href="/puja">Pujas</a>
+    <a href="/login">Iniciar sesion</a>
+    <a href="/registro">Registrarse</a>
 
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
+    <!--<input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>-->
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>

@@ -1,45 +1,55 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Login;
-use App\Http\Controllers\Portal;
-use App\Http\Controllers\Producto;
-use App\Http\Controllers\Registro;
-use App\Http\Controllers\Subasta;
-//use App\Http\Controllers\Tablas;
-use App\Http\Controllers\Usuario;
+  use Illuminate\Support\Facades\Route;
+  /*use App\Http\Controllers\Login;
+  use App\Http\Controllers\Portal;
+  use App\Http\Controllers\Producto;
+  use App\Http\Controllers\Registro;
+  use App\Http\Controllers\Subasta;
+  use App\Http\Controllers\Tablas;
+  use App\Http\Controllers\Usuario;*/
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+  /*
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register web routes for your application. These
+  | routes are loaded by the RouteServiceProvider within a group which
+  | contains the "web" middleware group. Now create something great!
+  |
+  */
 
-//Route::post('/', Principal::class, 'store');
-/*Route::post('/', Login::class, 'store');
-Route::post('/productos', Producto::class, 'store');
-Route::post('/registro', Registro::class, 'store');
-Route::post('/portal', Portal::class, 'store');
-Route::post('/subasta', Subasta::class, 'store');
-Route::post('/usuario', Usuario::class, 'store');*/
+  //Route::post('/', Principal::class, 'store');
+  /*Route::post('/', Login::class, 'store');
+  Route::post('/productos', Producto::class, 'store');
+  Route::post('/registro', Registro::class, 'store');
+  Route::post('/portal', Portal::class, 'store');
+  Route::post('/subasta', Subasta::class, 'store');
+  Route::post('/usuario', Usuario::class, 'store');*/
 
-Route::get('/', function() {
-  return view('login');
-});
 
-Route::get('/registro', function() {
-  return view('registro');
-});
+  Route::get('/', function() {
+    return view('principal');
+  });
 
-Route::get('/portal', function() {
-  return view('portal');
-});
+  Route::get('/login', function() {
+    return view('login');
+  });
 
-Route::get('/subasta', function() {
-  return view('subasta');
-});
+  Route::get('/login', function() {
+    return view('login');
+  });
+
+  Route::get('/registro', function() {
+    return view('registro');
+  });
+
+  Route::get('/portal', function() {
+    return view('portal');
+  });
+
+  Route::get('/subasta', function() {
+    return view('subasta');
+  });
+?>
