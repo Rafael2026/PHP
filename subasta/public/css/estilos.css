@@ -200,7 +200,8 @@ nav a {
   float: left;
   color: rgb(255, 255, 255);
   padding: 0;
-  margin: 25px;
+  margin: 25px 40px;
+  text-decoration: none;
 }
 
 nav .disabled {

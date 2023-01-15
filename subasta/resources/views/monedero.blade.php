@@ -96,13 +96,13 @@
   ?>
 
   <div class="dragDrop">
-    <img src="../img/billetes.jfif" alt="Billetes">
-    <img src="../img/carteraVacia.jfif" alt="Cartera Vacía">
+    <img src="{{ asset('../img/billetes.jfif') }}" alt="Billetes">
+    <img src="{{ asset('../img/carteraVacia.jfif') }}" alt="Cartera Vacía">
     <div class="spinner-border text-secondary" id="load" role="status" aria-hidden="true"></div>
   </div>
 
   <div class="secundario">
-    <img src="img/carteraVacia.jfif" alt="Cartera Vacía">
+    <img src="{{ asset('img/carteraVacia.jfif') }}" alt="Cartera Vacía">
   </div>
 
 
