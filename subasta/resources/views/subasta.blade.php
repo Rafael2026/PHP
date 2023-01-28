@@ -1,3 +1,14 @@
+<?php
+  $productos = new Producto();
+  $products = $productos->getProductos();
+
+  $subastas = new Subasta();
+  $sub = $subastas->getSubastas();
+
+  $pujas = new Puja();
+  $pu = $pujas->getPujas();
+?>
+
 <!DOCTYPE html>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -22,11 +33,11 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="/" class="active">Inicio</a>
-    <a href="/subasta">Subastas</a>
-    <a href="/puja">Pujas</a>
-    <a href="/login">Iniciar sesion</a>
-    <a href="/registro">Registrarse</a>
+    <a href="{{ route('/') }}" class="active">Inicio</a>
+    <a href="{{ route('/subasta') }}">Subastas</a>
+    <a href="{{ route('/puja') }}">Pujas</a>
+    <a href="{{ route('/login') }}">Iniciar sesion</a>
+    <a href="{{ route('/registro') }}">Registrarse</a>
 
     <!--<input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>-->
@@ -59,19 +70,19 @@
       <ul>
 
         <li>
-          <a href="subastas.php">Busqueda</a>
+          <a href="{{ route('/subasta') }}">Busqueda</a>
         </li>
 
         <li>
-          <a href="resultados.php">Resultados</a>
+          <a href="{{ route('/resultados') }}">Resultados</a>
         </li>
 
         <li>
 
-          <a href="guardar.php" class="guardar">
+          <a href="{{ route('/guardar') }}" class="guardar">
             Guardar
             <span>Busqueda</span>
-            <img src="img/logoAcceso.png" srcset="img/logoAcceso.svg" alt="Sesion activa" />
+            <img src="{{ asset('img/logoAcceso.png') }}" srcset="{{ asset('img/logoAcceso.svg') }}" alt="Sesion activa" />
           </a>
 
         </li>
@@ -131,7 +142,7 @@
         </ul>
 
         <button>
-          <a href="portal.php" class="atras">Volver atrás</a>
+          <a href="{{ route('/portal') }}" class="atras">Volver atrás</a>
         </button>
 
       </div>
@@ -153,12 +164,12 @@
         </li>
 
         <li>
-          <a href="user.php">2</a>
+          <a href="{{ route('/user') }}">2</a>
         </li>
 
         <li>
 
-          <a href="user.php">
+          <a href="{{ route('/user') }}">
             <abbr title="Página">Pág.</abbr> siguiente
           </a>
 

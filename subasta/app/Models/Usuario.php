@@ -1,7 +1,7 @@
 <?php
 
   class Usuario {
-  
+
     private $con;
 
     public function __construct() {
@@ -40,7 +40,7 @@
 
     // Eliminar un usuario
     public function deleteUsuarios($id) {
-      
+
       $deleteUsers = $this->con->query("DELETE FROM usuario WHERE codUsu='$id'");
 
       while ($row = mysqli_fetch_array($deleteUsers)) { $usuarios[] = $row; }
@@ -58,5 +58,5 @@
       return $usuarios;
     }
   }
-  
+
 ?>

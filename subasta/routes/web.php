@@ -1,13 +1,14 @@
 <?php
 
   use Illuminate\Support\Facades\Route;
-  /*use App\Http\Controllers\Login;
-  use App\Http\Controllers\Portal;
-  use App\Http\Controllers\Producto;
-  use App\Http\Controllers\Registro;
-  use App\Http\Controllers\Subasta;
-  use App\Http\Controllers\Tablas;
-  use App\Http\Controllers\Usuario;*/
+
+  /*use App\Http\Controllers\LoginController;
+  use App\Http\Controllers\PortalController;
+  use App\Http\Controllers\ProductosController;
+  use App\Http\Controllers\RegistroController;
+  use App\Http\Controllers\SubastaController;
+  use App\Http\Controllers\TablasController;
+  use App\Http\Controllers\UsuariosController;*/
 
   /*
   |--------------------------------------------------------------------------
@@ -20,36 +21,50 @@
   |
   */
 
-  //Route::post('/', Principal::class, 'store');
-  /*Route::post('/', Login::class, 'store');
-  Route::post('/productos', Producto::class, 'store');
-  Route::post('/registro', Registro::class, 'store');
-  Route::post('/portal', Portal::class, 'store');
-  Route::post('/subasta', Subasta::class, 'store');
-  Route::post('/usuario', Usuario::class, 'store');*/
-
-
-  Route::get('/', function() {
+  Route::post('/', function() {
     return view('principal');
   });
 
-  Route::get('/login', function() {
+  Route::post('/login', function() {
     return view('login');
   });
 
-  Route::get('/login', function() {
-    return view('login');
-  });
-
-  Route::get('/registro', function() {
+  Route::post('/registro', function() {
     return view('registro');
   });
 
-  Route::get('/portal', function() {
+  Route::post('/productos', function() {
+    return view('productos');
+  });
+
+  Route::post('/subasta', function() {
+    return view('subasta');
+  });
+
+  Route::post('/tablas', function() {
+    return view('subasta');
+  });
+
+  Route::post('/usuario', function() {
+    return view('usuario');
+  });
+
+  Route::post('/portal', function() {
     return view('portal');
   });
 
-  Route::get('/subasta', function() {
-    return view('subasta');
-  });
+  /*Route::post('/login', 'LoginController@store');
+
+  Route::post('/registro', 'RegistroController@store');
+
+  Route::post('/portal', 'PortalController@store');
+
+  Route::post('/productos', 'ProductosController@store');
+
+  Route::post('/subasta', 'SubastaController@store');
+
+  Route::post('/tablas', 'TablasController@store');
+
+  Route::post('/usuario', 'UsuariosController@store');*/
+
 ?>

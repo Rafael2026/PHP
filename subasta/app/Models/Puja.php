@@ -1,7 +1,7 @@
 <?php
 
   class Puja {
-  
+
     private $con;
 
     public function __construct() {
@@ -40,7 +40,7 @@
 
     // Eliminar una puja
     public function deletePujas($codigo) {
-      
+
       $deletePujas = $this->con->query("DELETE FROM puja WHERE codPuja=$codigo");
 
       while ($row = mysqli_fetch_array($deletePujas)) { $pujas[] = $row; }
@@ -58,5 +58,5 @@
       return $pujas;
     }
   }
-  
+
 ?>

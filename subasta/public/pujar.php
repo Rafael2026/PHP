@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pujar</title>
-  <link href="{{ asset('css/pujar.css') }}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/pujar.css" rel="stylesheet">
 </head>
 
 <body>
-
+  
   <h1>Pujas (valores) de la subasta</h1>
 
   <?php
-
+    
     $pujaInicial = $_POST['inicial'];
     $pujaActual = $_POST['actual'];
     $inicio = $_POST['fecha1'];
@@ -35,8 +35,6 @@
   ?>
 
   <form action="" method="POST" enctype="multipart/form-data">
-
-    @csrf
 
     <div class="row">
 
@@ -80,7 +78,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
-  <script src="{{ asset('js/pujar.js') }}" defer></script>
+  <script src="js/pujar.js" defer></script>
+  <script src="js/nav.js" defer></script>
 
 </body>
 

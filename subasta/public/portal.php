@@ -1,44 +1,37 @@
-<?php
-  $productos = new Producto();
-  $products = $productos->getProductos();
-
-  $subastas = new Subasta();
-  $sub = $subastas->getSubastas();
-?>
-
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Subastas</title>
-  <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
-  <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  <link href="img/logo.png" type="image/x-icon" rel="icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/paginacion.css" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
-    <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+    <img src="img/cabecera.webp" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="{{ route('/') }}" class="active">Inicio</a>
-    <a href="{{ route('/subasta') }}">Subastas</a>
-    <a href="{{ route('/puja') }}">Pujas</a>
-    <a href="{{ route('/login') }}" class="disabled">Iniciar sesion</a>
-    <a href="{{ route('/registro') }}" class="disabled">Registrarse</a>
+    <a href="index.php" class="active">Inicio</a>
+    <a href="subasta.php">Subastas</a>
+    <a href="puja.php">Pujas</a>
+    <a href="login.php" class="disabled">Iniciar sesion</a>
+    <a href="registro.php" class="disabled">Registrarse</a>
 
     <!--<input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>-->
-
+    
     <button name="out" id="out">Log out</button>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -69,19 +62,19 @@
       <ul>
 
         <li>
-          <a href="{{ route('/subasta') }}">Busqueda</a>
+          <a href="subastas.php">Busqueda</a>
         </li>
 
         <li>
-          <a href="{{ route('/resultados') }}">Resultados</a>
+          <a href="resultados.php">Resultados</a>
         </li>
 
         <li>
 
-          <a href="{{ route('/guardar') }}" class="guardar">
+          <a href="guardar.php" class="guardar">
             Guardar
             <span>Busqueda</span>
-            <img src="{{ asset('img/logoAcceso.png') }}" srcset="{{ asset('img/logoAcceso.svg') }}" alt="Sesion activa" />
+            <img src="img/logoAcceso.png" srcset="img/logoAcceso.svg" alt="Sesion activa" />
           </a>
 
         </li>
@@ -90,13 +83,13 @@
 
     </section>
 
-    <section>
-
+    <section class="subastas">
+      
       <?php
         for ($i = 0; $i < count($products); $i++) {
       ?>
 
-      <div class="productos">
+      <div>
 
         <ul>
 
@@ -116,9 +109,9 @@
             <p>Altura del producto: <?php echo $products[$i]['altura'] ?></p>
           </li>
 
-          <li>
+          <!--<li>
             <p>Categoría del producto: <?php echo $products[$i]['categoria'] ?></p>
-          </li>
+          </li>-->
 
           <li>
             <p>Fecha inicial: <?php echo $sub[$i]['fechaInic'] ?></p>
@@ -133,8 +126,10 @@
           </li>
 
         </ul>
-
-        <button class="buscarSubasta">Buscar subasta</button>
+        
+        <button class="buscarSubasta">
+          <a href="<?php echo 'subasta.php?indice='. ($i + 1) ?>">Ir a pujas</a>
+        </button>
 
       </div>
 
@@ -144,32 +139,63 @@
 
     </section>
 
-    <section>
+    <section class="paginacion">
+      
+      <div class="center">
+        
+        <ul class="pagination">
 
-      <ul>
+          <li class="page-item">
+            <a class="page-link">Previous</a>
+          </li>
 
-        <li>
-          <span class="fuera">Está usted en la página de resultados número</span>
-          <span class="current">1</span>
-        </li>
+          <li class="page-item">
+            <a class="page-link">1</a>
+          </li>
 
-        <li>
-          <a href="{{ route('/portal') }}">2</a>
-        </li>
+          <li class="page-item">
+            <a class="page-link">2</a>
+          </li>
 
-        <li>
+          <li class="page-item">
+            <a class="page-link">3</a>
+          </li>
 
-          <a href="{{ route('/user') }}">
-            <abbr title="Página">Pág.</abbr> siguiente
-          </a>
+          <li class="page-item">
+            <a class="page-link">4</a>
+          </li>
 
-        </li>
+          <li class="page-item">
+            <a class="page-link">5</a>
+          </li>
 
-      </ul>
+          <li class="page-item">
+            <a class="page-link">6</a>
+          </li>
 
-      <!--
-        <p>Resultados:</p>
-        -->
+          <li class="page-item">
+            <a class="page-link">7</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link">8</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link">9</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link">10</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link">Next</a>
+          </li>
+
+        </ul>
+
+        </div>
 
     </section>
 
@@ -182,10 +208,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
-  <script src="{{ asset('js/reloj.js') }}" defer></script>
-  <script src="{{ asset('js/script.js') }}" defer></script>
-  <script src="{{ asset('js/nav.js') }}" defer></script>
-  <script src="{{ asset('js/login.js') }}" defer></script>
+  <script src="js/reloj.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/login.js" defer></script>
 
 </body>
 

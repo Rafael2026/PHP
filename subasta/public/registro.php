@@ -1,20 +1,15 @@
-<?php
-  /*$usuarios = new Usuario();
-  $users = $usuarios->getUsuarios();*/
-?>
-
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrarse</title>
-  <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
-  <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/registro.css') }}" rel="stylesheet">
+  <link href="img/logo.png" type="image/x-icon" rel="icon">
+  <link href="css/login.css" rel="stylesheet">
+  <link href="css/registro.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -22,20 +17,20 @@
 <body>
 
   <header>
-    <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+    <img src="img/cabecera.webp" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="{{ route('/') }}" class="active">Inicio</a>
-    <a href="{{ route('/subasta') }}" class="disabled">Subastas</a>
-    <a href="{{ route('/puja') }}" class="disabled">Pujas</a>
-    <a href="{{ route('/login') }}">Iniciar sesion</a>
-    <a href="{{ route('/registro') }}">Registrarse</a>
+    <a href="index.php" class="active">Inicio</a>
+    <a href="subasta.php" class="disabled">Subastas</a>
+    <a href="puja.php" class="disabled">Pujas</a>
+    <a href="login.php">Iniciar sesion</a>
+    <a href="registro.php">Registrarse</a>
 
     <!--<input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>-->
-
+    
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
@@ -63,9 +58,7 @@
 
       <h2>Subastas. Busqueda avanzada</h2>
 
-      <form action="{{ asset('/login') }}" method="POST">
-
-        @csrf
+      <form action="login.php" method="POST">
 
         <h2 class="text-center text-info">Registrarse</h2>
 
@@ -191,13 +184,13 @@
         //$regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü]{1,50}$/";
 
         //$rege = "/^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/";
-
+        
         for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
 
           if (strcmp($name, $users[$i]["nomUsu"]) != 0 && strcmp($surname, $users[$i]["apeUsu"]) != 0 &&
               strcmp($user, $users[$i]["user"]) != 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) != 0 &&
               $i != count($users)) {
-
+            
             $usuarioExiste = true;
             //$permiso = intval($users[$i]["permiso"]);
 
@@ -206,7 +199,7 @@
             echo "Usuario: ". $correo. "<br>";
             echo "Contraseña: ". $password. "<br>";
             echo "Fecha actual: ". date("Y-m-d"). "<br>";
-
+            
             $usuario = new Usuario();
             $codigo = $usuario->getLastId();
 
@@ -214,7 +207,7 @@
 
             /*echo "Codigo: ". $id. "<br>";
             echo "Codigo: ". intval($codigo[0]["codUsu"]). "<br>";
-
+            
             echo "<pre>";
             var_dump($codigo);
             echo "</pre>";*/
@@ -230,7 +223,7 @@
             echo "Usuario: ". $correo. "<br>";
             echo "Contraseña: ". $password. "<br>";
             echo "Fecha actual: ". date("Y-m-d");
-
+          
             $usuario = new Usuario();
             $user = $usuario->getLastId();
 
@@ -246,10 +239,10 @@
           /*if ($usuarioExiste) {
 
             if ($permiso == 1) {
-              header("Location: /tablas");
+              header("Location: tablas.php");
               exit();
             } else {
-              header("Location: /portal");
+              header("Location: portal.php");
               exit();
             }
 
@@ -271,9 +264,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
-  <script src="{{ asset('js/reloj.js') }}" defer></script>
-  <script src="{{ asset('js/nav.js') }}" defer></script>
-  <script srtc="{{ asset('js/form.js') }}"></script>
+  <script src="js/reloj.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script srtc="js/form.js"></script>
 
 </body>
 
