@@ -104,7 +104,11 @@ main form {
   margin: 30px 0 30px 40%;
 }
 
-main form h2 { margin-top: 30px; }
+main form h2 {
+  margin-top: 30px;
+  text-align: center;
+  color: #0dcaf0;
+}
 
 main .form-group {
   margin-top: 30px;
@@ -156,7 +160,7 @@ footer h2, footer p {
     border: none;
     float: left;
   }
-  
+
   nav button {
     padding: 6px 10px;
     margin: 25px 50px 0px 0px;
@@ -186,7 +190,7 @@ footer h2, footer p {
     border: none;
     float: left;
   }
-  
+
   nav button {
     padding: 6px 10px;
     margin: 25px 50px 0px 0px;
@@ -216,7 +220,7 @@ footer h2, footer p {
     border: none;
     float: left;
   }
-  
+
   nav button {
     padding: 6px 10px;
     margin: 35px 50px 0px 0px;
@@ -246,7 +250,7 @@ footer h2, footer p {
     border: none;
     float: left;
   }
-  
+
   nav button {
     padding: 6px 10px;
     margin: 35px 50px 0px 0px;
@@ -275,7 +279,7 @@ footer h2, footer p {
     border: none;
     float: left;
   }
-  
+
   nav button {
     padding: 6px 10px;
     margin: 35px 50px 0px 0px;
@@ -294,7 +298,7 @@ footer h2, footer p {
   .topnav .icon { float: right; }
 
   .topnav.responsive { position: relative; }
-  
+
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;

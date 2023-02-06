@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página principal</title>
-  <link href="{{ secure_asset('img/logo.png') }}" type="image/x-icon" rel="icon">
-  <link href="{{ secure_asset('icons/icomoon.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/estilos.css') }}" rel="stylesheet">
-  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">-->
+  <link href="{{ asset('img/logo.png')}}" type="image/x-icon" rel="icon">
+  <link href="{{ asset('icons/icomoon.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
@@ -36,7 +36,7 @@
     </div>
 
     <div class="imagen">
-      <img src="{{ secure_asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+      <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
     </div>
 
   </header>
@@ -44,14 +44,13 @@
   <div class="fin-float"></div>
 
   <nav class="topnav" id="myTopnav">
-    <a href="{{ route('/') }}" class="active">Inicio</a>
-    <a href="{{ route('/subasta') }}" class="disabled">Subastas</a>
-    <a href="{{ route('/puja') }}" class="disabled">Pujas</a>
-    <a href="{{ route('/login') }}">Iniciar sesion</a>
-    <a href="{{ route('/registro') }}">Registrarse</a>
 
-    <!--<input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>-->
+    <a href="{{ asset('/') }}" class="active">Inicio</a>
+    <a href="{{ asset('/subasta') }}" class="disabled">Subastas</a>
+    <a href="{{ asset('/puja') }}" class="disabled">Pujas</a>
+
+    <a href="#loginModal" data-target="#loginModal">Iniciar sesion</a>
+    <a href="#registroModal" data-target="#registroModal">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -75,10 +74,6 @@
 
     </section>
 
-    <!--
-    <a id="subir" class="icon-arrow-up scroll" href="#linkHome"></a>
-    -->
-
     <!-- Sección productos -->
     <section class="products">
 
@@ -86,7 +81,7 @@
 
       <div class="cardFeatures">
 
-        <img src="{{ secure_asset('img/piedrasPreciosas.jpg') }}" alt="Piedras muy valiosas">
+        <img src="{{ asset('img/piedrasPreciosas.jpg') }}" alt="Piedras muy valiosas">
 
         <h2>Piedras preciosas</h2>
 
@@ -101,7 +96,7 @@
 
       <div class="cardFeatures">
 
-        <img src="{{ secure_asset('img/autos.webp') }}" alt="Autos de lujo">
+        <img src="{{ asset('img/autos.webp') }}" alt="Autos de lujo">
 
         <h2>Vehículos lujosos</h2>
 
@@ -116,7 +111,7 @@
 
       <div class="cardFeatures">
 
-        <img src="{{ secure_asset('img/mobiliario.jpg') }}" alt="Hogar del futuro">
+        <img src="{{ asset('img/mobiliario.jpg') }}" alt="Hogar del futuro">
 
         <h2>Futuro hogar</h2>
 
@@ -188,7 +183,7 @@
         <h1>Eventos únicos</h1>
 
         <div class="imgCallToActions">
-          <img src="{{ secure_asset('img/evento.jpg') }}" alt="Evento único">
+          <img src="{{ asset('img/evento.jpg') }}" alt="Evento único">
         </div>
 
         <article class="contenido">
@@ -226,7 +221,7 @@
               <div class="boxProfesional">
 
                 <div class="imgProfesional">
-                  <img src="{{ secure_asset('img/cara.png') }}" alt="Cara del Administrador">
+                  <img src="{{ asset('img/cara.png') }}" alt="Cara del Administrador">
                 </div>
 
                 <div class="datosProfesional">
@@ -258,7 +253,7 @@
       <div class="personal">
 
         <div class="imagen">
-          <img src="{{ secure_asset('img/personal.jpg') }}" alt="Imagen del personal">
+          <img src="{{ asset('img/personal.jpg') }}" alt="Imagen del personal">
         </div>
 
         <article class="contenidoAbout">
@@ -285,12 +280,17 @@
 
   </main>
 
+  <?php
+    require_once("modal/login.php");
+    echo "<br/>";
+    require_once("modal/registro.php");
+  ?>
+
   <footer>
     <h2>Proyecto final de Grado Superior</h2>
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <!--<script src="js/dataApi.js" defer></script>

@@ -1,4 +1,8 @@
 <?php
+  use App\Models\Producto;
+  use App\Models\Subasta;
+  use App\Models\Puja;
+
   $productos = new Producto();
   $products = $productos->getProductos();
 
@@ -7,6 +11,8 @@
 
   $pujas = new Puja();
   $pu = $pujas->getPujas();
+
+  $codigoSubasta = $_GET["indice"];
 ?>
 
 <!DOCTYPE html>
@@ -33,14 +39,11 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="{{ route('/') }}" class="active">Inicio</a>
-    <a href="{{ route('/subasta') }}">Subastas</a>
-    <a href="{{ route('/puja') }}">Pujas</a>
-    <a href="{{ route('/login') }}">Iniciar sesion</a>
-    <a href="{{ route('/registro') }}">Registrarse</a>
-
-    <!--<input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>-->
+    <a href="{{ asset('/') }}" class="active">Inicio</a>
+    <a href="{{ asset('/subasta') }}">Subastas</a>
+    <a href="{{ asset('/puja') }}">Pujas</a>
+    <a href="{{ asset('/login') }}">Iniciar sesion</a>
+    <a href="{{ asset('/registro') }}">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -65,21 +68,21 @@
 
     <section>
 
-      <h2>Subastas. Busqueda avanzada</h2>
+      <h2>Pujar - Producto Nº <?php echo intval($codigoSubasta) ?></h2>
 
-      <ul>
+      <!--<ul>
 
         <li>
-          <a href="{{ route('/subasta') }}">Busqueda</a>
+          <a href="{{ asset('/subasta') }}">Busqueda</a>
         </li>
 
         <li>
-          <a href="{{ route('/resultados') }}">Resultados</a>
+          <a href="{{ asset('/resultados') }}">Resultados</a>
         </li>
 
         <li>
 
-          <a href="{{ route('/guardar') }}" class="guardar">
+          <a href="{{ asset('/guardar') }}" class="guardar">
             Guardar
             <span>Busqueda</span>
             <img src="{{ asset('img/logoAcceso.png') }}" srcset="{{ asset('img/logoAcceso.svg') }}" alt="Sesion activa" />
@@ -87,7 +90,7 @@
 
         </li>
 
-      </ul>
+      </ul>-->
 
     </section>
 
@@ -95,12 +98,9 @@
 
       <?php
 
-        $numeroSubasta = $_GET["indice"];
-        //echo $numeroSubasta;
-
         for ($i = 0; $i < count($products) - 1; $i++) {
 
-          if ((intval($i) + 1) == $numeroSubasta) {
+          if (intval($codigoSubasta) == $products[$i]['codProd']) {
       ?>
 
       <div class="subasta">
@@ -124,10 +124,6 @@
           </li>
 
           <li>
-            <p>Categoría del producto: <?php echo $products[$i]['categoria'] ?></p>
-          </li>
-
-          <li>
             <p>Fecha inicial: <?php echo $sub[$i]['fechaInic'] ?></p>
           </li>
 
@@ -142,7 +138,7 @@
         </ul>
 
         <button>
-          <a href="{{ route('/portal') }}" class="atras">Volver atrás</a>
+          <a href="{{ asset('/portal') }}" class="atras">Volver atrás</a>
         </button>
 
       </div>
@@ -164,12 +160,12 @@
         </li>
 
         <li>
-          <a href="{{ route('/user') }}">2</a>
+          <a href="{{ asset('/user') }}">2</a>
         </li>
 
         <li>
 
-          <a href="{{ route('/user') }}">
+          <a href="{{ asset('/user') }}">
             <abbr title="Página">Pág.</abbr> siguiente
           </a>
 

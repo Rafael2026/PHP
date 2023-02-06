@@ -1,19 +1,40 @@
 <?php
 
+  namespace App\Models;
+
   class Usuario {
 
     private $con;
 
+    protected $fillable = [];
+
+    protected $table = 'usuario';
+
+    protected $hidden = ['password'];
+
     public function __construct() {
-      $this->con = new mysqli('localhost', 'root' , '', 'subasta');
+      $this->con = mysqli_connect('localhost', 'root' , '', 'subasta');
     }
 
     // Obtener todos los usuarios
     public function getUsuarios() {
 
-      $selectUsers = $this->con->query("SELECT * FROM usuario");
+      $selectUsers = mysqli_query($this->con, "SELECT * FROM usuario");
 
       while ($row = mysqli_fetch_array($selectUsers)) { $usuarios[] = $row; }
+
+      //$usuarios = DB::table('usuario')->where('user', $correo)->where('password', $passw);
+
+      return $usuarios;
+    }
+
+    public function getAcceso($correo, $passw) {
+
+      $selectUsers = mysqli_query($this->con, "SELECT * FROM usuario WHERE user LIKE '$correo' AND password LIKE '$passw'");
+
+      while ($row = mysqli_fetch_array($selectUsers)) { $usuarios[] = $row; }
+
+      //$usuarios = DB::table('usuario')->where('user', $correo)->where('password', $passw);
 
       return $usuarios;
     }
@@ -21,7 +42,7 @@
     // Obtener el último usuario
     public function getLastId() {
 
-      $lastId = $this->con->query("SELECT * FROM usuario ORDER BY codUsu DESC LIMIT 1;");
+      $lastId = mysqli_query($this->con, "SELECT * FROM usuario ORDER BY codUsu DESC LIMIT 1");
 
       while ($row = mysqli_fetch_array($lastId)) { $id[] = $row; }
 
@@ -31,7 +52,7 @@
     // Añadir un usuario
     public function addUsuarios($id, $nombre, $ape, $correo, $passw, $inicio) {
 
-      $insertUsers = $this->con->query("INSERT INTO usuario(codUsu, nomUsu, apeUsu, user, password, fechaUnion, permiso) VALUES ('$id', '$nombre', '$ape', '$correo', '$passw', '$inicio', '0')");
+      $insertUsers = mysqli_query($this->con, "INSERT INTO usuario(codUsu, nomUsu, apeUsu, user, password, fechaUnion, permiso) VALUES ('$id', '$nombre', '$ape', '$correo', '$passw', '$inicio', '0')");
 
       while ($row = mysqli_fetch_array($insertUsers)) { $usuarios[] = $row; }
 
@@ -41,7 +62,7 @@
     // Eliminar un usuario
     public function deleteUsuarios($id) {
 
-      $deleteUsers = $this->con->query("DELETE FROM usuario WHERE codUsu='$id'");
+      $deleteUsers = mysqli_query($this->con, "DELETE FROM usuario WHERE codUsu='$id'");
 
       while ($row = mysqli_fetch_array($deleteUsers)) { $usuarios[] = $row; }
 
@@ -51,7 +72,7 @@
     // Actualizar un usuario
     public function updateUsuarios($codigo, $nombre, $ape, $correo, $passw) {
 
-      $updateUsers = $this->con->query("UPDATE usuario SET nomUsu='$nombre', apeUsu='$ape', user='$correo', password='$passw' WHERE codUsu='$codigo'");
+      $updateUsers = mysqli_query($this->con, "UPDATE usuario SET nomUsu='$nombre', apeUsu='$ape', user='$correo', password='$passw' WHERE codUsu='$codigo'");
 
       while ($row = mysqli_fetch_array($updateUsers)) { $usuarios[] = $row; }
 

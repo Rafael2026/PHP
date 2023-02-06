@@ -1,6 +1,5 @@
 <?php
-  /*$usuarios = new Usuario();
-  $users = $usuarios->getUsuarios();*/
+  use App\Models\Usuario;
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +25,11 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="{{ route('/') }}" class="active">Inicio</a>
-    <a href="{{ route('/subasta') }}" class="disabled">Subastas</a>
-    <a href="{{ route('/puja') }}" class="disabled">Pujas</a>
-    <a href="{{ route('/login') }}">Iniciar sesion</a>
-    <a href="{{ route('/registro') }}">Registrarse</a>
-
-    <!--<input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>-->
+    <a href="{{ asset('/') }}" class="active">Inicio</a>
+    <a href="{{ asset('/subasta') }}" class="disabled">Subastas</a>
+    <a href="{{ asset('/puja') }}" class="disabled">Pujas</a>
+    <a href="{{ asset('/login') }}">Iniciar sesion</a>
+    <a href="{{ asset('/registro') }}">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -60,9 +56,11 @@
 
     <section>
 
-      <form action="" method="POST">
+      <form action="" method="GET" enctype="multipart/form-data">
 
-        <h2 class="text-center text-info">Login</h2>
+        @csrf
+
+        <h2>Login</h2>
 
         <div class="form-group">
           <label for="usuario" class="text-info">User:</label>
@@ -91,10 +89,13 @@
       $usuarioExiste = false;
       $permiso = 0;
 
-      if (isset($_POST["login"])) {
+      if (isset($_GET["login"])) {
 
-        $user = $_POST["usuario"];
-        $password = $_POST["passw"];
+        $user = $_GET["usuario"];
+        $password = $_GET["passw"];
+
+        $usuarios = new Usuario();
+        $users = $usuarios->getUsuarios();
 
         for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
 
@@ -103,24 +104,11 @@
             $permiso = intval($users[$i]["permiso"]);
             //$_SESSION["usuario"] = $user;
             //$_SESSION["permiso"] = $permiso;
+            $acceso = $usuarios->getAcceso($user, trim(strval(hash('sha512', $password))));
           }
         }
 
         if ($usuarioExiste) {
-
-          if ($permiso == 1) {
-            header("Location: tablas.php");
-            exit();
-          } else {
-            header("Location: portal.php");
-            exit();
-          }
-
-        } else {
-          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
-        }
-
-        /*if (isset($_SESSION["usuario"])) {
 
           if ($permiso == 1) {
             header("Location: /tablas");
@@ -129,7 +117,10 @@
             header("Location: /portal");
             exit();
           }
-        }*/
+
+        } else {
+          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
+        }
       }
 
     ?>

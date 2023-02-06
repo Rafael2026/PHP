@@ -1,15 +1,8 @@
 <?php
-  $productos = new Producto();
-  $products = $productos->getProductos();
-
-  $subastas = new Subasta();
-  $sub = $subastas->getSubastas();
-
-  $usuarios = new Usuario();
-  $users = $usuarios->getUsuarios();
-
-  $pujas = new Puja();
-  $pu = $pujas->getPujas();
+  use App\Models\Producto;
+  use App\Models\Puja;
+  use App\Models\Subasta;
+  use App\Models\Usuario;
 ?>
 
 <!DOCTYPE html>
@@ -21,28 +14,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Todas las tablas</title>
-  <link href="{{ secure_asset('img/logo.png') }}" type="image/x-icon" rel="icon">
+  <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="{{ secure_asset('css/tablas.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/tablas.css') }}" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
-    <img src="{{ secure_asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+    <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="{{ route('/') }}" class="active">Inicio</a>
-    <a href="{{ route('/subasta') }}" class="disabled">Subastas</a>
-    <a href="{{ route('/puja') }}" class="disabled">Pujas</a>
-    <a href="{{ route('/login') }}">Iniciar sesion</a>
-    <a href="{{ route('/registro') }}">Registrarse</a>
-
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
+    <a href="{{ asset('/') }}" class="active">Inicio</a>
+    <a href="{{ asset('/subasta') }}" class="disabled">Subastas</a>
+    <a href="{{ asset('/puja') }}" class="disabled">Pujas</a>
+    <a href="{{ asset('/login') }} class="disabled"">Iniciar sesion</a>
+    <a href="{{ asset('/registro') }} class="disabled"">Registrarse</a>
 
     <button name="out" id="out">Log out</button>
 
@@ -69,121 +59,38 @@
 
     <div class="fin-float"></div>
 
-    <!--
-    <section>
-
-      <form action="" method="POST" enctype="multipart/form-data">
-
-        <div class="row">
-
-          <div class="col-25">
-            <label for="categoria">Según la categoría:</label>
-          </div>
-
-          <div class="col-75">
-
-            <select name="categoria" id="categoria">
-              <option></option>
-              <option value="Multiherramientas">Multiherramientas</option>
-              <option value="Mueble Autotransformable">Mueble Autotransformable</option>
-              <option value="Super coches">Super coches</option>
-              <option value="Dispositivo cambiante">Dispositivo cambiante</option>
-              <option value="Piedras preciosas" disabled>Piedras preciosas</option>
-            </select>
-
-          </div>
-
-        </div>
-
-        <div class="row">
-          <input type="submit" name="submit" id="submit" value="Mostrar datos">
-        </div>
-
-      </form>
-
-      <?php
-
-        //$category = $_POST['categoria'];
-
-        //if (isset($_POST['submit'])) {
-
-        //if (!empty($category)) {
-      ?>
-
-    </section>
-    -->
     <?php
-      require_once("crud/Productos.php");
+      $productos = new Producto();
+      $products = $productos->getProductos();
+      require_once("crud/productos.php");
     ?>
 
-    <div class="fin-float"></div><hr />
+    <div class="fin-float"></div><hr/>
 
     <?php
-      require_once("crud/Subastas.php");
+      //echo asset('crud/subastas.php');
+      $subastas = new Subasta();
+      $sub = $subastas->getSubastas();
+      require_once("crud/subastas.php");
     ?>
 
-    <div class="fin-float"></div> <hr />
+    <div class="fin-float"></div><hr/>
 
     <?php
-      require_once("crud/Pujas.php");
+      //echo asset('crud/pujas.php');
+      $pujas = new Puja();
+      $pu = $pujas->getPujas();
+      require_once("crud/pujas.php");
     ?>
 
-    <div class="fin-float"></div><hr />
+    <div class="fin-float"></div><hr/>
 
     <?php
-      require_once("crud/Usuarios.php");
+      //echo asset('crud/usuarios.php');
+      $usuario = new Usuario();
+      $users = $usuario->getUsuarios();
+      require_once("crud/usuarios.php");
     ?>
-
-    <div class="fin-float"></div>
-
-    <!--
-    <section>
-
-      <form action="../pujar/pujar.php" method="POST" enctype="multipart/form-data">
-
-        <div class="row">
-
-          <div class="col-25">
-            <label for="inicial">Precio inicial de la subasta</label>
-          </div>
-
-          <div class="col-75">
-            <input type="number" name="inicial" id="inicial" value="<?php echo $sub[count($sub) - 1]['precIni'] ?>"
-              readonly>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="col-25">
-            <label for="actual">Precio actual de la subasta</label>
-          </div>
-
-          <div class="col-75">
-            <input type="number" name="actual" id="actual" min="<?php echo ($sub[count($sub) - 1]['precIni'] + 1) ?>">
-          </div>
-
-        </div>
-
-        <div class="row">
-          <input type="hidden" name="fecha1" id="fecha1" value="<?php echo $sub[count($sub) - 1]['fechaInic']; ?>"
-            readonly>
-        </div>
-
-        <div class="row">
-          <input type="hidden" name="fecha2" id="fecha2" value="<?php echo $sub[count($sub) - 1]['fechaFin']; ?>"
-            readonly>
-        </div>
-
-        <div class="row">
-          <input type="submit" name="submit" id="submit" value="Pujar">
-        </div>
-
-      </form>
-
-    </section>
-    -->
 
   </main>
 
@@ -194,10 +101,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
-  <script src="{{ secure_asset('js/reloj.js') }}" defer></script>
-  <script src="{{ secure_asset('js/script.js') }}" defer></script>
-  <script src="{{ secure_asset('js/nav.js') }}" defer></script>
-  <script src="{{ secure_asset('js/tablas.js') }}" defer></script>
+  <script src="{{ asset('js/reloj.js') }}" defer></script>
+  <script src="{{ asset('js/script.js') }}" defer></script>
+  <script src="{{ asset('js/nav.js') }}" defer></script>
+  <script src="{{ asset('js/tablas.js') }}" defer></script>
 
 </body>
 

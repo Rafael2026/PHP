@@ -2,19 +2,15 @@
 
   namespace App\Http\Controllers;
 
-  class LoginController extends Controller {
+  class PrincipalController extends Controller {
 
     public function __invoke() {
       //
     }
 
     public function store() {
-      return view('login');
+      return view('principal');
     }
-
-    /*public function index() {
-      return view('login');
-    }*/
 
     public function imageUploadPost($imagen) {
 

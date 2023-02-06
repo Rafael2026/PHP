@@ -1,6 +1,5 @@
 <?php
-  /*$usuarios = new Usuario();
-  $users = $usuarios->getUsuarios();*/
+  use App\Models\Usuario;
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +26,11 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="{{ route('/') }}" class="active">Inicio</a>
-    <a href="{{ route('/subasta') }}" class="disabled">Subastas</a>
-    <a href="{{ route('/puja') }}" class="disabled">Pujas</a>
-    <a href="{{ route('/login') }}">Iniciar sesion</a>
-    <a href="{{ route('/registro') }}">Registrarse</a>
+    <a href="{{ asset('/') }}" class="active">Inicio</a>
+    <a href="{{ asset('/subasta') }}" class="disabled">Subastas</a>
+    <a href="{{ asset('/puja') }}" class="disabled">Pujas</a>
+    <a href="{{ asset('/login') }}">Iniciar sesion</a>
+    <a href="{{ asset('/registro') }}">Registrarse</a>
 
     <!--<input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>-->
@@ -63,7 +62,7 @@
 
       <h2>Subastas. Busqueda avanzada</h2>
 
-      <form action="{{ asset('/login') }}" method="POST">
+      <form action="{{ asset('/login') }}" method="GET" enctype="multipart/form-data">
 
         @csrf
 
@@ -177,12 +176,12 @@
       $usuarioExiste = false;
       $permiso = 0;
 
-      if (isset($_POST["register"])) {
+      if (isset($_GET["register"])) {
 
-        $name = $_POST["nombre"];
-        $surname = $_POST["apellidos"];
-        $correo = $_POST["usuario"];
-        $password = $_POST["passw"];
+        $name = $_GET["nombre"];
+        $surname = $_GET["apellidos"];
+        $correo = $_GET["usuario"];
+        $password = $_GET["passw"];
 
         $regex = "/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü]@subasta\.com$/ism";
 

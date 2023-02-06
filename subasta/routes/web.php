@@ -21,50 +21,32 @@
   |
   */
 
-  Route::post('/', function() {
+  Route::get('/', function() {
     return view('principal');
   });
 
-  Route::post('/login', function() {
+  Route::get('/login', function() {
     return view('login');
   });
 
-  Route::post('/registro', function() {
+  Route::get('/registro', function() {
     return view('registro');
   });
 
-  Route::post('/productos', function() {
-    return view('productos');
-  });
-
-  Route::post('/subasta', function() {
-    return view('subasta');
-  });
-
-  Route::post('/tablas', function() {
-    return view('subasta');
-  });
-
-  Route::post('/usuario', function() {
-    return view('usuario');
-  });
-
-  Route::post('/portal', function() {
+  Route::get('/portal', function() {
     return view('portal');
   });
 
-  /*Route::post('/login', 'LoginController@store');
+  Route::get('/subasta', function() {
+    return view('subasta');
+  });
 
-  Route::post('/registro', 'RegistroController@store');
+  Route::get('/pujar', function() {
+    return view('pujar');
+  });
 
-  Route::post('/portal', 'PortalController@store');
-
-  Route::post('/productos', 'ProductosController@store');
-
-  Route::post('/subasta', 'SubastaController@store');
-
-  Route::post('/tablas', 'TablasController@store');
-
-  Route::post('/usuario', 'UsuariosController@store');*/
+  Route::get('/tablas', function() {
+    return view('tablas');
+  });
 
 ?>
