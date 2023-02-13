@@ -32,9 +32,6 @@
     <a href="{{ asset('/login') }}">Iniciar sesion</a>
     <a href="{{ asset('/registro') }}">Registrarse</a>
 
-    <!--<input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>-->
-
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>

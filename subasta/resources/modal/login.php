@@ -1,10 +1,14 @@
+<?php
+  use App\Models\Usuario;
+?>
+
 <div id="loginModal" class="modalDialog">
 
   <div>
 
     <a href="#close" title="Close" class="close">X</a>
 
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="/" method="GET" enctype="multipart/form-data">
 
       <h2>Login</h2>
 
@@ -36,6 +40,7 @@
 
   $usuarioExiste = false;
   $permiso = 0;
+  $codUsuario;
 
   if (isset($_GET["login"])) {
 
@@ -49,6 +54,7 @@
 
       if (strcmp($user, $users[$i]["user"]) == 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) == 0) {
         $usuarioExiste = true;
+        $codUsuario = intval($i + 1);
         $permiso = intval($users[$i]["permiso"]);
         $acceso = $usuarios->getAcceso($user, trim(strval(hash('sha512', $password))));
       }
@@ -60,7 +66,7 @@
         header("Location: /tablas");
         exit();
       } else {
-        header("Location: /portal");
+        header("Location: /portal?codUsu=$codUsuario");
         exit();
       }
 

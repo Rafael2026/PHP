@@ -46,9 +46,9 @@
   <nav class="topnav" id="myTopnav">
 
     <a href="{{ asset('/') }}" class="active">Inicio</a>
+    <a href="{{ asset('/portal') }}" class="disabled">Portal</a>
     <a href="{{ asset('/subasta') }}" class="disabled">Subastas</a>
     <a href="{{ asset('/puja') }}" class="disabled">Pujas</a>
-
     <a href="#loginModal" data-target="#loginModal">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal">Registrarse</a>
 
@@ -278,6 +278,18 @@
 
     </section>
 
+    <!--<div class="fin-float"></div><hr>
+
+    <section class="grafica">
+
+      <h1>Representación gráfica</h2>
+      
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+    </section>-->
+
   </main>
 
   <?php
@@ -294,9 +306,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <!--<script src="js/dataApi.js" defer></script>
-  <script src="js/app.js" defer></script>-->
-  <script src="js/reloj.js" defer></script>
-  <script src="js/nav.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/nav.js" defer></script>-->
+  <script src="{{ asset('js/script.js') }}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="{{ asset('js/grafica.js') }}" defer></script>
 
 </body>
 

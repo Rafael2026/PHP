@@ -26,6 +26,16 @@
       return $subastas;
     }
 
+    // Obtener la última subasta
+    public function getLastId() {
+
+      $lastId = mysqli_query($this->con, "SELECT * FROM subasta ORDER BY codSubasta DESC LIMIT 1");
+
+      while ($row = mysqli_fetch_array($lastId)) { $id[] = $row; }
+
+      return $id;
+    }
+
     // Añadir una subasta
     public function addSubastas($fechaIni, $fechaFin, $participantes) {
 

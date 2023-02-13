@@ -1,8 +1,9 @@
 <?php
   use App\Models\Producto;
   use App\Models\Subasta;
-?>
 
+  $codigo = $_GET['codUsu'];
+?>
 
 <!DOCTYPE html>
 
@@ -29,12 +30,19 @@
   <nav class="topnav" id="myTopnav">
 
     <a href="{{ asset('/') }}" class="active">Inicio</a>
+    <a href="{{ asset('/portal') }}">Portal</a>
     <a href="{{ asset('/subasta') }}">Subastas</a>
     <a href="{{ asset('/puja') }}">Pujas</a>
-    <a href="{{ asset('/login') }}" class="disabled">Iniciar sesion</a>
-    <a href="{{ asset('/registro') }}" class="disabled">Registrarse</a>
 
-    <button name="out" id="out">Log out</button>
+    <!--<a href="{{ asset('/login') }}" class="disabled">Iniciar sesion</a>
+    <a href="{{ asset('/registro') }}" class="disabled">Registrarse</a>-->
+
+    <a href="#loginModal" data-target="#loginModal" class="disabled">Iniciar sesion</a>
+    <a href="#registroModal" data-target="#registroModal" class="disabled">Registrarse</a>
+
+    <a href="{{ asset('/') }}">
+      <button name="out" id="out">Log out</button>
+    </a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -61,7 +69,7 @@
 
       <h2>Buscar subastas</h2>
 
-      <!--<ul>
+      <ul>
 
         <li>
           <a href="{{ asset('/subasta') }}">Busqueda</a>
@@ -81,7 +89,7 @@
 
         </li>
 
-      </ul>-->
+      </ul>
 
     </section>
 
@@ -140,7 +148,7 @@
         </ul>
 
         <button class="buscarSubasta">
-          <a href="{{ asset('/subasta?indice='. ($i + 1)) }}">Buscar subasta</a>
+          <a href="{{ asset('/subasta?indice='. ($i + 1)) .'&codUsu=' .$codigo }}">Ir a subasta</a>
         </button>
 
       </div>
@@ -173,10 +181,6 @@
         </li>
 
       </ul>
-
-      <!--
-        <p>Resultados:</p>
-        -->
 
     </section>
 

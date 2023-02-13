@@ -26,6 +26,16 @@
       return $productos;
     }
 
+    // Obtener el último producto
+    public function getLastId() {
+
+      $lastId = mysqli_query($this->con, "SELECT * FROM producto ORDER BY codProd DESC LIMIT 1");
+
+      while ($row = mysqli_fetch_array($lastId)) { $id[] = $row; }
+
+      return $id;
+    }
+
     // Añadir un producto
     public function addProductos($codigo, $nombre, $material, $anchura, $altura, $codSubasta) {
 

@@ -1,14 +1,42 @@
-var botones = document.getElementsByClassName("buscarSubasta");
+/*var botones = document.getElementsByClassName("buscarSubasta");*/
 var links = document.getElementsByClassName("disabled");
 
-console.log("Buscadores de subastas: " + botones.length);
+var cards = document.querySelectorAll(".cardFeatures");
 
-/*for (let i = 0; i < botones.length; i++) {
+var time = document.getElementsByClassName("tiempo");
+var fecha = document.getElementsByClassName("fecha");
 
-  botones[i].onclick = function() {
-    location.replace("http://localhost:8082/subasta/subasta.php?indice=" + (i + 1));
-  };
-}*/
+function reloj() {
+
+  let today = new Date();
+  let horas = today.getHours();
+  let minutos = today.getMinutes();
+  let segundos = today.getSeconds();
+  let dia = today.getDate();
+  let mes = today.getMonth();
+  const semana = new Array('Lunes','Martes','Miercoles','Jueves','Viernes','Sabado', 'Domingo');
+
+  fecha[0].innerHTML = semana[today.getDay()] + ", " + String(dia).padStart(2, '0') + "/" + String(mes).padStart(2, '0') + "/" + today.getFullYear();
+  time[0].innerHTML = String(horas).padStart(2, "0") + ":" + String(minutos).padStart(2, "0") + ":" + String(segundos).padStart(2, "0");
+
+  setTimeout(reloj, 1000);
+}
+
+function myFunction() {
+
+  var topNav = document.getElementById("myTopnav");
+
+  if (topNav.className == "topnav") {
+    topNav.className += " responsive";
+  } else {
+    topNav.className = "topnav";
+  }
+}
+
+window.onload = function() {
+  reloj();
+  myFunction();
+};
 
 for (let i = 0; i < links.lenght; i++) {
 
@@ -25,3 +53,10 @@ for (let i = 0; i < links.lenght; i++) {
 
 /*window.history.pushState(null, null, window.location.href);
 window.onpopstate = function () { window.history.go(1); };*/
+
+for (let i = 0; i < cards.length; i++) {
+
+  cards[i].onclick = function() {
+    location.replace("http://127.0.0.1:8000/subasta?indice=" + parseInt(i + 1));
+  };
+}

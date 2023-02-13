@@ -1,3 +1,21 @@
 {
-  "editor.tabSize": 2
+  "files.autoSave": "afterDelay",
+  "editor.tabSize": 2,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingDelete": "always",
+  "editor.autoClosingOvertype": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.columnSelection": false,
+  "editor.foldingImportsByDefault": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "zenMode.hideLineNumbers": false,
+  "search.showLineNumbers": true,
+  "notebook.lineNumbers": "on",
+  "bookmarks.multicursor.toggleMode": "eachLineIndependently",
+  "editor.multiCursorMergeOverlapping": false,
+  "editor.tabCompletion": "on",
+  "editor.stickyTabStops": true,
+  "terminal.integrated.tabs.focusMode": "doubleClick",
+  "autoimport.doubleQuotes": true
 }

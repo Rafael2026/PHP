@@ -40,6 +40,7 @@
 
   $usuarioExiste = false;
   $permiso = 0;
+  $codUsuario;
 
   if (isset($_GET["login"])) {
 
@@ -53,6 +54,7 @@
 
       if (strcmp($user, $users[$i]["user"]) == 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) == 0) {
         $usuarioExiste = true;
+        $codUsuario = intval($i + 1);
         $permiso = intval($users[$i]["permiso"]);
         $acceso = $usuarios->getAcceso($user, trim(strval(hash('sha512', $password))));
       }
@@ -64,7 +66,7 @@
         header("Location: /tablas");
         exit();
       } else {
-        header("Location: /portal");
+        header("Location: /portal?codUsu=$codUsuario");
         exit();
       }
 

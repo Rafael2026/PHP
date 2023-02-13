@@ -1,0 +1,343 @@
+$color_1: rgb(0, 0, 255);
+$color_2: rgb(255, 255, 255);
+$color_3: #912600;
+$font-family_1: 'Source Sans Pro', sans-serif;
+$background-color_1: rgb(255, 255, 255);
+$background-color_2: rgb(0, 0, 0);
+$background-color_3: #f9f9f9;
+$background-color_4: #EAEAEA;
+$background-color_5: #000000;
+
+/***** Nav styles *****/
+/*** Contenido princiapl ***/
+/***** Pie *****/
+/* Small mobile */
+/* Medium mobile */
+/* Big mobile */
+/* Tablets */
+/*section:first-child div { height: 80px; }*/
+/* Laptops */
+/*section:first-child div { height: 80px; }*/
+/** Media query for small devices **/
+body {
+	background-color: $background-color_1;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: $font-family_1;
+}
+header {
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: 5px underline dotted rgb(255, 0, 0);
+	text-align: center;
+	color: $color_1;
+	img {
+		width: 100%;
+		height: 500px;
+	}
+}
+nav {
+	overflow: hidden;
+	position: relative;
+	top: 0;
+	color: $color_2;
+	background-color: $background-color_2;
+	text-align: left;
+	width: 100%;
+	justify-content: center;
+	a {
+		font-size: 30px;
+		float: left;
+		color: $color_2;
+		padding: 0;
+		margin: 25px 40px;
+		text-decoration: none;
+	}
+	.disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+		pointer-events: none;
+	}
+	input[type=text] {
+		padding: 6px;
+		margin: 35px 0 0 250px;
+		font-size: 17px;
+		border: none;
+		float: left;
+	}
+	button {
+		padding: 6px 10px;
+		margin: 35px 50px 0px 0px;
+		font-size: 17px;
+		border: none;
+		cursor: pointer;
+		float: left;
+		&:hover {
+			background: #ccc;
+		}
+	}
+}
+main {
+	text-align: center;
+	form {
+		width: 20%;
+		height: 550px;
+		border: 1px solid #9C9C9C;
+		background-color: $background-color_4;
+		padding: 25px 50px;
+		margin: 30px 0 30px 40%;
+		h2 {
+			margin-top: 30px;
+		}
+		label {
+			float: left;
+		}
+		input {
+			float: left;
+		}
+		select {
+			float: left;
+		}
+	}
+	.form-group {
+		margin-top: 30px;
+		width: 100%;
+	}
+}
+section {
+	&:first-child {
+		width: 100%;
+		margin-bottom: 50px;
+		div {
+			padding: 15px 30%;
+			background-color: $background-color_3;
+			color: $color_3;
+			border-bottom: 1px solid #ddd;
+			height: 50px;
+		}
+	}
+	&:nth-child(2) {
+		width: 100%;
+		margin-bottom: 50px;
+		div {
+			padding: 15px 30%;
+			background-color: $background-color_3;
+			color: $color_3;
+			border-bottom: 1px solid #ddd;
+			height: 50px;
+		}
+	}
+}
+footer {
+	clear: both;
+	width: 100%;
+	background-color: $background-color_5;
+	padding: 1em 0;
+	font-size: 1.5em;
+	text-align: center;
+	color: $color_2;
+	border-top: 1px solid #ddd;
+	margin-top: 10px;
+	p {
+		margin-top: 1.5em;
+		box-sizing: border-box;
+		padding: 0.5em;
+		height: 50px;
+	}
+	h2 {
+		box-sizing: border-box;
+		padding: 0.5em;
+		height: 50px;
+	}
+}
+.fin-float {
+	clear: both;
+}
+@media only screen and (max-width: 320px) {
+	section {
+		&:first-child {
+			div {
+				height: 100px;
+			}
+		}
+	}
+	main {
+		form {
+			width: 70%;
+			padding: 25px 40px;
+			margin: 30px 15%;
+		}
+	}
+	nav {
+		input[type=text] {
+			padding: 6px;
+			margin: 25px 0 0 25px;
+			font-size: 17px;
+			border: none;
+			float: left;
+		}
+		button {
+			padding: 6px 10px;
+			margin: 25px 50px 0px 0px;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			float: left;
+		}
+	}
+}
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+	section {
+		&:first-child {
+			div {
+				height: 100px;
+			}
+		}
+	}
+	main {
+		form {
+			width: 70%;
+			padding: 25px;
+			margin: 30px 15%;
+		}
+	}
+	nav {
+		input[type=text] {
+			padding: 6px;
+			margin: 25px 0 0 25px;
+			font-size: 17px;
+			border: none;
+			float: left;
+		}
+		button {
+			padding: 6px 10px;
+			margin: 25px 50px 0px 0px;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			float: left;
+		}
+	}
+}
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+	section {
+		&:first-child {
+			div {
+				height: 80px;
+			}
+		}
+	}
+	main {
+		form {
+			width: 60%;
+			padding: 25px;
+			margin: 30px 25%;
+		}
+	}
+	nav {
+		input[type=text] {
+			padding: 6px;
+			margin: 35px 0 0 50px;
+			font-size: 17px;
+			border: none;
+			float: left;
+		}
+		button {
+			padding: 6px 10px;
+			margin: 35px 50px 0px 0px;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			float: left;
+		}
+	}
+}
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+	main {
+		form {
+			width: 50%;
+			padding: 25px;
+			margin: 30px 25%;
+		}
+	}
+	nav {
+		input[type=text] {
+			padding: 6px;
+			margin: 35px 0 0 50px;
+			font-size: 17px;
+			border: none;
+			float: left;
+		}
+		button {
+			padding: 6px 10px;
+			margin: 35px 50px 0px 0px;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			float: left;
+		}
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	main {
+		form {
+			width: 40%;
+			margin: 30px 30%;
+		}
+	}
+	nav {
+		input[type=text] {
+			padding: 6px;
+			margin: 35px 0 0 250px;
+			font-size: 17px;
+			border: none;
+			float: left;
+		}
+		button {
+			padding: 6px 10px;
+			margin: 35px 50px 0px 0px;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+			float: left;
+		}
+	}
+}
+@media screen and (max-width: 600px) {
+	.topnav {
+		a {
+			&:not:first-child {
+				display: none;
+			}
+		}
+		.icon {
+			float: right;
+		}
+	}
+	&:last-child {
+		display: none;
+	}
+	.topnav.responsive {
+		position: relative;
+		a.icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		a {
+			float: none;
+			text-align: left;
+			display: block;
+		}
+	}
+	.topnav.icon {
+		display: block;
+	}
+	table {
+		overflow-x: scroll;
+		text-align: left;
+		font-size: 14px;
+	}
+}

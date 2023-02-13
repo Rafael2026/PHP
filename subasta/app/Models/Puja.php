@@ -27,13 +27,23 @@
     }
 
     // Obtener puja ganadora
-    public function getPujaWin() {
+    public function getPujaWin($codigo) {
 
-      $winner = mysqli_query($this->con, "SELECT * FROM puja ORDER BY codPuja desc LIMIT 1;");
+      $winner = mysqli_query($this->con, "SELECT * FROM puja WHERE codSubasta=$codigo ORDER BY codPuja DESC LIMIT 1;");
 
       while ($row = mysqli_fetch_array($winner)) { $pujaWin[] = $row; }
 
       return $pujaWin;
+    }
+
+    // Obtener la última puja
+    public function getLastId() {
+
+      $lastId = mysqli_query($this->con, "SELECT * FROM puja ORDER BY codPuja DESC LIMIT 1");
+
+      while ($row = mysqli_fetch_array($lastId)) { $id[] = $row; }
+
+      return $id;
     }
 
     // Añadir una puja

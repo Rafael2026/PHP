@@ -31,10 +31,12 @@
     <a href="{{ asset('/') }}" class="active">Inicio</a>
     <a href="{{ asset('/subasta') }}" class="disabled">Subastas</a>
     <a href="{{ asset('/puja') }}" class="disabled">Pujas</a>
-    <a href="{{ asset('/login') }} class="disabled"">Iniciar sesion</a>
-    <a href="{{ asset('/registro') }} class="disabled"">Registrarse</a>
+    <a href="{{ asset('/login') }}" class="disabled">Iniciar sesion</a>
+    <a href="{{ asset('/registro') }}" class="disabled">Registrarse</a>
 
-    <button name="out" id="out">Log out</button>
+    <a href="{{ asset('/') }}">
+      <button name="out" id="out">Log out</button>
+    </a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
