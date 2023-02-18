@@ -56,14 +56,14 @@
             <td><?php echo $products[$p]['codSubasta']; ?></td>
 
             <!--
-                  <td>
-                    <button name="editProd">Editar producto</button>
-                  </td>
+              <td>
+                <button name="editProd">Editar producto</button>
+              </td>
 
-                  <td>
-                    <button name="delProd">Borrar producto</button>
-                  </td>
-                -->
+              <td>
+                <button name="delProd">Borrar producto</button>
+              </td>
+              -->
 
           </tr>
 
@@ -99,7 +99,7 @@
 
         if (!empty($_GET['codProd']) && !empty($_GET['nomProd']) && !empty($_GET['material']) &&
             !empty($_GET['anchura']) && !empty($_GET['altura']) && !empty($_GET['codSub'])) {
-          $products = $productos->addProductos($codigo, $nombre, $material, $anchura, $altura, $codSub);
+          $productos->addProductos($codigo, $nombre, $material, $anchura, $altura, $codSub);
         }
 
       break;
@@ -126,7 +126,7 @@
                 echo "<br><br>Id: ". $_GET['codProd']. "<br>Nombre: ". $_GET['nomProd']. "<br>Apellidos: ". $_GET['material'];
                 echo "<br>Correo: ". $_GET['anchura']. "<br>Contraseña: ". products[$p]['password']. "<br>Fecha: ". $_GET['fecha'];*/
 
-              $products = $productos->updateProductos($codigo, $nombre, $material, $anchura, $altura, $codSub);
+              $productos->updateProductos($codigo, $nombre, $material, $anchura, $altura, $codSub);
             }
           }
         }
@@ -146,7 +146,7 @@
           for ($u = 0; $u < count($products); $u++) {
 
             if (intval($products[$p]['codProd']) == intval($_GET['codProd'])) {
-              $products = $productos->deleteProductos($codigo);
+              $productos->deleteProductos($codigo);
             }
           }
         }

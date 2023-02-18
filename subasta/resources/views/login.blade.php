@@ -31,8 +31,8 @@
     <a href="{{ asset('/login') }}">Iniciar sesion</a>
     <a href="{{ asset('/registro') }}">Registrarse</a>
 
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
+    <a href="javascript:void(0);" class="icon nav">
+      <img src="{{ asset('img/menu.svg') }}" alt="Menu">
     </a>
 
   </nav>
@@ -135,7 +135,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <script src="{{ asset('js/reloj.js') }}" defer></script>
-  <script src="{{ asset('js/nav.js') }}" defer></script>
 
 </body>
 

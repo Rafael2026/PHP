@@ -24,23 +24,25 @@ function reloj() {
 
 function myFunction() {
 
-  var topNav = document.getElementById("myTopnav");
+  let topNav = document.getElementById("myTopnav");
 
-  if (topNav.className == "topnav") {
-    topNav.className += " responsive";
-  } else {
-    topNav.className = "topnav";
+  if (topNav != null) {
+
+    if (topNav.className == "topnav") {
+      topNav.className += " responsive";
+    } else {
+      topNav.className = "topnav";
+    }
   }
 }
 
 window.onload = function() {
-  reloj();
   myFunction();
 };
 
-for (let i = 0; i < links.lenght; i++) {
+for (let i = 0; i < links.length; i++) {
 
-  links[i].disabled = true;
+  links[i].disabled = "true";
 
   links[i].onclick = function() {
 

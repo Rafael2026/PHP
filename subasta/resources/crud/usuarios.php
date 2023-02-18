@@ -85,7 +85,7 @@
 
         if (!empty($_GET['codigo']) && !empty($_GET['nombre']) && !empty($_GET['apellidos']) &&
             !empty($_GET['usuario']) && !empty($_GET['secreto']) && !empty($_GET['fecha'])) {
-          $users = $usuario->addUsuarios($codigo, $nombre, $apellidos, $cuenta, trim(strval(hash('sha512', $secreto))), $fecha);
+          $usuario->addUsuarios($codigo, $nombre, $apellidos, $cuenta, trim(strval(hash('sha512', $secreto))), $fecha);
         }
 
       break;
@@ -107,7 +107,7 @@
               echo "<br><br>Id: ". $_GET['codigo']. "<br>Nombre: ". $_GET['nombre']. "<br>Apellidos: ". $_GET['apellidos'];
               echo "<br>Correo: ". $_GET['usuario']. "<br>Contraseña: ". $users[$u]['password']. "<br>Fecha: ". $_GET['fecha'];*/
 
-              $users = $usuario->updateUsuarios($_GET['codigo'], $_GET['nombre'], $_GET['apellidos'], $_GET['usuario'], trim(strval(hash('sha512', $_GET['secreto']))));
+              $usuario->updateUsuarios($_GET['codigo'], $_GET['nombre'], $_GET['apellidos'], $_GET['usuario'], trim(strval(hash('sha512', $_GET['secreto']))));
             }
           }
         }
@@ -124,7 +124,7 @@
           for ($u = 0; $u < count($users); $u++) {
 
             if (intval($users[$u]['codUsu']) == intval($_GET['codigo'])) {
-              $users = $usuario->deleteUsuarios($_GET['codigo']);
+              $usuario->deleteUsuarios($_GET['codigo']);
             }
           }
         }

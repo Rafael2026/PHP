@@ -14,14 +14,14 @@
 
       <div class="form-group">
         <label for="usuario">Usuario:</label>
-        <input type="email" name="usuario" id="usuario" class="form-control" required autofocus>
+        <input type="email" name="usuario" id="cuenta" class="form-control" required autofocus>
       </div>
 
       <div class="fin-float"></div>
 
       <div class="form-group">
         <label for="passw">Contraseña:</label>
-        <input type="password" name="passw" id="passw" class="form-control" required>
+        <input type="password" name="passw" id="clave" class="form-control" required>
       </div>
 
       <div class="fin-float"></div>

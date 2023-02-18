@@ -4,7 +4,7 @@
 
   class Puja {
 
-    private $con;
+    protected $con;
 
     protected $fillable = [];
 
@@ -49,31 +49,31 @@
     // Añadir una puja
     public function addPujas($codigo, $value, $date, $codigoUsu, $codigoSub) {
 
-      $insertPujas = mysqli_query($this->con, "INSERT INTO puja VALUES ('$codigo', '$value', '$date', '$codigoUsu', '$codigoSub')");
+      mysqli_query($this->con, "INSERT INTO puja VALUES ('$codigo', '$value', '$date', '$codigoUsu', '$codigoSub')");
 
-      while ($row = mysqli_fetch_array($insertPujas)) { $pujas[] = $row; }
+      /*while ($row = mysqli_fetch_array($insertPujas)) { $pujas[] = $row; }
 
-      return $pujas;
+      return $pujas;*/
     }
 
     // Eliminar una puja
     public function deletePujas($codigo) {
 
-      $deletePujas = mysqli_query($this->con, "DELETE FROM puja WHERE codPuja=$codigo");
+      mysqli_query($this->con, "DELETE FROM puja WHERE codPuja='$codigo'");
 
-      while ($row = mysqli_fetch_array($deletePujas)) { $pujas[] = $row; }
+      /*while ($row = mysqli_fetch_array($deletePujas)) { $pujas[] = $row; }
 
-      return $pujas;
+      return $pujas;*/
     }
 
     // Actualizar una puja
     public function updatePujas($codigo, $value, $date, $codigoUsu, $codigoSub) {
 
-      $updatePujas = mysqli_query($this->con, "UPDATE puja SET valor=$value, fecha=$date, codUsu=$codigoUsu, codSubasta=$codigoSub WHERE codPuja=$codigo");
+      mysqli_query($this->con, "UPDATE puja SET valor=$value, fecha=$date, codUsu=$codigoUsu, codSubasta=$codigoSub WHERE codPuja=$codigo");
 
-      while ($row = mysqli_fetch_array($updatePujas)) { $pujas[] = $row; }
+      /*while ($row = mysqli_fetch_array($updatePujas)) { $pujas[] = $row; }
 
-      return $pujas;
+      return $pujas;*/
     }
   }
 

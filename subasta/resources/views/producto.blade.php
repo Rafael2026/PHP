@@ -25,7 +25,7 @@
   <link href="{{ asset('css/login.css') }}" rel="stylesheet">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -46,8 +46,8 @@
       <button name="out" id="out">Log out</button>
     </a>
 
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
+    <a href="javascript:void(0);" class="icon nav">
+      <img src="{{ asset('img/menu.svg') }}" alt="Menu">
     </a>
 
   </nav>
@@ -203,9 +203,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <script src="{{ asset('js/reloj.js') }}" defer></script>
-  <script src="{{ asset('js/script.js') }}" defer></script>
-  <script src="{{ asset('js/nav.js') }}" defer></script>
   <script src="{{ asset('js/login.js') }}" defer></script>
+  <script src="{{ asset('js/script.js') }}" defer></script>
 
 </body>
 

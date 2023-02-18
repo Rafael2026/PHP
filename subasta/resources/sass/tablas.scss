@@ -13,9 +13,95 @@ $background-color_4: #000000;
   padding: 0; Top, right, bottom and left
   font-family: 'Source Sans Pro', sans-serif;
 }*/
-/***** Nav styles *****/
-/*** Contenido princiapl ***/
+
+header {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: 5px underline dotted rgb(255, 0, 0);
+  text-align: center;
+  color: rgb(0, 0, 255);
+}
+
+header img {
+  width: 100%;
+  height: 500px;
+}
+
+nav {
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  text-align: left;
+  width: 100%;
+  justify-content: center;
+}
+
+nav a {
+  font-size: 30px;
+  float: left;
+  color: rgb(255, 255, 255);
+  padding: 0;
+  margin: 25px 40px;
+  text-decoration: none;
+}
+
+nav .disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+nav input[type=text] {
+  padding: 6px;
+  margin: 35px 0 0 50px;
+  font-size: 17px;
+  border: none;
+  float: left;
+}
+
+nav button {
+  padding: 6px 10px;
+  margin: 5px 40px 0px 0px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  float: left;
+}
+
+nav  button:hover { background: #ccc; }
+
 /* main { text-align: center; } */
+
+section:first-child {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+section:first-child div {
+  padding: 15px 0;
+  background-color: #f9f9f9;
+  color: #912600;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  /*height: 50px;*/
+}
+
+.productos, .subastas, .pujas, .usuarios {
+  width: 100%;
+  height: 650px;
+  margin-bottom: 25px;
+}
+
+.productos h1, .subastas h1, .pujas h1, .usuarios h1 {
+  margin: 50px 0 30px 0;
+  text-align: center;
+}
+
+.productos .formulario form { height: 500px; }
+
 /*.productos div, .subastas div, .pujas div, .usuarios div, section:nth-child(2) div {
   padding: 25px 15% 5px 15%;
   background-color: #f9f9f9;
@@ -29,6 +115,43 @@ $background-color_4: #000000;
 }
 
 .productos button, .subastas button, .pujas button, .usuarios button { margin-left: 15px; }*/
+
+main .formulario { border-top: 0.5px solid rgb(0, 0, 0); }
+
+form {
+  width: 25%;
+  height: 400px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+  margin: 30px 7.5%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.usuario { height: 475px; }
+
+form input { width: 80%; }
+
+form input:first-child {
+  margin: 50px 10% 20px 10%;
+  text-align: center;
+}
+
+form input:not(:first-child) {
+  margin: 10px 10%;
+  text-align: center;
+}
+
+form button {
+  float: left;
+  /*margin: 25px 10px;
+  vertical-align: middle;*/
+  text-align: center;
+  width: 90px;
+  margin: 25px 0 25px 10%;
+  /*height: 100px;*/
+}
+
 /*form button:first-child {
   margin: 25px 0 25px 12%;
 }
@@ -36,6 +159,20 @@ $background-color_4: #000000;
 form button:not(:first-child) {
   margin: 25px 0 25px 8%;
 }*/
+
+main .tabla { border-top: 0.5px solid rgb(0, 0, 0); }
+
+table {
+  /*width: 25%;*/
+  height: 400px;
+  padding: 25px 50px;
+  margin: 30px 0%;
+  box-sizing: border-box;
+  float: left;
+}
+
+main table tr > * { border: 1px solid #0d6efd; }
+
 /*main form {
   margin: 15px 30%;
   border: 1px solid gray;
@@ -80,368 +217,195 @@ main input[type=submit] {
   cursor: pointer;
   float: right;
 }*/
-/***** Pie *****/
-/* Small mobile */
-/*section:first-child div { height: 100px; }*/
-/* Medium mobile */
-/*section:first-child div { height: 100px; }*/
-/* Big mobile */
-/*section:first-child div { height: 80px; }*/
-/* Tablets */
-/*section:first-child div { height: 80px; }*/
-/* Laptops */
-/*section:first-child div { height: 80px; }*/
-/** Media query for small devices **/
-header {
-	font-size: 30px;
-	font-weight: bold;
-	font-style: italic;
-	text-decoration: 5px underline dotted rgb(255, 0, 0);
-	text-align: center;
-	color: $color_1;
-	img {
-		width: 100%;
-		height: 500px;
-	}
-}
-nav {
-	overflow: hidden;
-	position: relative;
-	top: 0;
-	color: $color_2;
-	background-color: $background-color_1;
-	text-align: left;
-	width: 100%;
-	justify-content: center;
-	a {
-		font-size: 30px;
-		float: left;
-		color: $color_2;
-		padding: 0;
-		margin: 25px 40px;
-		text-decoration: none;
-	}
-	.disabled {
-		cursor: not-allowed;
-		opacity: 0.5;
-		pointer-events: none;
-	}
-	input[type=text] {
-		padding: 6px;
-		margin: 35px 0 0 50px;
-		font-size: 17px;
-		border: none;
-		float: left;
-	}
-	button {
-		padding: 6px 10px;
-		margin: 5px 40px 0px 0px;
-		font-size: 17px;
-		border: none;
-		cursor: pointer;
-		float: left;
-		&:hover {
-			background: #ccc;
-		}
-	}
-}
-section {
-	&:first-child {
-		width: 100%;
-		margin-bottom: 50px;
-		div {
-			padding: 15px 0;
-			background-color: $background-color_2;
-			color: $color_3;
-			border-bottom: 1px solid #ddd;
-			text-align: center;
-		}
-	}
-}
-.productos {
-	width: 100%;
-	height: 650px;
-	margin-bottom: 25px;
-	h1 {
-		margin: 50px 0 30px 0;
-		text-align: center;
-	}
-	.formulario {
-		form {
-			height: 500px;
-		}
-	}
-}
-.subastas {
-	width: 100%;
-	height: 650px;
-	margin-bottom: 25px;
-	h1 {
-		margin: 50px 0 30px 0;
-		text-align: center;
-	}
-}
-.pujas {
-	width: 100%;
-	height: 650px;
-	margin-bottom: 25px;
-	h1 {
-		margin: 50px 0 30px 0;
-		text-align: center;
-	}
-}
-.usuarios {
-	width: 100%;
-	height: 650px;
-	margin-bottom: 25px;
-	h1 {
-		margin: 50px 0 30px 0;
-		text-align: center;
-	}
-}
-main {
-	.formulario {
-		border-top: 0.5px solid rgb(0, 0, 0);
-	}
-	.tabla {
-		border-top: 0.5px solid rgb(0, 0, 0);
-	}
-	table {
-		tr {
-			>* {
-				border: 1px solid #0d6efd;
-			}
-		}
-	}
-}
-form {
-	width: 25%;
-	height: 400px;
-	border: 1px solid #9C9C9C;
-	background-color: $background-color_3;
-	margin: 30px 7.5%;
-	box-sizing: border-box;
-	float: left;
-	input {
-		width: 80%;
-		&:first-child {
-			margin: 50px 10% 20px 10%;
-			text-align: center;
-		}
-		&:not(:first-child) {
-			margin: 10px 10%;
-			text-align: center;
-		}
-	}
-	button {
-		float: left;
-		text-align: center;
-		width: 90px;
-		margin: 25px 0 25px 10%;
-	}
-}
-.usuario {
-	height: 475px;
-}
-table {
-	height: 400px;
-	padding: 25px 50px;
-	margin: 30px 0%;
-	box-sizing: border-box;
-	float: left;
-}
+
 footer {
-	clear: both;
-	width: 100%;
-	background-color: $background-color_4;
-	padding: 1em 0;
-	font-size: 1.5em;
-	text-align: center;
-	color: $color_2;
-	border-top: 1px solid #ddd;
-	margin-top: 10px;
-	p {
-		margin-top: 1.5em;
-		box-sizing: border-box;
-		padding: 0.5em;
-		height: 50px;
-	}
-	h2 {
-		box-sizing: border-box;
-		padding: 0.5em;
-		height: 50px;
-	}
+  clear: both;
+  width: 100%;
+  background-color: #000000;
+  padding: 1em 0;
+  font-size: 1.5em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border-top: 1px solid #ddd; /* Width | Style | Color */
+  margin-top: 10px;
 }
-.fin-float {
-	clear: both;
+
+footer p { margin-top: 1.5em; }
+
+footer h2, footer p {
+  box-sizing: border-box;
+  padding: 0.5em;
+  /*margin: 0.3em auto;*/
+  height: 50px;
 }
+
+.fin-float { clear: both; }
+
+/** Small mobile **/
 @media only screen and (max-width: 320px) {
-	main {
-		form {
-			width: 70%;
-			height: 350px;
-			padding: 25px 40px;
-			margin: 30px 15%;
-		}
-	}
-	nav {
-		input[type=text] {
-			padding: 6px;
-			margin: 25px 0 0 25px;
-			font-size: 17px;
-			border: none;
-			float: left;
-		}
-		button {
-			padding: 6px 10px;
-			margin: 25px 50px 0px 0px;
-			font-size: 17px;
-			border: none;
-			cursor: pointer;
-			float: left;
-		}
-	}
+
+  main form {
+    width: 70%;
+    height: 350px;
+    padding: 25px 40px;
+    margin: 30px 15%;
+  }
+
+  nav input[type=text] {
+    padding: 6px;
+    margin: 25px 0 0 25px;
+    font-size: 17px;
+    border: none;
+    float: left;
+  }
+
+  nav button {
+    padding: 6px 10px;
+    margin: 25px 50px 0px 0px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    float: left;
+  }
 }
+
+/** Medium mobile **/
 @media only screen and (min-width: 320px) and (max-width: 375px) {
-	main {
-		form {
-			width: 70%;
-			height: 350px;
-			padding: 25px;
-			margin: 30px 15%;
-		}
-	}
-	nav {
-		input[type=text] {
-			padding: 6px;
-			margin: 25px 0 0 25px;
-			font-size: 17px;
-			border: none;
-			float: left;
-		}
-		button {
-			padding: 6px 10px;
-			margin: 25px 50px 0px 0px;
-			font-size: 17px;
-			border: none;
-			cursor: pointer;
-			float: left;
-		}
-	}
+
+  main form {
+    width: 70%;
+    height: 350px;
+    padding: 25px;
+    margin: 30px 15%;
+  }
+
+  nav input[type=text] {
+    padding: 6px;
+    margin: 25px 0 0 25px;
+    font-size: 17px;
+    border: none;
+    float: left;
+  }
+
+  nav button {
+    padding: 6px 10px;
+    margin: 25px 50px 0px 0px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    float: left;
+  }
 }
+
+/** Big mobile **/
 @media only screen and (min-width: 375px) and (max-width: 425px) {
-	main {
-		form {
-			width: 60%;
-			height: 350px;
-			padding: 25px;
-			margin: 30px 25%;
-		}
-	}
-	nav {
-		input[type=text] {
-			padding: 6px;
-			margin: 35px 0 0 50px;
-			font-size: 17px;
-			border: none;
-			float: left;
-		}
-		button {
-			padding: 6px 10px;
-			margin: 35px 50px 0px 0px;
-			font-size: 17px;
-			border: none;
-			cursor: pointer;
-			float: left;
-		}
-	}
+
+  main form {
+    width: 60%;
+    height: 350px;
+    padding: 25px;
+    margin: 30px 25%;
+  }
+
+  nav input[type=text] {
+    padding: 6px;
+    margin: 35px 0 0 50px;
+    font-size: 17px;
+    border: none;
+    float: left;
+  }
+
+  nav button {
+    padding: 6px 10px;
+    margin: 35px 50px 0px 0px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    float: left;
+  }
 }
+
+/** Tablets **/
 @media only screen and (min-width: 425px) and (max-width: 768px) {
-	main {
-		form {
-			width: 50%;
-			height: 350px;
-			padding: 25px;
-			margin: 30px 25%;
-		}
-	}
-	nav {
-		input[type=text] {
-			padding: 6px;
-			margin: 35px 0 0 50px;
-			font-size: 17px;
-			border: none;
-			float: left;
-		}
-		button {
-			padding: 6px 10px;
-			margin: 35px 50px 0px 0px;
-			font-size: 17px;
-			border: none;
-			cursor: pointer;
-			float: left;
-		}
-	}
+
+  main form {
+    width: 50%;
+    height: 350px;
+    padding: 25px;
+    margin: 30px 25%;
+  }
+
+  nav input[type=text] {
+    padding: 6px;
+    margin: 35px 0 0 50px;
+    font-size: 17px;
+    border: none;
+    float: left;
+  }
+
+  nav button {
+    padding: 6px 10px;
+    margin: 35px 50px 0px 0px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    float: left;
+  }
 }
+
+/** Laptops **/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-	main {
-		form {
-			width: 40%;
-			height: 350px;
-			margin: 30px 30%;
-		}
-	}
-	nav {
-		input[type=text] {
-			padding: 6px;
-			margin: 35px 0 0 250px;
-			font-size: 17px;
-			border: none;
-			float: left;
-		}
-		button {
-			padding: 6px 10px;
-			margin: 35px 50px 0px 0px;
-			font-size: 17px;
-			border: none;
-			cursor: pointer;
-			float: left;
-		}
-	}
+
+  main form {
+    width: 40%;
+    height: 350px;
+    margin: 30px 30%;
+  }
+
+  nav input[type=text] {
+    padding: 6px;
+    margin: 35px 0 0 250px;
+    font-size: 17px;
+    border: none;
+    float: left;
+  }
+
+  nav button {
+    padding: 6px 10px;
+    margin: 35px 50px 0px 0px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    float: left;
+  }
 }
+
+/** Media query for small devices **/
 @media screen and (max-width: 600px) {
-	.topnav {
-		a {
-			&:not:first-child {
-				display: none;
-			}
-		}
-		.icon {
-			float: right;
-		}
-	}
-	&:last-child {
-		display: none;
-	}
-	.topnav.responsive {
-		position: relative;
-		a.icon {
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-		a {
-			float: none;
-			text-align: left;
-			display: block;
-		}
-	}
-	.topnav.icon {
-		display: block;
-	}
-	table {
-		overflow-x: scroll;
-		text-align: left;
-		font-size: 14px;
-	}
+
+  .topnav a:not(:first-child, :last-child) { display: none; }
+
+  .topnav .icon { float: right; }
+
+  .topnav.responsive { position: relative; }
+
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    text-align: left;
+  }
+
+  .topnav.icon, .topnav.responsive a { display: block; }
+
+  table {
+    overflow-x: scroll;
+    text-align: left;
+    font-size: 14px;
+  }
 }
+

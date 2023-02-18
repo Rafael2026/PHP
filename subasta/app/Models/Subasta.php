@@ -39,31 +39,31 @@
     // Añadir una subasta
     public function addSubastas($fechaIni, $fechaFin, $participantes) {
 
-      $insertSubastas = mysqli_query($this->con, "INSERT INTO subasta(fechaInic, fechaFin, particTotales) VALUES (fechaInic=$fechaIni, fechaFin=$fechaFin, particTotales=$participantes)");
+      mysqli_query($this->con, "INSERT INTO subasta(fechaInic, fechaFin, particTotales) VALUES (fechaInic=$fechaIni, fechaFin=$fechaFin, particTotales=$participantes)");
 
-      while ($row = mysqli_fetch_array($insertSubastas)) { $subastas[] = $row; }
+      /*while ($row = mysqli_fetch_array($insertSubastas)) { $subastas[] = $row; }
 
-      return $subastas;
+      return $subastas;*/
     }
 
     // Eliminar una subasta
     public function deleteSubastas($indice) {
 
-      $deleteSubastas = mysqli_query($this->con, "DELETE FROM subasta WHERE codSubasta=$indice");
+      mysqli_query($this->con, "DELETE FROM subasta WHERE codSubasta=$indice");
 
-      while ($row = mysqli_fetch_array($deleteSubastas)) { $subastas[] = $row; }
+      /*while ($row = mysqli_fetch_array($deleteSubastas)) { $subastas[] = $row; }
 
-      return $subastas;
+      return $subastas;*/
     }
 
     // Actualizar una subasta
     public function updateSubastas($indice, $fechaIni, $fechaFin, $participantes) {
 
-      $updateSubastas = mysqli_query($this->con, "UPDATE subasta SET fechaInic=$fechaIni, fechaFin=$fechaFin, particTotales=$participantes WHERE codSubasta=$indice");
+      mysqli_query($this->con, "UPDATE subasta SET fechaInic=$fechaIni, fechaFin=$fechaFin, particTotales=$participantes WHERE codSubasta=$indice");
 
-      while ($row = mysqli_fetch_array($updateSubastas)) { $subastas[] = $row; }
+      /*while ($row = mysqli_fetch_array($updateSubastas)) { $subastas[] = $row; }
 
-      return $subastas;
+      return $subastas;*/
     }
   }
 

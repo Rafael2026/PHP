@@ -1,11 +1,11 @@
-const ctx = document.getElementById('myChart');
+const ctx:HTMLElement | null = document.getElementById('myChart');
 
 new Chart(ctx, {
 
   type: 'bar',
 
   data: {
-    
+
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
 
     datasets: [{
@@ -18,7 +18,7 @@ new Chart(ctx, {
   options: {
 
     scales: {
-      
+
       y: {
         beginAtZero: true
       }

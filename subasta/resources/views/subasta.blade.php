@@ -16,8 +16,13 @@
   $codigoSubasta = $_GET["indice"];
   $codigoUsuario = $_GET["codUsu"];
 
-  $ultimaPuja = $pujas->getLastId();
-  $codigo = intval($ultimaPuja[0]['codPuja']) + 1;
+  $lastId = $pujas->getLastId();
+  $codigo = intval($lastId[0]['codPuja']) + 1;
+
+  $ultimaPuja = $pujas->getPujaWin($codigoSubasta);
+  $valorFinal = number_format(floatval($ultimaPuja[0]['valor']), 2, '.', '');
+
+  $pujadorFinal = intval($ultimaPuja[0]['codUsu']);
 
 ?>
 
@@ -31,10 +36,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Subastas</title>
   <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
-  <!--<link href="{{ asset('css/login.css') }}" rel="stylesheet">-->
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -48,16 +52,16 @@
     <a href="{{ asset('/') }}" class="active">Inicio</a>
     <a href="{{ asset('/portal') }}">Portal</a>
     <a href="{{ asset('/subasta') }}">Subastas</a>
-    <a href="{{ asset('/puja') }}">Pujas</a>
-    <a href="{{ asset('/login') }}">Iniciar sesion</a>
-    <a href="{{ asset('/registro') }}">Registrarse</a>
+
+    <a href="#loginModal" data-target="#loginModal" class="disabled">Iniciar sesion</a>
+    <a href="#registroModal" data-target="#registroModal" class="disabled">Registrarse</a>
 
     <a href="{{ asset('/') }}">
       <button name="out" id="out">Log out</button>
     </a>
 
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
+    <a href="javascript:void(0);" class="icon nav">
+      <img src="{{ asset('img/menu.svg') }}" alt="Menu">
     </a>
 
   </nav>
@@ -102,10 +106,6 @@
         </li>
 
       </ul>-->
-
-    </section>
-
-    <section>
 
       <?php
 
@@ -156,10 +156,10 @@
         </ul>
 
         <button>
-          <a href="{{ asset('/portal') }}" class="atras">Volver atrás</a>
+          <a href="{{ asset('/portal?codUsu='. $codigoUsuario) }}" class="atras">Volver atrás</a>
         </button>
 
-        <form method="GET">
+        <form method="GET" class="pujaForm">
 
           <input type="number" min="<?php echo $codigoSubasta ?>" max="<?php echo $codigoSubasta ?>" value="<?php echo $codigoSubasta ?>" class="indice" name="indice" style="display: none">
 
@@ -169,67 +169,49 @@
 
           <button class="pujar" name="pujar" value="Crear puja">Pujar</button>
 
+          <?php
+
+            if (isset($_GET['pujar'])) {
+
+              $valor = $_GET['puja'];
+
+              //date_default_timezone_set('Europe/Madrid');
+
+              $fecha = date("Y-m-d");
+
+              echo "<br/>Id: ". $codigo;
+              echo "<br/>Valor insertado: ". $valor;
+              echo "<br/>Fecha: ". $fecha;
+              echo "<br/>Id_Usuario: ". $codigoUsuario;
+              echo "<br/>Id_Subasta: ". $codigoSubasta;
+              echo "<br/>Valor de la última puja: ". $valorFinal;
+
+              if ($pujadorFinal == intval($codigoUsuario)) {
+                echo '<script>
+                  alert("La puja ganadora te pertenece, espera una puja mayor de otra persona");
+                </script>';
+              } else {
+
+                if ($valor > $valorFinal) {
+
+                  $pujas->addPujas($codigo, $valor, $fecha, $codigoUsuario, $codigoSubasta);
+
+                  header("Location: /subasta?indice=$codigoSubasta&codUsu=$codigoUsuario&puja=$valor");
+                  exit();
+                }
+              }
+            }
+
+          ?>
+
         </form>
 
-        <div class="fin-float"></div>
+        <div class="fin-float"></div><br/>
 
-        <?php
-
-          $valor;
-          $date = '';
-          $codigoUsu = 1;
-          $codigoSub = 1;
-
-          echo '<script type="text/javascript">
-
-            document.getElementsByClassName("pujar")[0].onclick = function() {
-
-              var ultimaPuja = document.getElementsByClassName("valorPuja")[0].min;
-              var valorActual = document.getElementsByClassName("valorPuja")[0].value;
-
-              console.log("Ultimo valor: " +  parseFloat(ultimaPuja).toFixed(2));
-              console.log("Valor actual: " + parseFloat(valorActual).toFixed(2));
-
-              if (parseFloat(valorActual).toFixed(2) > parseFloat(ultimaPuja).toFixed(2)) {
-                document.getElementsByClassName("valorPuja")[0].min = valorActual;
-                document.getElementsByClassName("valorPuja")[0].value = valorActual;
-                document.getElementsByClassName("prueba")[0].innerHTML = valorActual;
-              }
-            };
-
-            document.getElementsByClassName("valorPuja")[0].onchange = function() {
-              console.log(document.getElementsByClassName("valorPuja")[0].value);
-            };
-
-          </script>';
-
-          //$valor = htmlspecialchars("<p class='prueba'></p>");
-          //echo $valor;
-          
-          
-          /*echo '<script type="text/javascript">
-            document.getElementsByClassName("prueba")[0].innerHTML;
-          </script>';*/
-          
-
-          if (isset($_REQUEST['pujar'])) {
-
-            $valor = $_GET['puja'];
-
-            //date_default_timezone_set('Europe/Madrid');
-
-            $fecha = date("Y-m-d");
-              
-            echo "<br/>Id: ". $codigo;
-            echo "<br/>Valor insertado: ". $valor;
-            echo "<br/>Fecha: ". $fecha;
-            echo "<br/>Id_Usuario: ". $codigoUsuario;
-            echo "<br/>Id_Subasta: ". $codigoSubasta;
-
-            /*$nuevaPuja = $pujas->addPujas(intval($codigo), $valor, $fecha, intval($codigoUsuario), intval($codigoSubasta));*/
-          }
-
-        ?>
+        <p>
+          Vas ganando porque la última puja te pertenece.<br/>
+          Última puja: <?php echo $valorFinal; ?>
+        </p>
 
       </div>
 
@@ -240,7 +222,7 @@
 
     </section>
 
-    <section>
+    <section class="paginacion">
 
       <ul>
 
@@ -265,6 +247,18 @@
 
     </section>
 
+    <div class="fin-float"></div><hr>
+
+    <section class="grafica">
+
+      <h1>Representación gráfica</h2>
+
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+    </section>
+
   </main>
 
   <footer>
@@ -274,8 +268,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <script src="{{ asset('js/script.js') }}" defer></script>
-  <script src="{{ asset('js/nav.js') }}" defer></script>
+
+  <?php
+    echo '<script>grafica('. $codigoSubasta .')</script>';
+  ?>
 
 </body>
 
