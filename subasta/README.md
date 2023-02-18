@@ -2,49 +2,27 @@
 Subasta o también conocido como Subasta total es una aplicación web donde todas tus pujas solamente se ven influidas por fondos viruales (sin dinero físico o criptomonedas). Es totalmente virtual, no se dejen engañar y pujen ahora que la cuenta atrás acaba pronto.
 
 ## Tecnologías
-| Frontend | Backend | Others |
-|----------|---------|--------|
-<a href="https://www.w3.org/html" target="_blank" rel="noreferrer">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
-</a>
+| Frontend |
+|----------|
+| [![HTML5](img/tecnologias/HTML5.svg)](https://www.w3.org/html/)  [![CSS3](img/tecnologias/CSS3.svg)](https://www.w3schools.com/css/)  [![JavaScript](img/tecnologias/JS.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  [![SASS](img/tecnologias/SASS.svg)](https://sass-lang.com) |
+| And JS Libraries |
 
-<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
-</a>
+| Backend |
+|---------|
+| [![PHP](img/tecnologias/PHP.svg)](https://www.php.net)  [![MySQL](img/tecnologias/MySQL.svg)](https://www.mysql.com/)  [![Laravel](img/tecnologias/laravel.svg)](https://laravel.com/)  [![NodeJS](img/tecnologias/NodeJS.png)](https://nodejs.org/es/) |
 
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
-</a>
-
-<a href="https://sass-lang.com" target="_blank" rel="noreferrer">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/>
-</a>
-
-<a href="https://jquery.com" target="_blank" rel="noreferrer">
-  <img src="https://cdn.iconscout.com/icon/free/png-256/jquery-8-1175153.png" alt="jquery" width="40" height="40"/>
-</a>
-
-<a href="https://https://reactjs.org.com" target="_blank" rel="noreferrer">
-  <img src="https://alternative.me/media/256/react-native-icon-pb99lshx8fagxe0r-c.png" alt="React" width="40" height="40"/>
-</a>
-
-<a href="https://axios-http.com/es/docs/intro" target="_blank" rel="noreferrer">
-  <img src="https://user-images.githubusercontent.com/8939680/57233882-20344080-6fe5-11e9-9086-d20a955bed59.png" alt="Axios" width="40" height="40"/>
-</a> | <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a><a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://laravel.com/" target="_blank" rel="noreferrer"> <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/194_Laravel-512.png" alt="laravel" width="40" height="40"/> </a> <a href="https://solidity-es.readthedocs.io/es/latest/" target="_blank" rel="noreferrer"> <img src="https://miro.medium.com/max/1200/0*yqbRInqX0ZRUlVS0" alt="Solidity" width="40" height="40"/> </a>  <a href="https://ethereum.org/es/" target="_blank" rel="noreferrer"> <img src="https://github.com/ethereum/ethereum-org/blob/fe5ba46f061ba342ca57b9401920ef4677d9c980/public/images/logos/Ethereum-Icon-small.png" alt="Ethereum" width="40" height="40"/> </a> <a href="https://nodejs.org/es/" target="_blank" rel="noreferrer"> <img src="https://the-guild.dev/blog-assets/nodejs-esm/nodejs_logo.png" alt="Node" width="40" height="40"/> </a> </div>| <div align="center"> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white) </div>|
-
+| Others |
+|--------|
+| [![Figma](img/tecnologias/figma.svg)](https://www.figma.com/)  [![Git](img/tecnologias/git.svg)](https://git-scm.com/)  ![GitHub](img/tecnologias/GitHub.svg) |
 
 ## Modelado
 ![Modelo de base de datos](img/modelado.webp)
 
-## Desarrollo en Entorno cliente
-
-
-## Desarrollo en Entorno servidor
-
+## Ruta de páginas
+![Modelo de base de datos](img/figma.png)
 
 ## Despliegue de aplciaciones web
 Buscando un proveedor de hosting
-
 
 ## Diseño de interfaces
 | Color dominante: naranja |
@@ -84,3 +62,95 @@ Enlance de prototipo 360x640 (móvil): [Prototipo](https://www.figma.com/proto/W
 Bucar la forma más eficiente de traducir las páginas del proyecto (Mínimo: inglés o español)
 
 ## Bibilografía
+Enlaces de interés:
+-------------------
+
+- https://geekflare.com/es/online-auction-software/
+
+- https://geekflare.com/online-auction-software/
+
+- https://geekflare.com/es/online-auction-software/
+
+- https://github.com/Queky/ErMercailloH
+
+- https://github.com/cam-ila/subastayar
+
+- https://github.com/farolfo/subasta-ya
+
+- https://github.com/Khalid145/WebAuction
+
+- https://github.com/topics/auction-website
+
+- https://github.com/shrestsav/auction
+
+- https://github.com/functionfirst/realtime-auction
+
+- https://github.com/bids-standard/bids-examples
+
+- https://github.com/CodingImproveLife/laravel-auction
+
+- https://www.elmueble.com/decoracion/muebles-transformables-y-convertibles-perfectos-para-ahorrar-espacio-y-ganar-estilo-con-shopping_47675
+
+- https://www.ikea.com/es/es/ideas/7-muebles-transformables-y-multifuncion-para-espacios-pequenos-pub254a6490
+
+- https://www.businessinsider.es/6-muebles-convertibles-ikea-te-van-solucionar-vida-1004871
+
+- https://play.google.com/store/apps/details?id=com.catawiki2&hl=es&gl=US
+
+- https://play.google.com/store/apps/details?id=net.sharewire.subastadeocio&hl=es&gl=US
+
+- https://hackernoon.com/metamorphosis-morphing-svgs-378cf4f3aa58
+
+- https://www.freshconsulting.com/insights/blog/8-methods-of-ux-analysis/
+
+- https://subastonic.com/
+
+- https://andro4all.com/aplicaciones/mejores-aplicaciones-de-subastas-para-android
+
+- https://www.getapp.es/directory/185/auction/software
+
+- https://www.daniloaz.com/es/aplicacion-web-subastas-coches-online-presenciales/
+
+- https://regispro.es/jose-maria-de-pablos-la-informacion-registral-en-el-marco-de-las-subastas-electronicas/
+
+- https://vertabelo.com/blog/an-online-auction-data-model/
+
+- https://relevant.software/blog/how-to-build-bidding-website/
+
+- https://stackoverflow.com/questions/7455365/database-design-for-an-auction-style-website
+
+- https://www.getapp.es/directory/185/auction/software
+
+- https://www.frozenmountain.com/developers/blog/archive/build-an-auction-website-with-websync/
+
+- https://www.youtube.com/watch?v=bZHGni95gLY
+
+- https://vertabelo.com/blog/defining-identifying-and-non-identifying-relationships-in-vertabelo/#:~:text=Identifying%20relationships%20exist%20when%20the,the%20child%20entity's%20primary%20key.
+
+- https://codecanyon.net/item/auctglobal-live-auction-laravel-script/22316909
+
+- https://www.codester.com/items/4105/php-laravel-auction-multi-vendor-auction-script
+
+- https://www.youtube.com/watch?v=WTiBT4zb420
+
+- https://nullpress.net/free-download-larabid-a-laravel-php-auction-platform/
+
+- https://codecanyon.net/item/larabid-a-laravel-php-auction-platform/21221158
+
+- https://codecanyon.net/category/php-scripts?tags=laravel&term=bidding
+
+- https://laravel.io/forum/06-12-2015-how-to-plan-for-a-auction-site-in-laravel
+
+- https://laracasts.com/discuss/channels/laravel/how-would-you-structure-a-winning-bid
+
+- https://kornatzky.medium.com/real-time-auctions-with-laravel-638e404637a4
+
+- https://webkul.com/blog/laravel-ecommerce-multi-vendor-auction/
+
+- https://1library.co/article/problema-subastas-aplicaciones-programaci%C3%B3n-declarativa.q0p9rjlz
+
+- https://www.researchgate.net/figure/Funcionamiento-del-algoritmo-de-subasta-de-aceptacion-diferida_fig1_339032231
+
+- https://es.linkedin.com/pulse/algoritmia-vs-puja-fija-en-las-subastas-de-compra-medios-vinagre
+
+- https://www.idealista.com/
