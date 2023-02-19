@@ -8,3 +8,7 @@ function myFunction() {
     topNav.className = "topnav";
   }
 }
+
+
+// validate an emailwith regex and comment each line
+

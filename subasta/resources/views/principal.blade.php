@@ -293,6 +293,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@latest/lib/anime.min.js"></script>
   <!--<script src="js/dataApi.js" defer></script>
   <script src="js/app.js" defer></script>-->
   <script src="{{ asset('js/script.js') }}" defer></script>

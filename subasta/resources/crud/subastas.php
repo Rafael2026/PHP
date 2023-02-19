@@ -6,7 +6,7 @@
 
     <form method="GET">
 
-      <input type="number" name="codigo" value="<?php echo intval(count($sub)) + 1; ?>" disabled>
+      <input type="number" name="codigo" value="<?php echo intval(count($sub)) + 1; ?>">
       <input type="date" name="fechaIni">
       <input type="date" name="fechaFin">
       <input type="number" name="participantes" min="1">

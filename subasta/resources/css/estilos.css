@@ -178,7 +178,8 @@ nav {
   overflow: hidden;
   position: relative;
   top: 0;
-  background-color: #005DA3;
+  /*background-color: #005DA3;*/
+  background-color: rgb(0, 0, 0);
   text-align: left;
   width: 100%;
   justify-content: center;
@@ -193,7 +194,8 @@ nav a:not(:last-child), nav a:last-child {
   padding: 0;
   padding: 0;
   float: left;
-  color: #F0C481;
+  /*color: #F0C481;*/
+  color: rgb(255, 255, 255);
   font-size: 30px;
 }
 
@@ -354,6 +356,7 @@ section:first-child div {
 
 .contenido h1 {
   margin: 25px 0 15px 0;
+  text-align: left;
 }
 
 .contenido p {
@@ -854,7 +857,6 @@ footer span { color: #20be6b; }*/
   }
 
   .contenido h1 {
-    text-align: center;
     margin: 0px 0 15px 0;
   }
 
@@ -1139,7 +1141,6 @@ footer span { color: #20be6b; }*/
   }
 
   .contenido h1 {
-    text-align: center;
     margin: 0px 0 15px 0;
   }
 
@@ -1421,7 +1422,6 @@ footer span { color: #20be6b; }*/
   }
 
   .contenido h1 {
-    text-align: center;
     margin: 0px 0 15px 0;
   }
 

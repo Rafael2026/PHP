@@ -25,7 +25,8 @@ nav {
   overflow: hidden;
   position: relative;
   top: 0;
-  background-color: #005DA3;
+  /*background-color: #005DA3;*/
+  background-color: rgb(0, 0, 0);
   text-align: left;
   width: 100%;
   justify-content: center;
@@ -40,7 +41,8 @@ nav a:not(:last-child), nav a:last-child {
   padding: 0;
   padding: 0;
   float: left;
-  color: #F0C481;
+  /*color: #F0C481;*/
+  color: rgb(255, 255, 255);
   font-size: 30px;
 }
 
@@ -102,12 +104,12 @@ section:nth-child(2) h2 {
   color: rgb(255, 0, 0);
 }
 
-section:nth-child(2) ul {
+/*section:nth-child(2) ul {
   box-sizing: border-box;
   border-bottom: 1px solid #ccc;
   margin: 50px 15%;
   padding-bottom: 35px;
-  /*padding-left: 40px;*/
+  padding-left: 40px;
 }
 
 section:nth-child(2) ul li {
@@ -127,7 +129,7 @@ section:nth-child(2) ul li a:link, section:nth-child(2) ul li a:visited {
   height: 30px;
   margin-right: 8px;
   float: left;
-  padding: 2px 10px; /* Top and bottom | Right  and left*/
+  padding: 2px 10px;
   text-decoration: none;
   border-top: 2px solid rgb(255, 255, 255);
 }
@@ -161,14 +163,9 @@ section:nth-child(2) ul li .guardar img {
   height: 1.5em;
   margin: 0 0 0 0.5em;
   vertical-align: middle;
-}
+}*/
 
-section:nth-child(3) {
-  width: 100%;
-  height: auto;
-}
-
-section:nth-child(3) .productos {
+section:nth-child(2) .productos {
   box-sizing: border-box;
   margin: 20px 0 10px 10%;
   width: 30%;
@@ -177,7 +174,7 @@ section:nth-child(3) .productos {
   margin-bottom: 50px;
 }
 
-section:nth-child(3) .producto {
+section:nth-child(2) .producto {
   box-sizing: border-box;
   margin: 20px 35% 10px 35%;
   width: 30%;
@@ -186,7 +183,7 @@ section:nth-child(3) .producto {
   margin-bottom: 50px;
 }
 
-section:nth-child(3) .subasta {
+section:nth-child(2) .subasta {
   box-sizing: border-box;
   /*border-bottom: 1px solid #ccc;*/
   margin: 20px 0 10px 35%;
@@ -196,9 +193,9 @@ section:nth-child(3) .subasta {
   margin-bottom: 50px;
 }
 
-section:nth-child(3) div ul { border: 2px solid rgb(0, 0, 0); }
+section:nth-child(2) div ul { border: 2px solid rgb(0, 0, 0); }
 
-section:nth-child(3) button {
+section:nth-child(2) button {
   /*margin: 20px 0 20px 10%;
   float: left;
   text-align: center;
@@ -207,29 +204,29 @@ section:nth-child(3) button {
   float: left;
 }
 
-section:nth-child(3) div ul li {
+section:nth-child(2) div ul li {
   width: 100%;
   text-align: center;
   padding: 15px 0px;
   list-style-type: none;
 }
 
-section:nth-child(3) ul li h3 { font-size: 1.5em; }
+section:nth-child(2) ul li h3 { font-size: 1.5em; }
 
-section:nth-child(3) ul li h4 {
+section:nth-child(2) ul li h4 {
   font-size: 1.2em;
   padding: 15px 0px;
 }
 
-section:nth-child(3) .subasta form {
+section:nth-child(2) .subasta form {
   clear: both;
   margin-top: 75px;
   padding: 0 25%;
 }
 
-section:nth-child(3) .subasta form input{ float: left; }
+section:nth-child(2) .subasta form input{ float: left; }
 
-section:nth-child(3) .subasta form button { margin-top: 10px; }
+section:nth-child(2) .subasta form button { margin-top: 10px; }
 
 .paginacion {
   text-align: center;
@@ -385,8 +382,6 @@ button a, button a:hover {
 /** Tablets **/
 @media only screen and (min-width: 425px) and (max-width: 768px) {
 
-  /*section:first-child div { height: 80px; }*/
-
   main form {
     width: 50%;
     height: 350px;
@@ -414,8 +409,6 @@ button a, button a:hover {
 
 /** Laptops **/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-  /*section:first-child div { height: 80px; }*/
 
   main form {
     width: 40%;

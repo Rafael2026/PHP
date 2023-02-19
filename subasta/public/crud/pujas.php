@@ -6,7 +6,7 @@
 
     <form method="GET">
 
-      <input type="number" name="codigo" value="<?php echo intval(count($pu)) + 1; ?>" disabled>
+      <input type="number" name="codigo" value="<?php echo intval(count($pu)) + 1; ?>">
       <input type="number" name="valor">
       <input type="date" name="fecha">
       <input type="number" name="codUsu">

@@ -8,6 +8,8 @@ var fecha = document.getElementsByClassName("fecha");
 
 const ctx = document.getElementById('myChart');
 
+var myChart = null;
+
 function reloj() {
 
   let today = new Date();
@@ -76,44 +78,76 @@ document.getElementsByClassName("pujar")[0].onclick = function() {
   if (parseFloat(valorActual).toFixed(2) > parseFloat(ultimaPuja).toFixed(2)) {
     document.getElementsByClassName("valorPuja")[0].min = valorActual;
     document.getElementsByClassName("valorPuja")[0].value = valorActual;
-    // document.getElementsByClassName("prueba")[0].innerHTML = valorActual;
   }
 };
 
-/*document.getElementsByClassName("valorPuja")[0].onchange = function() {
+document.getElementById("myChart").onload = function grafica(idSubasta) {
 
-  console.log("Ultimo valor: " +  parseFloat(ultimaPuja).toFixed(2));
-  console.log("Valor actual: " + parseFloat(valorActual).toFixed(2));
-
-  if (parseFloat(valorActual).toFixed(2) > parseFloat(ultimaPuja).toFixed(2)) {
-    document.getElementsByClassName("valorPuja")[0].min = valorActual;
-    document.getElementsByClassName("valorPuja")[0].value = valorActual;
-    // document.getElementsByClassName("prueba")[0].innerHTML = valorActual;
+  if (myChart != null) {
+    myChart.destroy();
   }
-};*/
 
-new Chart(ctx, {
+  const ctx = document.getElementById("myChart").getContext("2d");
 
-  type: 'bar',
+  const myChart = new Chart(ctx, {
 
-  data: {
+    type: "line",
 
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    data: {
 
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
+      labels: [],
 
-  options: {
+      datasets: [{
+        label: "Pujas",
+        data: [],
+        backgroundColor: "rgb(125, 125, 125)",
+        borderColor: "rgb(125, 125, 125)",
+        tension: 0.1,
+        borderWidth: 1,
+        fill: false,
+      }]
+    },
 
-    scales: {
+    options: {
 
-      y: {
-        beginAtZero: true
-      }
+      responsive: true,
+      animation: false,
+
+      scales: {
+        y: { beginAtZero: true, min: 0, max: 25 }
+      },
     }
-  }
-});
+  });
+
+  /*fetch("fecha.php", {
+    method: "GET",
+    headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", },
+    body: `nomTab=${tabla}`,
+  }).then(function (response) {
+    return response.text();
+  }).then(function (data) {
+    console.log(JSON.parse(data));
+    myChart.data.labels = JSON.parse(data);
+    myChart.update();
+    myChart.stop();
+  });
+
+  fetch("casos.php", {
+
+    method: "GET",
+    headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", },
+    body: `numPag=${idSubasta}`,
+  }).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    console.log(data);
+    var casos = data;
+
+    for (let c = 0; c < casos.length; c++) { myChart.data.datasets[0].data[c] = casos[c]; }
+
+    myChart.data.datasets[0].label = "Evolución de las pujas";
+    myChart.data.datasets[0].backgroundColor = "rgb(255, 0, 0)";
+    myChart.data.datasets[0].borderColor = "rgb(255, 0, 0)";
+    myChart.update();
+  });*/
+};

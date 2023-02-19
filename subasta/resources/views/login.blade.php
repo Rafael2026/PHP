@@ -13,7 +13,7 @@
   <title>Iniciar sesión</title>
   <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 </head>
 
