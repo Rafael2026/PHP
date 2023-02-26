@@ -7,17 +7,20 @@ body {
 }
 
 header {
+  width: 100%;
+  height: 600px;
   font-size: 30px;
   font-weight: bold;
   font-style: italic;
   text-decoration: 5px underline dotted rgb(255, 0, 0);
   text-align: center;
   color: rgb(0, 0, 255);
+  background-color: #fff;
 }
 
 header img {
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
 
 /*** Nav styles ***/
@@ -62,7 +65,7 @@ nav input[type=text] {
 
 nav button {
   padding: 6px 10px;
-  margin: 8px 50px 0px 0px;
+  margin: 8px 50px 0 0;
   font-size: 17px;
   border: none;
   cursor: pointer;
@@ -76,14 +79,14 @@ main {
   text-align: center;
   width: 100%;
   height: 100%;
-  /*height: 1500px;*/
 }
 
 .fin-float { clear: both; }
 
 section:first-child {
   width: 100%;
-  margin-bottom: 50px;
+  /*margin-bottom: 40px;*/
+  text-align: center;
 }
 
 section:first-child div {
@@ -91,7 +94,6 @@ section:first-child div {
   background-color: #f9f9f9;
   color: #912600;
   border-bottom: 1px solid #ddd;
-  height: 50px;
 }
 
 section:nth-child(2) {
@@ -102,6 +104,19 @@ section:nth-child(2) {
 section:nth-child(2) h2 {
   font-size: 40px;
   color: rgb(255, 0, 0);
+}
+
+section:nth-child(2).bloquePujas {
+  width: 100%;
+  height: auto;
+}
+
+.bloquePujas { padding: 30px 0; }
+
+.bloquePujas .pujas {
+  width: 20%;
+  margin: 30px 0 30px 20%;
+  float: left;
 }
 
 /*section:nth-child(2) ul {
@@ -119,7 +134,7 @@ section:nth-child(2) ul li {
   padding: 0;
 }
 
-section:nth-child(2) ul li h3, section:nth-child(2) ul li p { padding-left: 0px; }
+section:nth-child(2) ul li h3, section:nth-child(2) ul li p { padding-left: 0; }
 
 section:nth-child(2) ul li a:link, section:nth-child(2) ul li a:visited {
   color: #666;
@@ -196,18 +211,39 @@ section:nth-child(2) .subasta {
 section:nth-child(2) div ul { border: 2px solid rgb(0, 0, 0); }
 
 section:nth-child(2) button {
-  /*margin: 20px 0 20px 10%;
   float: left;
+  /*margin: 25px 10px;
+  vertical-align: middle;*/
   text-align: center;
-  margin-bottom: 75px;*/
-  position: relative;
-  float: left;
+  /*width: 90px;*/
+  /*margin: 25px 0 25px 10%;*/
+  /*height: 100px;*/
+  border: 0;
+  background-image: linear-gradient(150deg, #9500ff, #09f, #00DDFF);
+  border-radius: 8px;
+  color: #fff;
+  /*display: flex;*/
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+section:nth-child(2) button span {
+  background-color: #111;
+  padding: 16px 24px;
+  border-radius:6px;
+  transition: 0.3s;
+}
+
+section:nth-child(2) button:hover span { background: none; }
+
+section:nth-child(2) button:active span { transform: scale(0.9); }
 
 section:nth-child(2) div ul li {
   width: 100%;
   text-align: center;
-  padding: 15px 0px;
+  padding: 15px 0;
   list-style-type: none;
 }
 
@@ -215,7 +251,7 @@ section:nth-child(2) ul li h3 { font-size: 1.5em; }
 
 section:nth-child(2) ul li h4 {
   font-size: 1.2em;
-  padding: 15px 0px;
+  padding: 15px 0;
 }
 
 section:nth-child(2) .subasta form {
@@ -224,9 +260,11 @@ section:nth-child(2) .subasta form {
   padding: 0 25%;
 }
 
-section:nth-child(2) .subasta form input{ float: left; }
+section:nth-child(2) .subasta form input { float: left; }
 
 section:nth-child(2) .subasta form button { margin-top: 10px; }
+
+input.codSub, input.codUsu { display: none; }
 
 .paginacion {
   text-align: center;
@@ -269,7 +307,7 @@ footer {
   font-size: 1.5em;
   text-align: center;
   color: rgb(255, 255, 255);
-  border-top: 1px solid #ddd; /* Width | Style | Color */
+  border-top: 1px solid #ddd;
   margin-top: 10px;
 }
 
@@ -286,13 +324,11 @@ footer h2, footer p {
 
 button a, button a:hover {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 /** Small mobile **/
 @media only screen and (max-width: 320px) {
-
-  section:first-child div { height: 100px; }
 
   main form {
     width: 70%;
@@ -301,28 +337,13 @@ button a, button a:hover {
     margin: 30px 15%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 25px 0 0 25px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 25px 0 0 25px; }
 
-  /*nav button {
-    padding: 6px 10px;
-    margin: 25px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }*/
+  nav button { margin: 25px 50px 0 0; }
 }
 
 /** Medium mobile **/
 @media only screen and (min-width: 320px) and (max-width: 375px) {
-
-  section:first-child div { height: 100px; }
 
   main form {
     width: 70%;
@@ -331,28 +352,13 @@ button a, button a:hover {
     margin: 30px 15%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 25px 0 0 25px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 25px 0 0 25px; }
 
-  /*nav button {
-    padding: 6px 10px;
-    margin: 25px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }*/
+  nav button { margin: 25px 50px 0 0; }
 }
 
 /** Big mobile **/
 @media only screen and (min-width: 375px) and (max-width: 425px) {
-
-  section:first-child div { height: 80px; }
 
   main form {
     width: 60%;
@@ -361,22 +367,9 @@ button a, button a:hover {
     margin: 30px 25%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 35px 0 0 50px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 35px 0 0 50px; }
 
-  /*nav button {
-    padding: 6px 10px;
-    margin: 35px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }*/
+  nav button { margin: 35px 50px 0 0; }
 }
 
 /** Tablets **/
@@ -389,22 +382,9 @@ button a, button a:hover {
     margin: 30px 25%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 35px 0 0 50px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 35px 0 0 50px; }
 
-  /*nav button {
-    padding: 6px 10px;
-    margin: 35px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }*/
+  nav button { margin: 35px 50px 0 0; }
 }
 
 /** Laptops **/
@@ -416,22 +396,9 @@ button a, button a:hover {
     margin: 30px 30%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 35px 0 0 250px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 35px 0 0 250px; }
 
-  /*nav button {
-    padding: 6px 10px;
-    margin: 35px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }*/
+  nav button { margin: 35px 50px 0 0; }
 }
 
 /** Media query for small devices **/

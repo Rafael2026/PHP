@@ -3,6 +3,7 @@
   use App\Models\Producto;
   use App\Models\Subasta;
   use App\Models\Puja;
+  use App\Models\Usuario;
 
   $productos = new Producto();
   $products = $productos->getProductos();
@@ -13,8 +14,11 @@
   $pujas = new Puja();
   $pu = $pujas->getPujas();
 
-  $codigoSubasta = $_GET["indice"];
-  $codigoUsuario = $_GET["codUsu"];
+  $usuario = new Usuario();
+  $users = $usuario->getUsuarios();
+
+  $codigoSubasta = $_GET["idSub"];
+  $codigoUsuario = $_GET["idUsu"];
 
   $lastId = $pujas->getLastId();
   $codigo = intval($lastId[0]['codPuja']) + 1;
@@ -34,11 +38,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal de Subastas</title>
-  <link href="{{ asset('img/logo.png') }}" type="image/x-icon" rel="icon">
+  <title>Sala Nº <?php echo intval($codigoSubasta);; ?></title>
+  <link href="{{ asset('img/logo.png')}}" type="image/x-icon" rel="icon">
+  <link href="{{ asset('icons/icomoon.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -49,14 +53,15 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="{{ asset('/') }}" class="active">Inicio</a>
-    <a href="{{ asset('/portal') }}">Portal</a>
-    <a href="{{ asset('/subasta') }}">Subastas</a>
+    <a href="/" class="active">Inicio</a>
+    <a href="<?php echo '/portal?idUsu='. $codigoUsuario ?>">Portal</a>
+    <a href="<?php echo '/subasta?idSub='. $codigoSubasta .'&idUsu='. $codigoUsuario; ?>">Subastas</a>
+    <a href="<?php echo '/pujas?idUsu='. $codigoUsuario ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="disabled">Registrarse</a>
 
-    <a href="{{ asset('/') }}">
+    <a href="/">
       <button name="out" id="out">Log out</button>
     </a>
 
@@ -83,7 +88,7 @@
 
     <section>
 
-      <h2>Pujar - Producto Nº <?php echo intval($codigoSubasta) ?></h2>
+      <h2>Pujar - Producto Nº <?php echo intval($codigoSubasta); ?></h2>
 
       <!--<ul>
 
@@ -156,14 +161,14 @@
         </ul>
 
         <button>
-          <a href="{{ asset('/portal?codUsu='. $codigoUsuario) }}" class="atras">Volver atrás</a>
+          <a href="{{ asset('/portal?idUsu='. $codigoUsuario) }}" class="atras">Volver atrás</a>
         </button>
 
         <form method="GET" class="pujaForm">
 
-          <input type="number" min="<?php echo $codigoSubasta ?>" max="<?php echo $codigoSubasta ?>" value="<?php echo $codigoSubasta ?>" class="indice" name="indice" style="display: none">
+          <input type="number" min="<?php echo $codigoSubasta ?>" max="<?php echo $codigoSubasta ?>" value="<?php echo $codigoSubasta ?>" class="codSub" name="codSub">
 
-          <input type="number" min="<?php echo $codigoUsuario ?>" max="<?php echo $codigoUsuario ?>" value="<?php echo $codigoUsuario ?>" class="codUsu" name="codUsu" style="display: none">
+          <input type="number" min="<?php echo $codigoUsuario ?>" max="<?php echo $codigoUsuario ?>" value="<?php echo $codigoUsuario ?>" class="codUsu" name="codUsu">
 
           <input type="number" min="<?php echo $puWin[0]['valor']; ?>" value="<?php echo $puWin[0]['valor']; ?>" class="valorPuja" name="puja">
 
@@ -174,7 +179,6 @@
             if (isset($_GET['pujar'])) {
 
               $valor = $_GET['puja'];
-
               //date_default_timezone_set('Europe/Madrid');
 
               $fecha = date("Y-m-d");
@@ -192,11 +196,11 @@
                 </script>';
               } else {
 
-                if ($valor > $valorFinal) {
+                if (number_format(floatval($valor), 2, '.', '') > $valorFinal) {
 
                   $pujas->addPujas($codigo, $valor, $fecha, $codigoUsuario, $codigoSubasta);
 
-                  header("Location: /subasta?indice=$codigoSubasta&codUsu=$codigoUsuario&puja=$valor");
+                  header("Location: /subasta?idSub=$codigoSubasta&idUsu=$codigoUsuario&puja=$valor");
                   exit();
                 }
               }
@@ -209,9 +213,10 @@
         <div class="fin-float"></div><br/>
 
         <p>
-          Vas ganando porque la última puja te pertenece.<br/>
-          Última puja: <?php echo $valorFinal; ?>
+          Puja más alta: <?php echo $valorFinal; ?><br/>
         </p>
+
+        <!--<p class="ganador"></p>-->
 
       </div>
 
@@ -222,6 +227,7 @@
 
     </section>
 
+    <!--
     <section class="paginacion">
 
       <ul>
@@ -245,19 +251,20 @@
 
       </ul>
 
-    </section>
+    </section>-->
 
     <div class="fin-float"></div><hr>
 
-    <section class="grafica">
+    <!--<section class="grafica">
 
       <h1>Representación gráfica</h2>
 
       <div>
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart" width="600" height="400"></canvas>
       </div>
 
     </section>
+    -->
 
   </main>
 
@@ -266,15 +273,25 @@
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/animejs@latest/lib/anime.min.js" defer></script>
+  <script src="{{ asset('js/app.min.js') }}" defer></script>
   <script src="{{ asset('js/script.js') }}" defer></script>
 
   <?php
-    echo '<script>grafica('. $codigoSubasta .')</script>';
+
+    for ($p = 0; $p < count($pu); $p++) {
+
+      if (intval($pu[$p]["codSubasta"]) == intval($codigoSubasta)) {
+
+        $fechas[$p] = $pu[$p]["fecha"];
+        $valores[$p] = $pu[$p]["valor"];
+      }
+    }
+
+
+    echo '<script type="text/javascript" src="">grafica('. $codigoSubasta .','. json_encode($fechas) .','. json_encode($valores) .'</script>';
+
   ?>
+
 
 </body>
 

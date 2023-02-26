@@ -7,17 +7,20 @@
 }*/
 
 header {
+  width: 100%;
+  height: 600px;
   font-size: 30px;
   font-weight: bold;
   font-style: italic;
   text-decoration: 5px underline dotted rgb(255, 0, 0);
   text-align: center;
   color: rgb(0, 0, 255);
+  background-color: #fff;
 }
 
 header img {
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
 
 nav {
@@ -64,23 +67,7 @@ nav button {
   float: left;
 }
 
-nav  button:hover { background: #ccc; }
-
-/* main { text-align: center; } */
-
-section:first-child {
-  width: 100%;
-  margin-bottom: 50px;
-}
-
-section:first-child div {
-  padding: 15px 0;
-  background-color: #f9f9f9;
-  color: #912600;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-  /*height: 50px;*/
-}
+nav button:hover { background: #ccc; }
 
 .productos, .subastas, .pujas, .usuarios {
   width: 100%;
@@ -109,11 +96,9 @@ section:first-child div {
 
 .productos button, .subastas button, .pujas button, .usuarios button { margin-left: 15px; }*/
 
-main .formulario { border-top: 0.5px solid rgb(0, 0, 0); }
-
 form {
-  width: 25%;
-  height: 400px;
+  width: 30%;
+  height: 250px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
   margin: 30px 7.5%;
@@ -143,7 +128,27 @@ form button {
   width: 90px;
   margin: 25px 0 25px 10%;
   /*height: 100px;*/
+  border: 0;
+  background-image: linear-gradient(150deg, #9500ff, #09f, #00DDFF);
+  border-radius: 8px;
+  color: #fff;
+  /*display: flex;*/
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+form button span {
+  background-color: #111;
+  padding: 16px 24px;
+  border-radius:6px;
+  transition: 0.3s;
+}
+
+form button:hover span { background: none; }
+
+form button:active span { transform: scale(0.9); }
 
 /*form button:first-child {
   margin: 25px 0 25px 12%;
@@ -152,8 +157,6 @@ form button {
 form button:not(:first-child) {
   margin: 25px 0 25px 8%;
 }*/
-
-main .tabla { border-top: 0.5px solid rgb(0, 0, 0); }
 
 table {
   /*width: 25%;*/
@@ -244,26 +247,13 @@ footer h2, footer p {
     margin: 30px 15%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 25px 0 0 25px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 25px 0 0 25px; }
 
-  nav button {
-    padding: 6px 10px;
-    margin: 25px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }
+  nav button { margin: 25px 50px 0px 0px; }
 }
 
 /** Medium mobile **/
-@media only screen and (min-width: 320px) and (max-width: 375px) {
+@media only screen and (min-width: 321px) and (max-width: 375px) {
 
   main form {
     width: 70%;
@@ -272,26 +262,13 @@ footer h2, footer p {
     margin: 30px 15%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 25px 0 0 25px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 25px 0 0 25px; }
 
-  nav button {
-    padding: 6px 10px;
-    margin: 25px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }
+  nav button { margin: 25px 50px 0px 0px; }
 }
 
 /** Big mobile **/
-@media only screen and (min-width: 375px) and (max-width: 425px) {
+@media only screen and (min-width: 376px) and (max-width: 425px) {
 
   main form {
     width: 60%;
@@ -300,26 +277,11 @@ footer h2, footer p {
     margin: 30px 25%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 35px 0 0 50px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
-
-  nav button {
-    padding: 6px 10px;
-    margin: 35px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }
+  nav button { margin: 35px 50px 0px 0px; }
 }
 
 /** Tablets **/
-@media only screen and (min-width: 425px) and (max-width: 768px) {
+@media only screen and (min-width: 426px) and (max-width: 768px) {
 
   main form {
     width: 50%;
@@ -328,26 +290,11 @@ footer h2, footer p {
     margin: 30px 25%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 35px 0 0 50px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
-
-  nav button {
-    padding: 6px 10px;
-    margin: 35px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }
+  nav button { margin: 35px 50px 0px 0px; }
 }
 
 /** Laptops **/
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
 
   main form {
     width: 40%;
@@ -355,22 +302,9 @@ footer h2, footer p {
     margin: 30px 30%;
   }
 
-  nav input[type=text] {
-    padding: 6px;
-    margin: 35px 0 0 250px;
-    font-size: 17px;
-    border: none;
-    float: left;
-  }
+  nav input[type=text] { margin: 35px 0 0 250px; }
 
-  nav button {
-    padding: 6px 10px;
-    margin: 35px 50px 0px 0px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    float: left;
-  }
+  nav button { margin: 35px 50px 0px 0px; }
 }
 
 /** Media query for small devices **/
