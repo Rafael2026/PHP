@@ -18,10 +18,5 @@ mix.scripts([
   'node_modules/@popperjs/core/dist/umd/popper.min.js',
   'node_modules/bootstrap/dist/js/bootstrap.min.js',
   'node_modules/animejs/lib/anime.min.js',
-  'node_modules/chart.js/dist/chart.js'
+  'node_modules/chart.js/dist/chart.umd.js'
 ],'public/js/app.js');
-
-mix.minify([
-  'public/css/app.css',
-  'public/js/app.js'
-]);
