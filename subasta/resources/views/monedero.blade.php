@@ -102,8 +102,8 @@
     <img src="{{ asset('img/carteraVacia.jfif') }}" alt="Cartera Vacía">
   </div>
 
-  <script src="{{ asset('js/app.min.js') }}" defer></script>
-  <script src="{{ asset('js/monedero.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="{{ asset('js/script.js') }}" defer></script>
 
 </body>
 

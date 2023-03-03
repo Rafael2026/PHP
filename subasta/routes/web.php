@@ -38,13 +38,13 @@
     return view('principal');
   });
 
-  Route::get('/login', function() {
+  /*Route::get('/login', function() {
     return view('login');
   });
 
   Route::get('/registro', function() {
     return view('registro');
-  });
+  });*/
 
   Route::get('/portal', function() {
     return view('portal');

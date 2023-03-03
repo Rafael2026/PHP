@@ -72,16 +72,16 @@
       <!--<ul>
 
         <li>
-          <a href="{{ asset('/subasta') }}">Busqueda</a>
+          <a href="/subasta">Busqueda</a>
         </li>
 
         <li>
-          <a href="{{ asset('/resultados') }}">Resultados</a>
+          <a href="/resultados">Resultados</a>
         </li>
 
         <li>
 
-          <a href="{{ asset('/guardar') }}" class="guardar">
+          <a href="/guardar" class="guardar">
             Guardar
             <span>Busqueda</span>
             <img src="{{ asset('img/logoAcceso.png') }}" srcset="{{ asset('img/logoAcceso.svg') }}" alt="Sesion activa" />
@@ -154,7 +154,7 @@
         </ul>
 
         <button class="atras">
-          <a href="{{ asset('/portal') }}">Volver atrás</a>
+          <a href="/portal">Volver atrás</a>
         </button>
 
       </div>
@@ -176,12 +176,12 @@
         </li>
 
         <li>
-          <a href="{{ asset('/portal') }}">2</a>
+          <a href="/portal">2</a>
         </li>
 
         <li>
 
-          <a href="{{ asset('/user') }}">
+          <a href="/user">
             <abbr title="Página">Pág.</abbr> siguiente
           </a>
 
@@ -198,9 +198,8 @@
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <script src="{{ asset('js/app.min.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/reloj.js') }}" defer></script>
-  <script src="{{ asset('js/login.js') }}" defer></script>
   <script src="{{ asset('js/script.js') }}" defer></script>
 
 </body>

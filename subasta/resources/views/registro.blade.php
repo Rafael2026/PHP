@@ -262,10 +262,9 @@
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <script src="{{ asset('js/app.min.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/reloj.js') }}" defer></script>
-  <script src="{{ asset('js/nav.js') }}" defer></script>
-  <script srtc="{{ asset('js/form.js') }}"></script>
+  <script srtc="{{ asset('js/script.js') }}"></script>
 
 </body>
 

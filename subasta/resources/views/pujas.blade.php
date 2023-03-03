@@ -18,7 +18,6 @@
   $users = $usuario->getUsuarios();
 
   $codigoUsuario = $_GET["idUsu"];
-  //$codigoUsuario = $_GET["codUsu"];
 
   // $lastId = $pujas->getLastId();
   //$codigo = intval($lastId[0]['codPuja']) + 1;
@@ -109,7 +108,13 @@
 
               //echo "<ul><li>Subasta Nº ". $ganadores[0]['codSubasta'] ."</li>";
               //echo "<li>". $users[$codigoGanador - 1]['nomUsu'] ." ". $users[$codigoGanador - 1]['apeUsu'] ."</li>";
-              echo "<li>Puja ganadora: ". $ganadores[0]['valor'] ."</li></ul></div>";
+              echo "<li>Puja ganadora: ". $ganadores[0]['valor'] ."</li></ul>";
+
+              //echo "Código de la subasta: ". $pu[$p]['codSubasta'];
+
+              echo "<button>
+                <a href='/subasta?idUsu=". $codigoUsuario ."&idSub=". $pu[$p]['codSubasta'] ."'>Volver a subasta</a>
+              </button></div>";
 
             } else {
 
@@ -118,22 +123,26 @@
                 $bestPuja = $pujas->getBestPuja(intval($pu[$p]['codSubasta']), $codigoUsuario);
 
                 echo "<div class='pujas'><ul><li>Subasta Nº ". $pu[$p]['codSubasta'] ."</li>";
-                  echo "<li>Tu mejor puja: ". $bestPuja[0]['valor'] ."</li>";
+                echo "<li>Tu mejor puja: ". $bestPuja[0]['valor'] ."</li>";
 
                 $ganadores = $pujas->getPujaWin(intval($pu[$p]['codSubasta']));
                 $codigoGanador = intval($ganadores[0]['codUsu']);
 
                 //echo "<ul><li>Subasta Nº ". $ganadores[0]['codSubasta'] ."</li>";
                 //echo "<li>". $users[$codigoGanador - 1]['nomUsu'] ." ". $users[$codigoGanador - 1]['apeUsu'] ."</li>";
-                echo "<li>Puja ganadora: ". $ganadores[0]['valor'] ."</li></ul></div>";
+                echo "<li>Puja ganadora: ". $ganadores[0]['valor'] ."</li></ul>";
+
+                //echo "Código de la subasta: ". $pu[$p]['codSubasta'];
+
+                echo "<button>
+                  <a href='/subasta?idUsu=". $codigoUsuario ."&idSub=". $pu[$p]['codSubasta'] ."'>Volver a subasta</a>
+                </button></div>";
               }
             }
 
             //$idSub = intval($pu[$p]['codSubasta']);
 
-            /*if (intval($pu[$p]['codSubasta']) != intval($pu[($p + 1)]['codSubasta'])) {
-              echo "<hr/>";
-            }*/
+            /* if (intval($pu[$p]['codSubasta']) != intval($pu[($p + 1)]['codSubasta'])) { echo "<hr/>"; } */
           }
         }
 
@@ -209,7 +218,7 @@
   <p id="tictac">Tiempo: </p>
   -->
 
-  <script src="{{ asset('js/app.min.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/pujar.js') }}" defer></script>
   <script src="{{ asset('js/script.js') }}" defer></script>
 

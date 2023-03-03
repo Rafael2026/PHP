@@ -6,11 +6,35 @@ var cards = document.querySelectorAll(".cardFeatures");
 var time = document.getElementsByClassName("tiempo");
 var fecha = document.getElementsByClassName("fecha");
 
-const ctx = document.getElementById('myChart');
-
 const nav = document.getElementsByClassName("nav");
 
 const pujar = document.getElementsByClassName("pujar");
+
+var final = false;
+
+
+/*function showTime() {
+
+  let [hora1, minuto1, segundo1] = time[0].innerHTML.split(":");
+  let [hora2, minuto2, segundo2] = time[1].innerHTML.split(":");
+
+  if (parseInt(hora1) < parseInt(hora2)) {
+    hora1++;
+  } else if (parseInt(minuto1) < parseInt(minuto2)) {
+    minuto1++;
+  } else if (parseInt(segundo1) < parseInt(segundo2)) {
+    segundo1++;
+  } else {
+    final = true;
+  }
+
+  if (!final) {
+    arrayTime[0].innerHTML = String(hora1).padStart(2, "0") + ":" + String(minuto1).padStart(2, "0") + ":" + String(segundo1).padStart(2, "0");
+    setTimeout(showTime, 1000);
+  }
+}
+
+showTime();*/
 
 function reloj() {
 
@@ -28,6 +52,10 @@ function reloj() {
   setTimeout(reloj, 1000);
 }
 
+window.onload = function() {
+  reloj();
+};
+
 nav[0].onclick = function foldNav() {
 
   var topNav = document.getElementById("myTopnav");
@@ -39,47 +67,54 @@ nav[0].onclick = function foldNav() {
   }
 };
 
-window.onload = function() {
-  reloj();
-};
+var ctx = document.getElementById("myChart").getContext("2d");
+//const ctx = document.getElementById("myChart");
 
-function grafica(idSubasta, fechas, valores) {
+var representacion = new Chart(ctx, {
 
-  new Chart(ctx, {
+  type: "line",
 
-    type: "line",
+  data: {
 
-    data: {
+    labels: [0, 1, 2, 3, 4, 5],
 
-      labels: fechas,
+    datasets: [{
+      label: "Evolución de las pujas",
+      data: [0, 1, 2, 3, 4, 5],
+      backgroundColor: "rgb(255, 0, 0)",
+      borderColor: "rgb(255, 0, 0)",
+      tension: 0.1,
+      borderWidth: 1,
+      fill: false,
+    }]
+  },
 
-      datasets: [{
-        label: "Evolución de las pujas",
-        data: valores,
-        backgroundColor: "rgb(255, 0, 0)",
-        borderColor: "rgb(255, 0, 0)",
-        tension: 0.1,
-        borderWidth: 1,
-        fill: false,
-      }]
+  options: {
+
+    responsive: true,
+    animation: false,
+
+    scales: {
+      y: { beginAtZero: true, min: 0, max: 5 }
     },
+  }
+});
 
-    options: {
 
-      responsive: true,
-      animation: false,
 
-      scales: {
-        y: { beginAtZero: true, min: 0, max: 25 }
-      },
-    }
-  });
+function grafica(codSub, arrayFechas, arrayPujas) {
 
-  ctx.update();
-  ctx.stop();
+  console.log(codSub);
+  console.log(arrayFechas);
+  console.log(arrayPujas);
+
+
+  /*representacion.data.labels = JSON.parse(arrayPujas);
+  representacion.data.datasets[0].data = JSON.parse(arrayPujas);
+  representacion.update();*/
 }
 
-for (let i = 0; i < links.lenght; i++) {
+for (let i = 0; i < links.length; i++) {
 
   links[i].disabled = true;
 
@@ -131,9 +166,9 @@ if (pujar.length > 0) {
   "goodbye": "adiós",
   "house": "casa",
   "car": "coche"
-};*/
+};
 
-/*function traducir(palabra) {
+function traducir(palabra) {
   return diccionario[palabra];
 }
 
@@ -168,4 +203,42 @@ function traducirInversa(palabra) {
   } else {
     return diccionario[palabra];
   }
-}*/
+}
+
+function preventBack() {
+  window.history.forward();
+}
+
+setTimeout("preventBack()", 0);
+
+window.onunload = function() {
+  window.location.href = "http://localhost:8082/subasta/portal.php";
+  null
+};
+
+window.onbeforeunload = function() { return "You will  leave this page"; };
+
+window.history.back() = function() {
+  window.location.href = "http://localhost:8082/subasta/portal.php";
+};
+
+window.history.go(-1);*/
+
+document.getElementsByTagName("img")[0].draggable = true;
+
+document.getElementsByTagName("img")[0].ondragend = function loadImage() {
+  document.getElementsByTagName("img")[1].style.opacity = "0.3";
+  document.getElementById("load").style.display = "block";
+};
+
+function gastar() {
+  document.getElementsByTagName("img")[1].src = "../img/carteraVacia.jfif";
+  document.getElementsByTagName("img")[1].style.opacity = "1";
+  document.getElementById("load").style.display = "none";
+}
+
+document.getElementsByTagName("img")[0].ondrop = function llenar() {
+  document.getElementsByTagName("img")[1].src = "../img/carteraLlena.jpg";
+  document.getElementsByTagName("img")[1].style.opacity = "1";
+  document.getElementById("load").style.display = "none";
+};

@@ -93,16 +93,16 @@
       <!--<ul>
 
         <li>
-          <a href="{{ asset('/subasta') }}">Busqueda</a>
+          <a href="/subasta">Busqueda</a>
         </li>
 
         <li>
-          <a href="{{ asset('/resultados') }}">Resultados</a>
+          <a href="/resultados">Resultados</a>
         </li>
 
         <li>
 
-          <a href="{{ asset('/guardar') }}" class="guardar">
+          <a href="/guardar" class="guardar">
             Guardar
             <span>Busqueda</span>
             <img src="{{ asset('img/logoAcceso.png') }}" srcset="{{ asset('img/logoAcceso.svg') }}" alt="Sesion activa" />
@@ -161,8 +161,10 @@
         </ul>
 
         <button>
-          <a href="{{ asset('/portal?idUsu='. $codigoUsuario) }}" class="atras">Volver atrás</a>
+          <a href="/portal?idUsu=<?php echo $codigoUsuario ?>&pagina=1" class="atras">Volver atrás</a>
         </button>
+
+      </div>
 
         <form method="GET" class="pujaForm">
 
@@ -210,11 +212,9 @@
 
         </form>
 
-        <div class="fin-float"></div><br/>
+        <br/>
 
-        <p>
-          Puja más alta: <?php echo $valorFinal; ?><br/>
-        </p>
+        <p>Puja más alta: <?php echo $valorFinal; ?></p><br/><br/><br/>
 
         <!--<p class="ganador"></p>-->
 
@@ -238,12 +238,12 @@
         </li>
 
         <li>
-          <a href="{{ asset('/user') }}">2</a>
+          <a href="/user">2</a>
         </li>
 
         <li>
 
-          <a href="{{ asset('/user') }}">
+          <a href="/user">
             <abbr title="Página">Pág.</abbr> siguiente
           </a>
 
@@ -253,18 +253,17 @@
 
     </section>-->
 
-    <div class="fin-float"></div><hr>
+    <div class="fin-float"></div><hr/>
 
-    <!--<section class="grafica">
+    <section class="grafica">
 
       <h1>Representación gráfica</h2>
 
       <div>
-        <canvas id="myChart" width="600" height="400"></canvas>
+        <canvas id="myChart" width="600" height="600"></canvas>
       </div>
 
     </section>
-    -->
 
   </main>
 
@@ -273,7 +272,7 @@
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <script src="{{ asset('js/app.min.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/script.js') }}" defer></script>
 
   <?php
@@ -287,11 +286,9 @@
       }
     }
 
-
-    echo '<script type="text/javascript" src="">grafica('. $codigoSubasta .','. json_encode($fechas) .','. json_encode($valores) .'</script>';
+    echo '<noscript type="text/javascript" src="">grafica('. $codigoSubasta .', '. json_encode($fechas) .', '. json_encode($valores) .'</noscript>';
 
   ?>
-
 
 </body>
 
