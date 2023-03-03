@@ -1,3 +1,7 @@
+<?php
+  date_default_timezone_set('Europe/Madrid');
+?>
+
 <section class="productos">
 
   <h1>Tabla Productos</h1>
@@ -54,16 +58,6 @@
             <td><?php echo $products[$p]['anchura']; ?></td>
             <td><?php echo $products[$p]['altura']; ?></td>
             <td><?php echo $products[$p]['codSubasta']; ?></td>
-
-            <!--
-              <td>
-                <button name="editProd">Editar producto</button>
-              </td>
-
-              <td>
-                <button name="delProd">Borrar producto</button>
-              </td>
-              -->
 
           </tr>
 

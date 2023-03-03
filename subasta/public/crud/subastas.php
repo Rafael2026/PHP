@@ -1,3 +1,7 @@
+<?php
+  date_default_timezone_set('Europe/Madrid');
+?>
+
 <section class="subastas">
 
   <h1>Tabla Subastas</h1>

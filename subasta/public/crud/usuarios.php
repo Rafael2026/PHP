@@ -1,3 +1,7 @@
+<?php
+  date_default_timezone_set('Europe/Madrid');
+?>
+
 <section class="usuarios">
 
   <h1>Tabla Usuarios</h1>
@@ -11,7 +15,7 @@
       <input type="text" name="apellidos">
       <input type="email" name="usuario">
       <input type="password" name="secreto">
-      <input type="date" name="fecha" value="<?php echo date("Y-m-d"); ?>">
+      <input type="date" name="fecha" value="<?php echo date("Y-m-d h:i:s"); ?>">
 
       <div class="fin-float"></div>
 

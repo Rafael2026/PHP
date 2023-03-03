@@ -1,3 +1,7 @@
+<?php
+  date_default_timezone_set('Europe/Madrid');
+?>
+
 <section class="pujas">
 
   <h1>Tabla Pujas</h1>
