@@ -10,12 +10,12 @@
 
     <form method="GET">
 
-      <input type="number" name="codigo" value="<?php echo intval(count($products)) + 1; ?>">
-      <input type="text" name="nombre">
-      <input type="text" name="material">
-      <input type="number" name="anchura" min="0">
-      <input type="number" name="altura" min="0">
-      <input type="number" name="codSub" value="<?php echo intval(count($products)) + 1; ?>">
+      <input type="number" name="codigo" value="<?php echo intval(count($products)) + 1; ?>" required>
+      <input type="text" name="nombre" required>
+      <input type="text" name="material" required>
+      <input type="number" name="anchura" min="0" required>
+      <input type="number" name="altura" min="0" required>
+      <input type="number" name="codSub" value="<?php echo intval(count($products)) + 1; ?>" required>
 
       <div class="fin-float"></div>
 

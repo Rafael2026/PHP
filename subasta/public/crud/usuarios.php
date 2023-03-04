@@ -10,12 +10,12 @@
 
     <form method="GET" class="usuario">
 
-      <input type="number" name="codigo" value="<?php echo intval(count($users)) + 1; ?>">
-      <input type="text" name="nombre">
-      <input type="text" name="apellidos">
-      <input type="email" name="usuario">
-      <input type="password" name="secreto">
-      <input type="date" name="fecha" value="<?php echo date("Y-m-d h:i:s"); ?>">
+      <input type="number" name="codigo" value="<?php echo intval(count($users)) + 1; ?>" required>
+      <input type="text" name="nombre" required>
+      <input type="text" name="apellidos" required>
+      <input type="email" name="usuario" required>
+      <input type="password" name="secreto" required>
+      <input type="date" name="fecha" value="<?php echo date("d/m/Y h:i:s"); ?>" disabled>
 
       <div class="fin-float"></div>
 

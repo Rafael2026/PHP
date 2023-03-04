@@ -10,11 +10,11 @@
 
     <form method="GET">
 
-      <input type="number" name="codigo" value="<?php echo intval(count($pu)) + 1; ?>">
-      <input type="number" name="valor">
+      <input type="number" name="codigo" value="<?php echo intval(count($pu)) + 1; ?>" required>
+      <input type="number" name="valor" required>
       <input type="date" name="fecha">
-      <input type="number" name="codUsu">
-      <input type="number" name="codSub" min="1">
+      <input type="number" name="codUsu" required disabled>
+      <input type="number" name="codSub" min="1" required disabled>
 
       <div class="fin-float"></div>
 
