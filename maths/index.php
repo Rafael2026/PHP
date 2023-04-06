@@ -88,6 +88,14 @@
                 <p><?php echo $figuras2D[$i]->perimetro(); ?></p>
               </td>
             </tr>
+
+            <tr>
+              <td>
+                <label for="lado"></label>
+                <input type="number" min="1" name="lado" id="lado">
+              </td>
+            </tr>
+
           </tbody>
 
         </table>
@@ -136,6 +144,21 @@
                 <p><?php echo $figuras2D[$i]->area(); ?></p>
               </td>
             </tr>
+
+            <tr>
+              <td>
+                <label for="base">Base</label>
+                <input type="number" min="1" name="base" id="base">
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="altura">Altura</label>
+                <input type="number" min="1" name="altura" id="altura">
+              </td>
+            </tr>
+
           </tbody>
 
         </table>
@@ -155,9 +178,9 @@
 
       <?php
 
-        $array2 = array("Cube");
+        $cubo = array("Cube");
 
-        for ($i = 0; $i < count($array2); $i++) {
+        for ($i = 0; $i < count($cubo); $i++) {
       ?>
 
         <table>
@@ -166,7 +189,7 @@
 
             <tr>
               <th>
-                <h2><?php echo $array2[$i]; ?> volume</h2>
+                <h2><?php echo $cubo[$i]; ?> volume</h2>
               </th>
             </tr>
 
@@ -176,7 +199,7 @@
 
             <tr>
               <td>
-                <img src=<?php echo "img/". $array2[$i] .".svg"; ?> alt="<?php echo $array2[$i]; ?>">
+                <img src=<?php echo "img/". $cubo[$i] .".webp"; ?> alt="<?php echo $cubo[$i]; ?>">
               </td>
             </tr>
 
@@ -199,11 +222,9 @@
 
     </section>
 
-    <hr/>
-
-    <section>
+    <!--<section>
       <img src="img/tabla.webp" alt="Tabla de figuras2D (Perímetros y áreas)">
-    </section>
+    </section>-->
 
   </main>
 

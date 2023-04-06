@@ -5,9 +5,9 @@
     public $width;
     public $height;
 
-    public function __construct($val1, $val2) {
-      $this->area = $val1;
-      $this->height = $val2;
+    public function __construct($base, $altura) {
+      $this->width = $base;
+      $this->height = $altura;
     }
 
     function getPerimetro() {
@@ -26,13 +26,5 @@
       echo "A = b * h";
     }
   }
-
-  /*$figura = new Triangle(2, 4);
-  $figura2 = new Triangle(4, 8);
-  $figura3 = new Triangle(3, 5);
-  
-  echo "Area del triangulo: ". $figura->getArea() ."<br>";
-  echo "Area del triangulo2: ". $figura2->getArea() ."<br>";
-  echo "Area del triangulo3: ". $figura3->getArea() ."<br>";*/
 
 ?>
