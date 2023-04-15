@@ -1,0 +1,130 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.preferredHighContrastColorTheme": "Solarized Dark",
+  "workbench.preferredLightColorTheme": "Solarized Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.autoLockGroups": {"default": true},
+  
+  "eslint.options": {
+    "env":{"es6": true},
+    "parserOptions": {"ecmaVersion": 6}
+  },
+
+  "debug.allowBreakpointsEverywhere": true,
+  "auto-close-tag.fullMode": true,
+  "auto-close-tag.SublimeText3Mode": true,
+  "editor.renderWhitespace": "all",
+  "settingsSync.ignoredExtensions": [
+    "wraith13.open-in-github-desktop",
+    "donjayamanne.jquerysnippets",
+    "aessoft.aessoft-class-autocomplete",
+    "dbaeumer.jshint",
+    "anderseandersen.html-class-suggestions",
+    "ms-vscode.js-debug-nightly",
+    "github.remotehub",
+    "github.codespaces"
+  ],
+
+  "settingsSync.ignoredSettings": [
+    "-git.path",
+    "-typescript.npm",
+    "-eslint.nodePath",
+    "-java.jdt.ls.java.home",
+    "-java.configuration.runtimes",
+    "-php.validate.executablePath",
+    "-php.debug.executablePath",
+    "-php.debug.ideKey",
+    "-http.proxy",
+    "-http.proxyAuthorization",
+    "-http.proxyStrictSSL",
+    "-http.systemCertificates",
+    "-http.proxySupport",
+    "-git.defaultCloneDirectory"
+  ],
+
+  "[javascript]": {
+    "editor.showUnused": false,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascriptreact]": {"editor.showUnused": false},
+
+  "[*]": {
+    "editor.tabSize": 2
+  },
+  
+  "git-graph.retainContextWhenHidden": false,
+  "auto-close-tag.activationOnLanguage": [
+  
+  "xml", "php", "blade", "ejs", "jinja", "javascript", "javascriptreact", "typescript", "typescriptreact", "plaintext", "markdown", "vue", "liquid", "erb", "lang-cfml", "cfml", "HTML (EEx)", "HTML (Eex)", "plist"
+  ],
+
+  "tabnine.experimentalAutoImports": true,
+  "auto-close-tag.disableOnLanguage": [],
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.nodePath": "",
+  "java.codeGeneration.generateComments": true,
+  "java.codeGeneration.hashCodeEquals.useInstanceof": true,
+  "java.codeGeneration.hashCodeEquals.useJava7Objects": true,
+  "java.jdt.ls.java.home": "c:\\Program Files\\Java\\jdk-14.0.2",
+  "java.configuration.runtimes": [{"path": "C:\\Program Files\\Java\\jdk-14.0.2"}],
+  "window.autoDetectColorScheme": true,
+  "window.closeWhenEmpty": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "window.zoomLevel": 0,
+  "phpConstructor.choosePropertyVisibility": true,
+  "phpConstructor.chooseConstructorVisibility": true,
+  "php-docblocker.qualifyClassNames": true,
+  "php-docblocker.returnGap": true,
+  "php-docblocker.useShortNames": true,
+  "npm.enableRunFromFolder": true,
+  "php-docblocker.alignParams": true,
+  "php-docblocker.alignReturn": true,
+  "editor.inlineSuggest.enabled": true,
+  "explorer.confirmDelete": false,
+
+  "files.associations": {
+    "*.css": "css"
+  },
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path.windows": "C:\\Users\\rafaa\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+"java.import.gradle.java.home": "C:\\Program Files\\Java\\jre1.8.0_333",
+  "git.fetchOnPull": true,
+  "git.verboseCommit": true,
+  "git-graph.repository.fetchAndPruneTags": true,
+  "git-graph.enhancedAccessibility": true,
+  "openInGitHub.useCommitSHAInURL": true,
+  "openInGitHub.requireSelectionForLines": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.useParentIgnoreFiles": true,
+  "xml.server.binary.trustedHashes": [
+    "eff229c217675bdbe8fc1f5c747ecd05cfb94396f36404e383265eef87ec3b53"
+  ],
+  "security.workspace.trust.banner": "never",
+  "gitlens.codeLens.dateFormat": "",
+  "git.followTagsWhenSync": true,
+  "todo-tree.filtering.ignoreGitSubmodules": true,
+  "gitlens.codeLens.includeSingleLineSymbols": true,
+  "git.showPushSuccessNotification": true,
+  "git-graph.defaultColumnVisibility": {
+
+    "Date": true,
+    "Author": true,
+    "Commit": true
+  },
+
+  "git.path": "C:\\Program Files\\Git\\bin\\git.exe",
+  "php.validate.executablePath": ""
+}
