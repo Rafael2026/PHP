@@ -8,22 +8,18 @@ section {
   margin-bottom: 10px;
 }
 
+section:first table { height: 450px; }
+
 section table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 30%;
-  height: 450px;
   border: 2px solid rgb(0, 0, 0);
-  display: inline-block; 
-  padding: 15px 7.5%;
-  margin: 20px 0;
+  display: inline-block;
   text-align: center;
+  height: 500px;
 }
 
-section table label {
-  /*float: left;*/
-  margin-right: 10px;
-}
+input[type="number"] { border: 2px solid rgb(0, 0, 0); }
 
 svg {
   fill: rgb(0, 0, 255);
@@ -31,3 +27,103 @@ svg {
 }
 
 .fin-float { clear: both; }
+
+hr { width: 100%; }
+
+@media only screen and (min-width: 320px) {
+
+  section table {
+    width: 80%;
+    padding: 15px 5%;
+    margin: 20px 0;
+  }
+
+  section table label {
+    /*float: left;*/
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 320px) {
+
+  section table {
+    width: 30%;
+    padding: 15px 5%;
+    margin: 20px 0;
+  }
+
+  section table label {
+    /*float: left;*/
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+
+  section table {
+    width: 30%;
+    padding: 15px 5%;
+    margin: 20px 0;
+  }
+
+  section table label {
+    /*float: left;*/
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+
+  section table {
+    width: 30%;
+    padding: 15px 5%;
+    margin: 20px 0;
+  }
+
+  section table label {
+    /*float: left;*/
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  section table {
+    width: 30%;
+    padding: 15px 5%;
+    margin: 20px 0;
+  }
+
+  section table label {
+    /*float: left;*/
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+
+  section table {
+    width: 30%;
+    padding: 15px 5%;
+    margin: 20px 0;
+  }
+
+  section table label {
+    /*float: left;*/
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+
+  section table {
+    width: 30%;
+    padding: 15px 7.5%;
+    margin: 20px 0;
+  }
+
+  section table label {
+    /*float: left;*/
+    margin-right: 10px;
+  }
+}

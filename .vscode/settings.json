@@ -76,7 +76,7 @@
   "window.closeWhenEmpty": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "terminal.integrated.enableMultiLinePasteWarning": false,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
   "phpConstructor.choosePropertyVisibility": true,
   "phpConstructor.chooseConstructorVisibility": true,
   "php-docblocker.qualifyClassNames": true,
@@ -100,7 +100,7 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-"java.import.gradle.java.home": "C:\\Program Files\\Java\\jre1.8.0_333",
+"java.import.gradle.java.home": "C:\\Program Files\\Java\\jre1.8.0_361",
   "git.fetchOnPull": true,
   "git.verboseCommit": true,
   "git-graph.repository.fetchAndPruneTags": true,
@@ -126,5 +126,6 @@
   },
 
   "git.path": "C:\\Program Files\\Git\\bin\\git.exe",
-  "php.validate.executablePath": ""
+  "php.validate.executablePath": "C:\\xampp2\\php",
+  "vue.features.codeActions.enable": false
 }
