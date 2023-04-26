@@ -95,7 +95,6 @@
                 <form action="" method="post">
                   <label for="lado">Lado:</label>
                   <input type="number" min="1" name="lado" id="lado">
-
                   <input type="button" value="Calcular">
                 </form>
               </td>
@@ -244,6 +243,9 @@
     <section>
       <img src="img/tabla.webp" alt="Tabla de figuras (Perímetros, áreas y volúmenes)">
     </section>
+
+
+    <script src="script.js"></script>
 
   </main>
 
