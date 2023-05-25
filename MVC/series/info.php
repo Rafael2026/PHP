@@ -101,9 +101,9 @@
     <a href="editSerie.php?serie=<?php echo $array ?>&argumento=<?php echo $argumento ?>">Editar serie</a>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
 
 </body>
 

@@ -244,7 +244,6 @@
       <img src="img/tabla.webp" alt="Tabla de figuras (Perímetros, áreas y volúmenes)">
     </section>
 
-
     <script src="script.js"></script>
 
   </main>
