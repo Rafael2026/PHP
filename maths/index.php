@@ -100,13 +100,13 @@
               </td>
             </tr>
 
+            <tr>
+              <td class="result"></td>
+            </tr>
+
           </tbody>
 
         </table>
-
-        </div>
-
-        </div>
 
       <?php
         }
@@ -162,13 +162,13 @@
               </td>
             </tr>
 
+            <tr>
+              <td class="result"></td>
+            </tr>
+
           </tbody>
 
         </table>
-
-        </div>
-
-        </div>
 
       <?php
         }
@@ -226,13 +226,13 @@
               </td>
             </tr>
 
+            <tr>
+              <td class="result"></td>
+            </tr>
+
           </tbody>
 
         </table>
-
-        </div>
-
-        </div>
 
       <?php
         }
@@ -240,9 +240,9 @@
 
     </section>
 
-    <section>
-      <img src="img/tabla.webp" alt="Tabla de figuras (Perímetros, áreas y volúmenes)">
-    </section>
+    <!--<section>
+      <img src="img/tabla.webp" alt="Tabla de figuras (Perimeter, areas y volume)">
+    </section>-->
 
     <script src="script.js"></script>
 
