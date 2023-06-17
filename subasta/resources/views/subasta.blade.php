@@ -39,24 +39,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sala Nº <?php echo intval($codigoSubasta); ?></title>
-  <link href="{{ asset('img/logo.png')}}" type="image/x-icon" rel="icon">
-  <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/estilos.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/styles.css') }}" rel="stylesheet">
+  <link href="img/logo.png" type="image/x-icon" rel="icon">
+
+  <!--
+    <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/styles.css') }}" rel="stylesheet">
+  -->
+
+  <link href="icons/icomoon.min.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
-    <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+    <!-- <img src="{{ asset('img/cabecera.webp') }}" alt="Logo de Subasta total"> -->
+    <img src="img/cabecera.webp" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
     <a href="/" class="active">Inicio</a>
-    <a href="<?php echo '/portal?idUsu='. $codigoUsuario ."&pagina=1" ?>">Portal</a>
-    <a href="<?php echo '/subasta?idSub='. $codigoSubasta .'&idUsu='. $codigoUsuario ?>">Subastas</a>
-    <a href="<?php echo '/pujas?idUsu='. $codigoUsuario ?>">Mis pujas</a>
+    <a href="/portal?idUsu=<?php echo $codigoUsuario ?>&pagina=1" ?>">Portal</a>
+    <a href="/subasta?idSub=<?php echo $codigoSubasta ?>&idUsu=<?php echo $codigoUsuario ?>">Subastas</a>
+    <a href="/pujas?idUsu=<?php echo $codigoUsuario ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="login disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="registro disabled">Registrarse</a>

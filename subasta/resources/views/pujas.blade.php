@@ -35,24 +35,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tus pujas</title>
-  <link href="{{ secure_asset('img/logo.png') }}" type="image/x-icon" rel="icon">
+  <!--<link href="{{ secure_asset('img/logo.png') }}" type="image/x-icon" rel="icon">
   <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
   <link href="{{ secure_asset('css/estilos.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/styles.css') }}" rel="stylesheet">
+  <link href="{{ secure_asset('css/styles.css') }}" rel="stylesheet">-->
+
+  <link href="img/logo.png" type="image/x-icon" rel="icon">
+  <link href="icons/icomoon.min.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
 </head>
 
 <body>
 
   <header>
-    <img src="{{ secure_asset('img/cabecera.webp') }}" alt="Logo de Subasta total">
+    <!--<img src="{{ secure_asset('img/cabecera.webp') }}" alt="Logo de Subasta total">-->
+    <img src="img/cabecera.webp" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
     <a href="/" class="active">Inicio</a>
-    <a href="<?php echo '/portal?idUsu='. $codigoUsuario ."&pagina=1" ?>">Portal</a>
-    <a href="<?php echo '/subasta' ?>" class="disabled">Subastas</a>
-    <a href="<?php echo '/pujas?idUsu='. $codigoUsuario ?>">Mis pujas</a>
+    <a href="/portal?idUsu=<?php echo $codigoUsuario ?>&pagina=1" ?>">Portal</a>
+    <a href="/subasta" class="disabled">Subastas</a>
+    <a href="/pujas?idUsu=<?php echo $codigoUsuario ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="disabled">Registrarse</a>
@@ -62,7 +69,8 @@
     </a>
 
     <a href="javascript:void(0);" class="icon nav">
-      <img src="{{ secure_asset('img/menu.svg') }}" alt="Menu">
+      <!--<img src="{{ secure_asset('img/menu.svg') }}" alt="Menu">-->
+      <img src="img/menu.svg" alt="Menu">
     </a>
 
   </nav>
@@ -218,9 +226,13 @@
   <p id="tictac">Tiempo: </p>
   -->
 
-  <script src="{{ secure_asset('js/app.js') }}" defer></script>
+  <!--<script src="{{ secure_asset('js/app.js') }}" defer></script>
   <script src="{{ secure_asset('js/pujar.js') }}" defer></script>
-  <script src="{{ secure_asset('js/script.js') }}" defer></script>
+  <script src="{{ secure_asset('js/script.js') }}" defer></script>-->
+
+  <script src="js/app.js" defer></script>
+  <script src="js/pujar.js" defer></script>
+  <script src="js/script.js" defer></script>
 
 </body>
 

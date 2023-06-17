@@ -6,9 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/login.css') }}" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,9 +46,9 @@
 
   </form>
 
-  <script src="{{ asset('https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js') }}"></script>
-  <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('js/login.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
+  <script src="js/login.js" defer></script>
 
 </body>
 

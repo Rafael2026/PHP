@@ -7,9 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comprobar monedero</title>
-  <link href="{{ secure_asset('img/logo.png')}}" type="image/x-icon" rel="icon">
-  <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/monedero.css') }}" rel="stylesheet">
+  <!--
+    <link href="{{ secure_asset('img/logo.png')}}" type="image/x-icon" rel="icon">
+    <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/monedero.css') }}" rel="stylesheet">
+  -->
+
+  <link href="img/logo.png" type="image/x-icon" rel="icon">
+  <link href="icons/icomoon.min.css" rel="stylesheet">
+  <link href="css/monedero.css" rel="stylesheet">
 </head>
 
 <body>
@@ -93,17 +99,28 @@
   ?>
 
   <div class="dragDrop">
-    <img src="{{ secure_asset('../img/billetes.jfif') }}" alt="Billetes">
-    <img src="{{ secure_asset('../img/carteraVacia.jfif') }}" alt="Cartera Vacía">
+    <!--
+      <img src="{{ secure_asset('../img/billetes.jfif') }}" alt="Billetes">
+      <img src="{{ secure_asset('../img/carteraVacia.jfif') }}" alt="Cartera Vacía">
+    -->
+    <img src="../img/billetes.jfif" alt="Billetes">
+    <img src="../img/carteraVacia.jfif" alt="Cartera Vacía">
+
     <div class="spinner-border text-secondary" id="load" role="status" aria-hidden="true"></div>
   </div>
 
   <div class="secundario">
-    <img src="{{ secure_asset('img/carteraVacia.jfif') }}" alt="Cartera Vacía">
+    <!-- <img src="{{ secure_asset('img/carteraVacia.jfif') }}" alt="Cartera Vacía"> -->
+    <img src="img/carteraVacia.jfif" alt="Cartera Vacía">
   </div>
 
-  <script src="{{ secure_asset('js/app.js') }}" defer></script>
-  <script src="{{ secure_asset('js/script.js') }}" defer></script>
+  <!--
+    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('js/script.js') }}" defer></script>
+  -->
+
+  <script src="js/app.js" defer></script>
+  <script src="js/script.js" defer></script>
 
 </body>
 
