@@ -202,11 +202,11 @@
             $usuarioExiste = true;
             //$permiso = intval($users[$i]["permiso"]);
 
-            echo "Nombre: ". $name. "<br>";
+            /*echo "Nombre: ". $name. "<br>";
             echo "Apellidos: ". $surname. "<br>";
             echo "Usuario: ". $correo. "<br>";
             echo "Contraseña: ". $password. "<br>";
-            echo "Fecha actual: ". date("Y-m-d"). "<br>";
+            echo "Fecha actual: ". date("Y-m-d"). "<br>";*/
 
             $usuario = new Usuario();
             $codigo = $usuario->getLastId();

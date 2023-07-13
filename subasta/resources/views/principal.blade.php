@@ -302,9 +302,6 @@
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <!--<script src="{{ secure_asset('js/app.js') }}" defer></script>
-  <script src="{{ secure_asset('js/script.js') }}" defer></script>-->
-
   <script src="js/app.js" defer></script>
   <script src="js/script.js" defer></script>
 

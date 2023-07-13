@@ -8,7 +8,7 @@
 
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -23,16 +23,15 @@
 <body>
 
   <header>
-    <!--<img src="{{ secure_asset('img/cabecera.webp') }}" alt="Logo de Subasta total">-->
     <img src="img/cabecera.webp" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
     <a href="/" class="active">Inicio</a>
-    <a href="/portal?idUsu=<?php echo $codigo; ?>&pagina=1">Portal</a>
+    <a href="/portal?idUsu=<?php echo htmlspecialchars($codigo); ?>&pagina=1">Portal</a>
     <a href="/subasta" class="disabled">Subastas</a>
-    <a href="/pujas?idUsu=<?php echo $codigo; ?>">Mis pujas</a>
+    <a href="/pujas?idUsu=<?php echo htmlspecialchars($codigo); ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="login disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="registro disabled">Registrarse</a>
@@ -42,7 +41,6 @@
     </a>
 
     <a href="javascript:void(0);" class="icon nav">
-      <!-- <img src="{{ secure_asset('img/menu.svg') }}" alt="Menu"> -->
       <img src="img/menu.svg" alt="Menu">
     </a>
 
@@ -88,41 +86,41 @@
         <ul>
 
           <li>
-            <h3>Producto: <?php echo $products[$i]['nomProd'] ?></h3>
+            <h3>Producto: <?php echo htmlspecialchars($products[$i]['nomProd']); ?></h3>
           </li>
 
           <li>
-            <h4>Materiales: <?php echo $products[$i]['material'] ?></h4>
+            <h4>Materiales: <?php echo htmlspecialchars($products[$i]['material']); ?></h4>
           </li>
 
           <li>
-            <p>Anchura del producto: <?php echo $products[$i]['anchura'] ?></p>
+            <p>Anchura del producto: <?php echo htmlspecialchars($products[$i]['anchura']); ?></p>
           </li>
 
           <li>
-            <p>Altura del producto: <?php echo $products[$i]['altura'] ?></p>
+            <p>Altura del producto: <?php echo htmlspecialchars($products[$i]['altura']); ?></p>
           </li>
 
           <!--<li>
-            <p>Categoría del producto: <?php // echo $products[$i]['categoria'] ?></p>
+            <p>Categoría del producto: <?php // echo $products[$i]['categoria']); ?></p>
           </li>-->
 
           <li>
-            <p>Fecha inicial: <?php echo $sub[$i]['fechaInic'] ?></p>
+            <p>Fecha inicial: <?php echo htmlspecialchars($sub[$i]['fechaInic']); ?></p>
           </li>
 
           <li>
-            <p>Fecha fin: <?php echo $sub[$i]['fechaFin'] ?></p>
+            <p>Fecha fin: <?php echo htmlspecialchars($sub[$i]['fechaFin']); ?></p>
           </li>
 
           <li>
-            <p>Precio inicial: <?php echo $sub[$i]['precIni'] ?></p>
+            <p>Precio inicial: <?php htmlspecialchars(echo $sub[$i]['precIni']); ?></p>
           </li>
 
         </ul>
 
         <button>
-          <a href="/subasta?idSub=<?php echo ($i + 1) ?>&idUsu=<?php echo $codigo ?>">Ir a subasta</a>
+          <a href="/subasta?idSub=<?php htmlspecialchars(echo ($i + 1)); ?>&idUsu=<?php echo htmlspecialchars($codigo); ?>">Ir a subasta</a>
         </button>
 
       </div>

@@ -76,7 +76,7 @@
 
     <section>
 
-      <h2>Producto Nº <?php echo $id; ?></h2>
+      <h2>Producto Nº <?php echo htmlspecialchars($id); ?></h2>
 
       <!--<ul>
 
@@ -125,27 +125,27 @@
         <ul>
 
           <li>
-            
-            <!--<img src="{{ secure_asset('img/productos/<?php echo $products[$i]['nomProd'] ?>.jpg') }}" alt="<?php echo $products[$i]['nomProd'] ?>">-->
 
-            <img src="img/productos/<?php echo $products[$i]['nomProd'] ?>.jpg" alt="<?php echo $products[$i]['nomProd'] ?>">
+            <!--<img src="{{ secure_asset('img/productos/<?php echo htmlspecialchars($products[$i]['nomProd']); ?>.jpg') }}" alt="<?php echo htmlspecialchars($products[$i]['nomProd']); ?>">-->
+
+            <img src="img/productos/<?php echo htmlspecialchars($products[$i]['nomProd']); ?>.jpg" alt="<?php echo htmlspecialchars($products[$i]['nomProd']); ?>">
 
           </li>
 
           <li>
-            <h3>Producto: <?php echo $products[$i]['nomProd'] ?></h3>
+            <h3>Producto: <?php echo htmlspecialchars($products[$i]['nomProd']); ?></h3>
           </li>
 
           <li>
-            <h4>Materiales: <?php echo $products[$i]['material'] ?></h4>
+            <h4>Materiales: <?php echo htmlspecialchars($products[$i]['material']); ?></h4>
           </li>
 
           <li>
-            <p>Anchura del producto: <?php echo $products[$i]['anchura'] ?></p>
+            <p>Anchura del producto: <?php echo htmlspecialchars($products[$i]['anchura']); ?></p>
           </li>
 
           <li>
-            <p>Altura del producto: <?php echo $products[$i]['altura'] ?></p>
+            <p>Altura del producto: <?php echo htmlspecialchars($products[$i]['altura']); ?></p>
           </li>
 
           <!--<li>
@@ -153,15 +153,15 @@
           </li>-->
 
           <li>
-            <p>Fecha inicial: <?php echo $sub[$i]['fechaInic'] ?></p>
+            <p>Fecha inicial: <?php echo htmlspecialchars($sub[$i]['fechaInic']); ?></p>
           </li>
 
           <li>
-            <p>Fecha fin: <?php echo $sub[$i]['fechaFin'] ?></p>
+            <p>Fecha fin: <?php echo htmlspecialchars($sub[$i]['fechaFin']); ?></p>
           </li>
 
           <li>
-            <p>Precio inicial: <?php echo $sub[$i]['precIni'] ?></p>
+            <p>Precio inicial: <?php echo htmlspecialchars($sub[$i]['precIni']); ?></p>
           </li>
 
         </ul>
