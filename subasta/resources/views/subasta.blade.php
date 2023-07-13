@@ -62,9 +62,9 @@
   <nav class="topnav" id="myTopnav">
 
     <a href="/" class="active">Inicio</a>
-    <a href="/portal?idUsu=<?php echo $codigoUsuario ?>&pagina=1" ?>">Portal</a>
-    <a href="/subasta?idSub=<?php echo $codigoSubasta ?>&idUsu=<?php echo $codigoUsuario ?>">Subastas</a>
-    <a href="/pujas?idUsu=<?php echo $codigoUsuario ?>">Mis pujas</a>
+    <a href="/portal?idUsu=<?php echo $codigoUsuario; ?>&pagina=1">Portal</a>
+    <a href="/subasta?idSub=<?php echo $codigoSubasta; ?>&idUsu=<?php echo $codigoUsuario ?>">Subastas</a>
+    <a href="/pujas?idUsu=<?php echo $codigoUsuario; ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="login disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="registro disabled">Registrarse</a>
@@ -74,7 +74,7 @@
     </a>
 
     <a href="javascript:void(0);" class="icon nav">
-      <img src="{{ asset('img/menu.svg') }}" alt="Menu">
+      <img src="img/menu.svg" alt="Menu">
     </a>
 
   </nav>

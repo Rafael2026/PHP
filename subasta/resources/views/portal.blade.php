@@ -15,17 +15,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Subastas</title>
-  <!--
-    <link href="{{ secure_asset('img/logo.png')}}" type="image/x-icon" rel="icon">
-    <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/styles.css') }}" rel="stylesheet">
-  -->
-
   <link href="img/logo.png" type="image/x-icon" rel="icon">
   <link href="icons/icomoon.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -38,9 +30,9 @@
   <nav class="topnav" id="myTopnav">
 
     <a href="/" class="active">Inicio</a>
-    <a href="/portal?idUsu=<?php echo $codigo ?>&pagina=1">Portal</a>
+    <a href="/portal?idUsu=<?php echo $codigo; ?>&pagina=1">Portal</a>
     <a href="/subasta" class="disabled">Subastas</a>
-    <a href="/pujas?idUsu=<?php echo $codigo ?>">Mis pujas</a>
+    <a href="/pujas?idUsu=<?php echo $codigo; ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="login disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="registro disabled">Registrarse</a>

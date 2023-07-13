@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
-  <link href="css/login.css" rel="stylesheet" type="text/css">
+  <link href="{{ asset('css/login.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -115,7 +115,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js"></script>
-  <script src="js/login.js"></script>
+  <script src="{{ asset('js/login.js') }}"></script>
 
 </body>
 
