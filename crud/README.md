@@ -1,63 +1,109 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Subasta Total
+Subasta total es una aplicación web donde se puja solamente con monedas de prueba.<br/>
+No se acepta dinero real ya sea físico o criptomonedas<br/>
+Es totalmente virtual, no se dejen engañar y pujen ahora que la cuenta atrás acaba pronto.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Comandos
+Download repository
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```bash
+git clone https://github.com/githubDaw1/subasta.git
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Download and install dependencies
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+composer install && npm install
+```
 
-## Learning Laravel
+Upgrade dependencies
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```bash
+composer update && npm audit && ncu && ncu -u
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Deploy local
+```bash
+php artisan serve
+```
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Tecnologías
+| Frontend |
+|----------|
+| [![HTML5](./img/tecnologias/HTML5.svg)](https://www.w3.org/html/)  [![CSS3](./img/tecnologias/CSS3.svg)](https://www.w3schools.com/css/)  [![JavaScript](./img/tecnologias/JS.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  [![SASS](./img/tecnologias/SASS.svg)](https://sass-lang.com) |
+| And JS Libraries |
 
-### Premium Partners
+| Backend |
+|---------|
+| [![PHP](./img/tecnologias/PHP.svg)](https://www.php.net)  [![MySQL](./img/tecnologias/MySQL.svg)](https://www.mysql.com/)  [![Laravel](./img/tecnologias/laravel.svg)](https://laravel.com/)  [![NodeJS](./img/tecnologias/NodeJS.png)](https://nodejs.org/es/) |
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+Framework: Laravel 8<br/>
+Lenguaje: PHP 8.0<br/>
+Verión de Mysql establecida por el servidor<br/>
+Verión de Nodejs: versiones recientes (las últimas versiones)
 
-## Contributing
+| Others |
+|--------|
+| [![Figma](./img/tecnologias/figma.svg)](https://www.figma.com/)  [![Git](./img/tecnologias/git.svg)](https://git-scm.com/)  [![GitHub](./img/tecnologias/GitHub.svg)](https://github.com/) |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Modelado
+<img src="./img/modelado.webp" width="1000" height="500">
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Ruta de páginas
+<img src="./img/figma.PNG" width="1000" height="500">
 
-## Security Vulnerabilities
+## Hosting
+| Hosting |
+|---------|
+| [![Railway.app](./img/tecnologias/railway.app.PNG)](https://railway.app/)  [![Vercel](./img/tecnologias/vercel.PNG)](https://vercel.com/)  |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+URL: https://subasta-production.up.railway.app/
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# apirest_crud_laravel8" 
+## Combinación de colores y fuente
+| Color dominante: naranja |
+|--------------------------|
+| La impulsividad de los compradores para conseguir los productos que hay en oferta. Las reacciones de los pujadores y color dominante (naranja) son los facotres que forman esta gran combinación. Lo más llamativo de cada subasta celebrada será el ganador/a, la cantidad de pujas, y el último valor para el producto. |
+
+Paleta de colores: complementaria
+
+![Paleta de colores - Complementarias](./img/paletaColores.webp)
+
+Fuente del prototipo: Open Sans
+
+Open Sans es una fuente sans-serif y este tipo de fuente mejora la legibilidad en todos los tipos de 
+dispositivos y facilita la lectura a las personas con dificultades de vision.
+
+Fuente acompañante: Noto Sans
+
+Esta fuente también termina en Sans y es sans-serif. Su unión no sería un problema.
+
+Contrast finder
+
+![Mejor combinación de colores](./img/contraste.webp)
+
+Equilibrio visual y tensión compositiva.
+
+- Equilibrio informal: deja la idea simetría, dependiendo del objeto visualizado, este puede tener un gran valor y viceversa. Se basa en asimetría intencionada. Unas tienen menor peso que las grandes.
+- Forma regular = aumento de peso (valor)
+- Colores luminosos e intensos tienen mayor valor
+- El equilibrio depende de su posición
+- Técnica sugestiva: trata de llamar la atención del usuario, utilizando puntos de apoyo
+
+
+## Prototipado
+Prototipo 1920x1080 (portátil): [Prototipo](https://www.figma.com/proto/MGazLbzsWFdFpbrXs1uyWc/Prototipo-subasta-(DESKTOP)?node-id=1%3A5&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A5)
+
+Enlance de prototipo 360x640 (móvil): [Prototipo](https://www.figma.com/proto/WEoUJsjENQh8x2WGeOYmgg/Prototipo-subasta-(PHONE)?node-id=4%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A5)
+
+## Bibilografía
+- Documentación: [Laravel 8](https://laravel.com/docs/8.x/releases)
+- Documentación: [PHP 8](https://www.php.net/manual/en/)
+- Documentación: [MySQL](https://dev.mysql.com/doc/)
+- Documentación: [Node.JS](https://nodejs.org/en/docs/)
+- Documentación: [Figma](https://help.figma.com/hc/en-us)
+- Documentación: [SASS](https://sass-lang.com/documentation/)
+- Documentación: [TypeScript](https://www.typescriptlang.org/docs/)
