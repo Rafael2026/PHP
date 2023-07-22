@@ -118,7 +118,7 @@
           }
 
         } else {
-          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
+          echo "<noscript>alert('El usuario o la contraseña son incorrectos');</noscript>";
         }
       }
 

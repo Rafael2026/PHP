@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -8,10 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-security-policy|content-type|default-style|refresh">
   <title>Página principal</title>
-  <!--<link href="{{ secure_asset('img/logo.png')}}" type="image/x-icon" rel="icon">
-  <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/modal.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/estilos.css') }}" rel="stylesheet">-->
   <link href="img/logo.png" type="image/x-icon" rel="icon">
   <link href="icons/icomoon.min.css" rel="stylesheet">
   <link href="css/modal.css" rel="stylesheet">
@@ -39,7 +35,6 @@
     </div>
 
     <div class="imagen">
-      <!--<img src="{{ secure_asset('img/cabecera.webp') }}" alt="Logo de Subasta total">-->
       <img src="img/cabecera.webp" alt="Logo de Subasta total">
     </div>
 
@@ -57,7 +52,6 @@
     <a href="#registroModal" data-target="#registroModal">Registrarse</a>
 
     <a href="javascript:void(0);" class="icon nav">
-      <!--<img src="{{ secure_asset('img/menu.svg') }}" alt="Menu">-->
       <img src="img/menu.svg" alt="Menu">
     </a>
 
@@ -86,7 +80,6 @@
 
       <div class="cardFeatures">
 
-        <!--<img src="{{ secure_asset('img/piedrasPreciosas.jpg') }}" alt="Piedras muy valiosas">-->
         <img src="img/piedrasPreciosas.jpg" alt="Piedras muy valiosas">
 
         <h2>Piedras preciosas</h2>
@@ -102,7 +95,6 @@
 
       <div class="cardFeatures">
 
-        <!--<img src="{{ secure_asset('img/autos.webp') }}" alt="Autos de lujo">-->
         <img src="img/autos.webp" alt="Autos de lujo">
 
         <h2>Vehículos lujosos</h2>
@@ -118,7 +110,6 @@
 
       <div class="cardFeatures">
 
-        <!--<img src="{{ secure_asset('img/mobiliario.jpg') }}" alt="Hogar del futuro">-->
         <img src="img/mobiliario.jpg" alt="Hogar del futuro">
 
         <h2>Futuro hogar</h2>
@@ -191,7 +182,6 @@
         <h1>Eventos únicos</h1>
 
         <div class="imgCallToActions">
-          <!--<img src="{{ secure_asset('img/evento.jpg') }}" alt="Evento único">-->
           <img src="img/evento.jpg" alt="Evento único">
         </div>
 
@@ -230,7 +220,6 @@
               <div class="boxProfesional">
 
                 <div class="imgProfesional">
-                  <!--<img src="{{ secure_asset('img/cara.png') }}" alt="Cara del Administrador">-->
                   <img src="img/cara.png" alt="Cara del Administrador">
                 </div>
 
@@ -263,7 +252,6 @@
       <div class="personal">
 
         <div class="imagen">
-          <!--<img src="{{ secure_asset('img/personal.jpg') }}" alt="Imagen del personal">-->
           <img src="img/personal.jpg" alt="Imagen del personal">
         </div>
 

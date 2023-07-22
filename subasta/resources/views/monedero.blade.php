@@ -85,8 +85,7 @@
       if (($reservas - $gastos[$g]) > 0) {
         echo "<br/>Le queda a ". $compradores[$g]['nomUsu'] ." ". $compradores[$g]['apeUsu'] ." -> ". ($reservas - $gastos[$g]);
       } else {
-        echo "<br/>Se ha reiniciado tu monedero.<br/>";
-        echo "Ahora le queda a ". $compradores[$g]['nomUsu'] ." ". $compradores[$g]['apeUsu'] ." -> $reservas";
+        echo "<br/>Se ha reiniciado tu monedero.<br/>Ahora le queda a ". $compradores[$g]['nomUsu'] ." ". $compradores[$g]['apeUsu'] ." -> $reservas";
       }
     }
 

@@ -28,18 +28,13 @@
 
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tus pujas</title>
-  <!--<link href="{{ secure_asset('img/logo.png') }}" type="image/x-icon" rel="icon">
-  <link href="{{ secure_asset('icons/icomoon.min.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/estilos.css') }}" rel="stylesheet">
-  <link href="{{ secure_asset('css/styles.css') }}" rel="stylesheet">-->
-
   <link href="img/logo.png" type="image/x-icon" rel="icon">
   <link href="icons/icomoon.min.css" rel="stylesheet">
   <link href="css/estilos.css" rel="stylesheet">
@@ -50,16 +45,15 @@
 <body>
 
   <header>
-    <!--<img src="{{ secure_asset('img/cabecera.webp') }}" alt="Logo de Subasta total">-->
     <img src="img/cabecera.webp" alt="Logo de Subasta total">
   </header>
 
   <nav class="topnav" id="myTopnav">
 
     <a href="/" class="active">Inicio</a>
-    <a href="/portal?idUsu=<?php echo htmlspecialchars($codigoUsuario); ?>&pagina=1" ?>">Portal</a>
+    <a href="/portal?idUsu=<?= echo $codigoUsuario ?>&pagina=1" ?>">Portal</a>
     <a href="/subasta" class="disabled">Subastas</a>
-    <a href="/pujas?idUsu=<?php echo htmlspecialchars($codigoUsuario); ?>">Mis pujas</a>
+    <a href="/pujas?idUsu=<?= echo $codigoUsuario ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="disabled">Registrarse</a>
@@ -69,7 +63,6 @@
     </a>
 
     <a href="javascript:void(0);" class="icon nav">
-      <!--<img src="{{ secure_asset('img/menu.svg') }}" alt="Menu">-->
       <img src="img/menu.svg" alt="Menu">
     </a>
 
@@ -107,9 +100,15 @@
             if (intval($pu[$p]['codSubasta']) != intval($pu[intval($p + 1)]['codSubasta'])) {
 
               $bestPuja = $pujas->getBestPuja(intval($pu[$p]['codSubasta']), $codigoUsuario);
+      ?>
 
-              echo "<div class='pujas'><ul><li>Subasta Nº ". htmlspecialchars($pu[$p]['codSubasta']) ."</li>";
-              echo "<li>Tu mejor puja: ". htmlspecialchars($bestPuja[0]['valor']) ."</li>";
+      <div class='pujas'>
+
+        <ul>
+          <li>Subasta Nº <?php echo $pu[$p]['codSubasta'] ?> </li>
+          <li>Tu mejor puja: <?php echo $bestPuja[0]['valor'] ?></li>
+
+        <?php
 
               $ganadores = $pujas->getPujaWin(intval($pu[$p]['codSubasta']));
               $codigoGanador = intval($ganadores[0]['codUsu']);
@@ -122,7 +121,7 @@
 
               echo "<button>
                 <a href='/subasta?idUsu=". $codigoUsuario ."&idSub=". $pu[$p]['codSubasta'] ."'>Volver a subasta</a>
-              </button></div>";
+              </button></div>"
 
             } else {
 
@@ -130,20 +129,20 @@
 
                 $bestPuja = $pujas->getBestPuja(intval($pu[$p]['codSubasta']), $codigoUsuario);
 
-                echo "<div class='pujas'><ul><li>Subasta Nº ". htmlspecialchars($pu[$p]['codSubasta']) ."</li>";
-                echo "<li>Tu mejor puja: ". htmlspecialchars($bestPuja[0]['valor']) ."</li>";
+                echo "<div class='pujas'><ul><li>Subasta Nº ". $pu[$p]['codSubasta'] ."</li>";
+                echo "<li>Tu mejor puja: ". $bestPuja[0]['valor'] ."</li>";
 
                 $ganadores = $pujas->getPujaWin(intval($pu[$p]['codSubasta']));
                 $codigoGanador = intval($ganadores[0]['codUsu']);
 
                 //echo "<ul><li>Subasta Nº ". $ganadores[0]['codSubasta'] ."</li>";
                 //echo "<li>". $users[$codigoGanador - 1]['nomUsu'] ." ". $users[$codigoGanador - 1]['apeUsu'] ."</li>";
-                echo "<li>Puja ganadora: ". htmlspecialchars($ganadores[0]['valor']) ."</li></ul>";
+                echo "<li>Puja ganadora: ". $ganadores[0]['valor'] ."</li></ul>";
 
                 //echo "Código de la subasta: ". $pu[$p]['codSubasta'];
 
                 echo "<button>
-                  <a href='/subasta?idUsu=". htmlspecialchars($codigoUsuario) ."&idSub=". htmlspecialchars($pu[$p]['codSubasta']) ."'>Volver a subasta</a>
+                  <a href='/subasta?idUsu=". $codigoUsuario ."&idSub=". $pu[$p]['codSubasta'] ."'>Volver a subasta</a>
                 </button></div>";
               }
             }
@@ -225,10 +224,6 @@
 
   <p id="tictac">Tiempo: </p>
   -->
-
-  <!--<script src="{{ secure_asset('js/app.js') }}" defer></script>
-  <script src="{{ secure_asset('js/pujar.js') }}" defer></script>
-  <script src="{{ secure_asset('js/script.js') }}" defer></script>-->
 
   <script src="js/app.js" defer></script>
   <script src="js/pujar.js" defer></script>

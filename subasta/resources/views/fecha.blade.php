@@ -31,7 +31,7 @@
     <div class="inicio">
 
       <div class="fecha">
-        <div class="tiempo"><?php echo htmlspecialchars(date_format($fechaIni, "H:i:s")); ?></div>
+        <div class="tiempo"><?php echo date_format($fechaIni, "H:i:s"); ?></div>
       </div>
 
     </div>
@@ -39,7 +39,7 @@
     <div class="fin">
 
       <div class="fecha">
-        <div class="tiempo"><?php echo htmlspecialchars(date_format($fechaFin, "H:i:s")); ?></d>
+        <div class="tiempo"><?php echo date_format($fechaFin, "H:i:s"); ?></d>
       </div>
 
     </div>
