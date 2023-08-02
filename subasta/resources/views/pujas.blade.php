@@ -51,9 +51,9 @@
   <nav class="topnav" id="myTopnav">
 
     <a href="/" class="active">Inicio</a>
-    <a href="/portal?idUsu=<?= echo $codigoUsuario ?>&pagina=1" ?>">Portal</a>
+    <a href="/portal?idUsu=<?php echo $codigoUsuario ?>&pagina=1" ?>">Portal</a>
     <a href="/subasta" class="disabled">Subastas</a>
-    <a href="/pujas?idUsu=<?= echo $codigoUsuario ?>">Mis pujas</a>
+    <a href="/pujas?idUsu=<?php echo $codigoUsuario ?>">Mis pujas</a>
 
     <a href="#loginModal" data-target="#loginModal" class="disabled">Iniciar sesion</a>
     <a href="#registroModal" data-target="#registroModal" class="disabled">Registrarse</a>

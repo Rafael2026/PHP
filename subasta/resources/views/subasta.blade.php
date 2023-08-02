@@ -127,7 +127,7 @@
         <ul>
 
           <li>
-            <img src="{{ asset('img/productos/imagen'. $codigoSubasta .'.jpg') }}" alt="<?php echo $products[$i]['nomProd']; ?>">
+            <img src="img/productos/imagen <?php echo $codigoSubasta ?> '.jpg'" alt="<?php echo $products[$i]['nomProd']; ?>">
           </li>
 
           <li>
