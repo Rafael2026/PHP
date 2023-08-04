@@ -7,18 +7,9 @@
   require_once("circle/Circle.php");
   require_once("cube/Cube.php");
 
-  $flecha = new Triangle(2, 4);
-  $flecha2 = new Triangle(4, 8);
-  $flecha3 = new Triangle(3, 5);
-
+  $flecha = new Triangle(2, 6, 0, 0);
   $cuadro = new Square(2, 4);
-  $cuadro2 = new Square(4, 8);
-  $cuadro3 = new Square(3, 5);
-
   $rueda = new Circle(2);
-  $rueda2 = new Circle(4);
-  $rueda3 = new Circle(3);
-
   $cubo = new Cube(4);
 
   $figuras2D = [$flecha, $cuadro, $rueda];
@@ -26,19 +17,11 @@
 
   $array = array("Triangle", "Square", "Circle");
 
-  /*
-    echo "<pre>";
-    var_dump($array);
-    echo "</pre>";
+  /*echo "<pre>";
+  print_r($array);
+  echo "</pre>";*/
 
-    echo "<pre>";
-    print_r($array);
-    echo "</pre>";
-
-    echo $array[0];
-
-    echo "<br><br>Longitud del array: ". count($array) . "<br>";
-  */
+  //echo "<br><br>Longitud del array: ". count($array) . "<br>";
 
 ?>
 
@@ -92,17 +75,53 @@
 
             <tr>
               <td>
-                <form action="" method="post">
+                <form action="" method="POST">
                   <label for="lado">Lado:</label>
                   <input type="number" min="1" name="lado" id="lado">
-                  <input type="button" value="Calcular">
+                  <button name="btnPerimeter">Calcular</button>
                 </form>
               </td>
             </tr>
 
+            <?php
+
+              $lado = $_POST['lado'];
+
+              if (!empty($lado)) {
+                
+                if ($i == 0) {
+                  $triangulo = new Triangle($lado, 0, $lado, $lado);
+              
+            ?>
+
+              <tr>
+                <td class="result"><?php echo $triangulo->getPerimetro(); ?></td>
+              </tr>
+
+            <?php
+              } else if ($i == 1) {
+                $cuadrado = new Square($lado, $lado);
+            ?>
+
+              <tr>
+                <td class="result"><?php echo $cuadrado->getPerimetro(); ?></td>
+              </tr>
+
+            <?php
+              } else {
+                $circulo = new Circle($lado);
+            ?>
+
             <tr>
-              <td class="result"></td>
+              <td class="result"><?php echo $circulo->getPerimetro(); ?></td>
             </tr>
+
+            <?php
+                }
+              }
+            ?>
+
+            
 
           </tbody>
 
@@ -157,7 +176,7 @@
                   <label for="altura">Altura:</label>
                   <input type="number" min="1" name="altura" id="altura">
 
-                  <input type="button" value="Calcular">
+                  <button name="btnArea">Calcular</button>
                 </form>
               </td>
             </tr>
@@ -221,7 +240,7 @@
                   <label for="altura">Altura:</label>
                   <input type="number" min="1" name="altura" id="altura">
 
-                  <input type="button" value="Calcular">
+                  <button name="btnVolume">Calcular</button>
                 </form>
               </td>
             </tr>
@@ -240,11 +259,7 @@
 
     </section>
 
-    <!--<section>
-      <img src="img/tabla.webp" alt="Tabla de figuras (Perimeter, areas y volume)">
-    </section>-->
-
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
   </main>
 

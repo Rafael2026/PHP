@@ -7,16 +7,18 @@
     public $ladoIzq;
     public $ladoDer;
 
-    public function __construct($base, $altura) {
+    public function __construct($base, $altura, $izquierda, $derecha) {
       $this->width = $base;
       $this->height = $altura;
-    }
-
-    public function __construct2($base, $izquierda, $derecha) {
-      $this->width = $base;
       $this->ladoIzq = $izquierda;
       $this->ladoDer = $derecha;
     }
+
+    /*public function __construct2($base, $izquierda, $derecha) {
+      $this->width = $base;
+      $this->ladoIzq = $izquierda;
+      $this->ladoDer = $derecha;
+    }*/
     
     function getPerimetro() {
       return $this->width + $this->ladoIzq + $this->ladoDer;
