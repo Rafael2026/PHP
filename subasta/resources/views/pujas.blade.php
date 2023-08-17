@@ -74,7 +74,7 @@
 
     <section>
 
-      <!-- Title: Hora Central Europea / Central European Time -->
+      <!-- Title: Central European Time -->
       <div>
         <span class="fecha"></span>
         <span class="tiempo"></span>
