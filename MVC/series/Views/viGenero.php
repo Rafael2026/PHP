@@ -37,7 +37,7 @@
       $array = implode(", ", $array);
     ?>
 
-    <a href="info.php?serie=<?php echo $array ?>&argumento=<?php echo $argumento ?>" class="inicio">
+    <a href="info.php?serie='<?php echo htmlspecialchars($array); ?>'&argumento='<?php echo htmlspecialchars($argumento); ?>'" class="inicio">
       Volver atrás
     </a>
   </div>

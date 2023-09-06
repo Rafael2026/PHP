@@ -24,8 +24,8 @@
   <h1>Exercise 2</h1>
 
   <form action='exercise2.php' method='post'>
-    Lado: <input type='text' name='lado' required><br>
-    Radio: <input type='text' name='radio' required><br>
+    Base: <input type='text' name='base' required><br>
+    Altura: <input type='text' name='altura' required><br>
     <input type='submit'>
   </form>
 
@@ -35,8 +35,8 @@
 
   <form action='exercise3.php' method='post'>
 
-    Lado: <input type='text' name='lado' required><br>
-    Radio: <input type='text' name='radio' required><br>
+    Base: <input type='text' name='base' required><br>
+    Altura: <input type='text' name='altura' required><br>
     Size: <input type='range' name='size' min='0' max='100'><br>
     Color del borde: <input type='color' name='border'><br>
     Color de la figura: <input type='color' name='figure'>

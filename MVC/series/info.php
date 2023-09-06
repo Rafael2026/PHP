@@ -34,18 +34,17 @@
 
   <div class="cartel">
 
-    <img src="<?php echo $array[7] ?>" alt="Poster de una serie" class="imagen">
+    <img src="<?php echo htmlspecialchars($array[7]); ?>" alt="Poster de una serie" class="imagen">
 
     <aside>
 
-      <h2 class="titulo"><?php echo $array[1] ?></h2>
-      <p class="plataforma"><?php echo $array[6] ?></p>
+      <h2 class="titulo"><?php echo htmlspecialchars($array[1]); ?></h2>
       
-      <p>Fecha de estreno:<?php echo " \t" .$array[2] ?></p>
-      <p>Temporadas:<?php echo " \t\t" .$array[3] ?></p>
-      <p>Puntuación:<?php echo " \t\t" .$array[4] ?></p>
+      <p>Fecha de estreno:<?php echo " \t" .htmlspecialchars($array[2]); ?></p>
+      <p>Temporadas:<?php echo " \t\t" .htmlspecialchars($array[3]); ?></p>
+      <p>Puntuación:<?php echo " \t\t" .htmlspecialchars($array[4]); ?></p>
 
-      <p class="argumento"><?php echo $array[5] ?></p>
+      <p class="argumento"><?php echo htmlspecialchars($array[5]); ?></p>
 
     </aside>
 
@@ -97,8 +96,8 @@
 
   <div class="container my-3">
     <a href="index.php">Volver atrás</a>
-    <a href="gestGenero.php?serie=<?php echo $array ?>&argumento=<?php echo $argumento ?>">Gestionar géneros</a>
-    <a href="editSerie.php?serie=<?php echo $array ?>&argumento=<?php echo $argumento ?>">Editar serie</a>
+    <a href="gestGenero.php?serie='<?php echo htmlspecialchars($array); ?>'&argumento='<?php echo htmlspecialchars($argumento); ?>'">Gestionar géneros</a>
+    <a href="editSerie.php?serie='<?php echo htmlspecialchars($array); ?>'&argumento='<?php echo htmlspecialchars($argumento); ?>'">Editar serie</a>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" defer></script>

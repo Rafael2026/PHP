@@ -36,17 +36,17 @@
 
     <fieldset class="mb-3">
       <label for="estreno">Fecha de estreno: </label>
-      <input name="estreno" value="<?php echo $array[2] ?>">
+      <input name="estreno" value="<?php echo htmlspecialchars($array[2]); ?>">
     </fieldset>
 
     <fieldset class="mb-3">
       <label for="temporada">Temporadas: </label>
-      <input name="temporada" value="<?php echo $array[3] ?>">
+      <input name="temporada" value="<?php echo htmlspecialchars($array[3]); ?>">
     </fieldset>
     
     <fieldset class="mb-3">
       <label for="puntua">Puntuación: </label>
-      <input name="puntua" value="<?php echo $array[4] ?>">
+      <input name="puntua" value="<?php echo htmlspecialchars($array[4]); ?>">
     </fieldset>
     
     <fieldset class="mb-3">
@@ -68,7 +68,7 @@
     
     <fieldset class="mb-3">
       <label for="argumento">Argumento: </label><br>
-      <textarea name="argumento" rows="10" cols="50"><?php echo $array[5] ?></textarea>
+      <textarea name="argumento" rows="10" cols="50"><?php echo htmlspecialchars($array[5]); ?></textarea>
     </fieldset>
     
     <fieldset class="mb-3">

@@ -53,7 +53,7 @@
 
             <tr>
               <th>
-                <h2><?php echo $array[$i]; ?> perimeter</h2>
+                <h2><?php echo htmlspecialchars($array[$i]); ?> perimeter</h2>
               </th>
             </tr>
 
@@ -78,7 +78,7 @@
                 <form action="" method="POST">
                   <label for="lado">Lado:</label>
                   <input type="number" min="1" name="lado" id="lado">
-                  <button name="btnPerimeter">Calcular</button>
+                  <input type="button" value="Calcular" name="btnPerimeter">
                 </form>
               </td>
             </tr>
@@ -147,7 +147,7 @@
 
             <tr>
               <th>
-                <h2><?php echo $array[$i]; ?> area</h2>
+                <h2><?php echo htmlspecialchars($array[$i]); ?> area</h2>
               </th>
             </tr>
 
@@ -176,7 +176,7 @@
                   <label for="altura">Altura:</label>
                   <input type="number" min="1" name="altura" id="altura">
 
-                  <button name="btnArea">Calcular</button>
+                  <input type="button" value="Calcular" name="btnArea">
                 </form>
               </td>
             </tr>
@@ -211,7 +211,7 @@
 
             <tr>
               <th>
-                <h2><?php echo $cubo[$i]; ?> volume</h2>
+                <h2><?php echo htmlspecialchars($cubo[$i]); ?> volume</h2>
               </th>
             </tr>
 
@@ -221,7 +221,7 @@
 
             <tr>
               <td>
-                <img src=<?php echo "img/". $cubo[$i] .".svg"; ?> alt="<?php echo $cubo[$i]; ?>">
+                <img src=<?php echo "img/". htmlspecialchars($cubo[$i]) .".svg"; ?> alt="<?php echo htmlspecialchars($cubo[$i]); ?>">
               </td>
             </tr>
 
@@ -240,7 +240,7 @@
                   <label for="altura">Altura:</label>
                   <input type="number" min="1" name="altura" id="altura">
 
-                  <button name="btnVolume">Calcular</button>
+                  <input type="button" value="Calcular" name="btnVolume">
                 </form>
               </td>
             </tr>
