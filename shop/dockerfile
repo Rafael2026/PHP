@@ -21,8 +21,11 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install composer dependencies
 RUN composer install --no-dev --no-interaction --optimize-autoloader
+
 RUN composer self-update
 RUN composer upgrade
+RUN npm audit && ncu
+RUN npm uprade
 
 # Expose port 8000 and start Laravel's development server
 EXPOSE 8000

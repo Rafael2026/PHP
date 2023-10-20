@@ -24,6 +24,8 @@ RUN composer install --no-dev --no-interaction --optimize-autoloader
 
 RUN composer self-update
 RUN composer upgrade
+RUN npm audit && ncu
+RUN npm uprade
 
 # Expose port 8000 and start Laravel's development server
 EXPOSE 8000
