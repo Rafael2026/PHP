@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercises - Unit 4</title>
   <link href="styles.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -42,8 +42,6 @@
 
     <?php
 
-      require_once("Series.php");
-
       for ($i = 0; $i < count($series); $i++) {
 
         echo "<tr>";
@@ -74,8 +72,6 @@
 
     <?php
 
-      require_once("Series.php");
-
       for ($i = 0; $i < count($series); $i++) {
 
         echo "<tr>";
@@ -96,8 +92,6 @@
   <h1>Exercise 4</h1>
 
   <?php
-
-    require_once("Series.php");
 
     for ($i = 0; $i < count($series); $i++) {
 

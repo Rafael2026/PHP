@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  
+
   <h1>Exercise 1 and 2</h1>
 
   <?php
@@ -20,7 +20,7 @@
       [
         "nombre" => "Rafael",
         "apellidos" => "Aguilar Muñoz",
-        "edad" => 20,
+        "edad" => 23,
         "direccion" => "C/ Ceres, Nº 8",
         "telefono" => 609213851
       ],
@@ -67,13 +67,13 @@
   ?>
 
   <!--
-    
+
     <h1>Exercise 4</h1>
 
     <?php
       // echo "a) " $info[1]["cast]["Fratelli"][2];
     ?>
-    
+
   -->
 
 </body>
