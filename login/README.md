@@ -1,5 +1,5 @@
 ## Deploy
-[Server connection](https://rafael2026.github.io/PHP/Server%20connection/)
+[Server connection](https://rafael2026.github.io/PHP/login/)
 
 ## Text
 - SQL queries: [link](https://docs.google.com/document/d/1bBGF4H5MIadC93QFxoMHiiByliY6P0SBr7bXNkiLFzI/edit)

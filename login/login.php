@@ -1,8 +1,3 @@
-<?php
-  error_reporting(E_ERROR) ;
-  ini_set("display-errors", 0);
-?>
-
 <!DOCTYPE html>
 
 <html>
@@ -18,97 +13,101 @@
 
 <body>
 
-  <?php
+<?php
 
-    $user = $_POST["username"];
-    $password = hash("SHA256", $_POST["passw"]);
-    $radioValor = $_POST["flexRadio"];
-    $busquedaFinalizada = false;
-    $usuarioExiste = false;
-    $passwordValid = false;
-    $i = 0;
+  error_reporting(E_ERROR) ;
+  ini_set("display-errors", 0);
 
-    function leerEstatico() {
+  $user = $_POST["username"];
+  $password = hash("SHA256", $_POST["passw"]);
+  $radioValor = $_POST["flexRadio"];
+  $busquedaFinalizada = false;
+  $usuarioExiste = false;
+  $passwordValid = false;
+  $i = 0;
 
-      $fh = fopen('usuarios.txt', 'r');
+  function leerEstatico() {
 
-      while ($line = fgets($fh)) { $usuarios[] = explode(" ", trim($line)); }
+    $fh = fopen('usuarios.txt', 'r');
 
-      fclose($fh);
+    while ($line = fgets($fh)) { $usuarios[] = explode(" ", trim($line)); }
 
-      return $usuarios;
-    }
+    fclose($fh);
 
-    function leerBDLocal() {
+    return $usuarios;
+  }
 
-      $conexion = mysqli_connect("localhost", "root", "", "logindaw");
-      $consulta = "SELECT email, passw FROM usuario";
-      $resultado = mysqli_query($conexion, $consulta);
+  function leerBDLocal() {
 
-      while ($row = mysqli_fetch_array($resultado)) { $usuarios[] = $row; }
+    $conexion = mysqli_connect("localhost", "root", "", "logindaw");
+    $consulta = "SELECT email, passw FROM usuario";
+    $resultado = mysqli_query($conexion, $consulta);
 
-      return $usuarios;
-    }
+    while ($row = mysqli_fetch_array($resultado)) { $usuarios[] = $row; }
 
-    if ($radioValor == "estatico") {
-      $usuarios = leerEstatico();
-    } else if ($radioValor == "local") {
-      $usuarios = leerBDLocal();
-    }
+    return $usuarios;
+  }
 
-    while (!$busquedaFinalizada) {
+  if ($radioValor == "estatico") {
+    $usuarios = leerEstatico();
+  } else if ($radioValor == "local") {
+    $usuarios = leerBDLocal();
+  }
 
-      if (strcmp($user, $usuarios[$i][0]) == 0) {
+  while (!$busquedaFinalizada) {
 
-        $usuarioExiste = true;
+    if (strcmp($user, $usuarios[$i][0]) == 0) {
 
-        if (strcmp($password, $usuarios[$i][1]) == 0) { $passwordValid = true; }
+      $usuarioExiste = true;
 
-        $busquedaFinalizada = true;;
+      if (strcmp($password, $usuarios[$i][1]) == 0) { $passwordValid = true; }
 
-      } else {
-
-        $usuarioExiste = false;
-
-        if ($i < count($usuarios)) {
-          $i++;
-        } else {
-          $busquedaFinalizada = true;
-        }
-      }
-    }
-
-    if ($usuarioExiste) {
-
-      if ($passwordValid) {
-        header("Location: logueado.html");
-      } else {
-  ?>
-
-  <div class="alert alert-warning" role="alert">Reestablecer contraseña</div>
-
-    <a href="login.html">
-      <button>Volver al login</button>
-    </a>
-
-  <?php
-      }
+      $busquedaFinalizada = true;;
 
     } else {
-  ?>
 
-      <div class="alert alert-danger" role="alert">Registrarse  - Ampliación futura</div>
+      $usuarioExiste = false;
+
+      if ($i < count($usuarios)) {
+        $i++;
+      } else {
+        $busquedaFinalizada = true;
+      }
+    }
+  }
+
+  if ($usuarioExiste) {
+
+    if ($passwordValid) {
+      header("Location: logueado.html");
+    } else {?>
+
+      <div class="alert alert-warning" role="alert">Reestablecer contraseña - Ampliación futura</div>
 
       <a href="login.html">
         <button>Volver al login</button>
       </a>
 
-    <?php
-      }
-    ?>
+      <?php
+    }
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
+  } else {?>
+
+    <div class="alert alert-danger" role="alert">Registrarse  - Ampliación futura</div>
+
+    <a href="login.html">
+      <button>Volver al login</button>
+    </a>
+
+    <?php
+
+  }
+
+?>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" type="text/javascript" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" type="text/javascript" defer></script>
 
 </body>
 
