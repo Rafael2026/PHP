@@ -22,11 +22,12 @@ fecha
 js
 monedero
 tablas
+pujar
+login
+public
+Views
 categoria.php
 puja.php
 registro.php
 subasta.php
 usuarios.php
-pujar
-modal
-login

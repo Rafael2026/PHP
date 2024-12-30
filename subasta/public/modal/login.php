@@ -8,7 +8,7 @@
 
     <a href="#close" title="Close" class="close">X</a>
 
-    <form action="https://subasta-production.up.railway.app" method="GET" enctype="multipart/form-data">
+    <form action="/portal" method="GET" enctype="multipart/form-data">
 
       <h2>Login</h2>
 
@@ -63,10 +63,10 @@
     if ($usuarioExiste) {
 
       if ($permiso == 1) {
-        header("Location: https://subasta-production.up.railway.app/tablas");
+        header("Location: /tablas");
         exit();
       } else {
-        header("Location: https://subasta-production.up.railway.app/portal?idUsu=$codUsuario&pagina=1");
+        header("Location: /portal?idUsu=$codUsuario&pagina=1");
         exit();
       }
 

@@ -50,10 +50,10 @@
         ?>
 
           <tr>
-            <td><?php echo htmlspecialchars($users[$u]['codUsu']); ?></td>
-            <td><?php echo htmlspecialchars($users[$u]['nomUsu']); ?></td>
-            <td><?php echo htmlspecialchars($users[$u]['apeUsu']); ?></td>
-            <td><?php echo htmlspecialchars($users[$u]['fechaUnion']); ?></td>
+            <td><?php echo $users[$u]['codUsu'] ?></td>
+            <td><?php echo $users[$u]['nomUsu'] ?></td>
+            <td><?php echo $users[$u]['apeUsu'] ?></td>
+            <td><?php echo $users[$u]['fechaUnion'] ?></td>
           </tr>
 
         <?php

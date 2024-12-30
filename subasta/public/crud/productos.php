@@ -10,12 +10,12 @@
 
     <form method="GET" enctype="multipart/form-data">
 
-      <input type="number" name="codigo" value="<?php echo htmlspecialchars(intval(count($products)) + 1); ?>" required>
+      <input type="number" name="codigo" value="<?php echo htmlspecialchars(intval(count($products)) + 1) ?>" required>
       <input type="text" name="nombre" required>
       <input type="text" name="material" required>
       <input type="number" name="anchura" min="0" required>
       <input type="number" name="altura" min="0" required>
-      <input type="number" name="codSub" value="<?php echo htmlspecialchars(intval(count($products)) + 1); ?>" required>
+      <input type="number" name="codSub" value="<?php echo htmlspecialchars(intval(count($products)) + 1) ?>" required>
 
       <div class="fin-float"></div>
 

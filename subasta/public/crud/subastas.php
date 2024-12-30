@@ -10,7 +10,7 @@
 
     <form method="GET" enctype="multipart/form-data">
 
-      <input type="number" name="codigo" value="<?php echo htmlspecialchars(intval(count($sub)) + 1); ?>" required>
+      <input type="number" name="codigo" value="<?php echo htmlspecialchars(intval(count($sub)) + 1) ?>" required>
       <input type="date" name="fechaIni">
       <input type="date" name="fechaFin">
       <input type="number" name="precIni" min="1" required>
