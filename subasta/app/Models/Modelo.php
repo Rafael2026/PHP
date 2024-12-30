@@ -5,7 +5,7 @@
     private $con;
 
     public function __construct() {
-      $this->con = mysqli_connect('containers-us-west-31.railway.app', 'root' , 'pK091DOyf7nqKTxSKcqM', 'railway');
+      $this->con = mysqli_connect('localhost', 'root' , '', 'subasta');
     }
 
     // Obtener todos los usuarios
