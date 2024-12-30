@@ -1,10 +1,6 @@
-<?php
-  use App\Models\Usuario;
-?>
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
@@ -12,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar sesión</title>
   <link href="img/logo.png" type="image/x-icon" rel="icon">
-  <link href="icons/icomoon.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
 </head>
 
@@ -24,14 +21,17 @@
 
   <nav class="topnav" id="myTopnav">
 
-    <a href="/" class="active">Inicio</a>
-    <a href="/subasta" class="disabled">Subastas</a>
-    <a href="/puja" class="disabled">Pujas</a>
-    <a href="/login">Iniciar sesion</a>
-    <a href="/registro">Registrarse</a>
+    <a href="index.php" class="active">Inicio</a>
+    <a href="subasta.php" class="disabled">Subastas</a>
+    <a href="puja.php" class="disabled">Pujas</a>
+    <a href="login.php">Iniciar sesion</a>
+    <a href="registro.php">Registrarse</a>
 
-    <a href="javascript:void(0);" class="icon nav">
-      <img src="img/menu.svg" alt="Menu">
+    <!--<input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>-->
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
     </a>
 
   </nav>
@@ -52,14 +52,12 @@
     </section>
 
     <div class="fin-float"></div>
-
+    
     <section>
 
-      <form action="/portal" method="GET" enctype="multipart/form-data">
+      <form action="<?php //echo $_SERVER['HTTP_REFERER'] ?>" method="POST">
 
-        @csrf
-
-        <h2>Login</h2>
+        <h2 class="text-center text-info">Login</h2>
 
         <div class="form-group">
           <label for="usuario" class="text-info">User:</label>
@@ -88,14 +86,11 @@
       $usuarioExiste = false;
       $permiso = 0;
 
-      if (isset($_GET["login"])) {
+      if (isset($_POST["login"])) {
 
-        $user = $_GET["usuario"];
-        $password = $_GET["passw"];
-
-        $usuarios = new Usuario();
-        $users = $usuarios->getUsuarios();
-
+        $user = $_POST["usuario"];
+        $password = $_POST["passw"];
+    
         for ($i = 0; $i < count($users) && !$usuarioExiste; $i++) {
 
           if (strcmp($user, $users[$i]["user"]) == 0 && strcmp($users[$i]["password"], trim(strval(hash('sha512', $password)))) == 0) {
@@ -103,23 +98,33 @@
             $permiso = intval($users[$i]["permiso"]);
             //$_SESSION["usuario"] = $user;
             //$_SESSION["permiso"] = $permiso;
-            $acceso = $usuarios->getAcceso($user, trim(strval(hash('sha512', $password))));
           }
         }
 
         if ($usuarioExiste) {
 
           if ($permiso == 1) {
-            header("Location: /tablas");
+            header("Location: tablas.php");
             exit();
           } else {
-            header("Location: /portal");
+            header("Location: portal.php");
             exit();
           }
 
         } else {
-          echo "<noscript>alert('El usuario o la contraseña son incorrectos');</noscript>";
+          echo "<script>alert('El usuario o la contraseña son incorrectos');</script>";
         }
+
+        /*if (isset($_SESSION["usuario"])) {
+
+          if ($permiso == 1) {
+            header("Location: tablas.php");
+            exit();
+          } else {
+            header("Location: portal.php");
+            exit();
+          }
+        }*/
       }
 
     ?>
@@ -131,14 +136,10 @@
     <p>Autor: Rafael Aguilar Muñoz</p>
   </footer>
 
-  <!--
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
-    <script src="{{ secure_asset('js/reloj.js') }}" defer></script>
-    <script src="{{ secure_asset('js/script.js') }}" defer></script>
-  -->
-  <script src="js/app.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@latest/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/js/bootstrap.min.js" defer></script>
   <script src="js/reloj.js" defer></script>
-  <script src="js/script.js" defer></script>
+  <script src="js/nav.js" defer></script>
 
 </body>
 

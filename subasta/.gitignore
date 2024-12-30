@@ -17,3 +17,16 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+*.pdf
+fecha
+js
+monedero
+tablas
+categoria.php
+puja.php
+registro.php
+subasta.php
+usuarios.php
+pujar
+modal
+login
